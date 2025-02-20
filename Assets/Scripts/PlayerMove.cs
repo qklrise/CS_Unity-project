@@ -2,61 +2,26 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Transform player;
-    public Transform cameraArm;
-    public float moveSpeed;
+    public Transform myModel;
+    public float moveSpeed = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        moveSpeed = 10.0f ;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
-        LookAround();
+        Vector3 inputDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-    }
-    void Move() // 캐릭터 움직임 구현 필요
-    {
-        if(Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(transform.forward * Time.deltaTime * moveSpeed);
-        }
-        if(Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(-transform.forward * Time.deltaTime * moveSpeed);
-        }
-        if(Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-transform.right * Time.deltaTime * moveSpeed);
-        }
-        if(Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(transform.right * Time.deltaTime * moveSpeed);
-        }
-    }
+        Vector3 modelDir = myModel.localRotation * Vector3.forward;
+        float angle = Vector3.Angle(modelDir, inputDir);
+        float rotdir = Vector3.Dot(inputDir, myModel.localRotation * Vector3.right) < 0.0f ? -1.0f : 1.0f;
 
-    private void LookAround() //마우스로 화면 돌려기
-    {
-        // 마우스 움직임을 Vector2로 저장
-        Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"));
-        // 카메라 움직임을 Vector3로 저장
-        Vector3 cameraAngle = cameraArm.rotation.eulerAngles;
-        // 마우스가 올라가면 카메라가 내려감 (마우스로 바라보는 곳을 바라봄)
-        float x = cameraAngle.x - mouseDelta.y;
-        // 카메라가 x축으로 돌면서 바닥에 들어가는걸 방지 최대값과 최소값 설정
-        if(x < 180.0f)
-        {
-            x = Mathf.Clamp(x, -1.0f, 70.0f);
-        }
-        else
-        {
-            x = Mathf.Clamp(x, 325f, 361f);
-        }
-        //카메라 트랜스폼 값 설정
-        cameraArm.rotation = Quaternion.Euler(x, cameraAngle.y + mouseDelta.x, cameraAngle.z);
+        float delta = Time.deltaTime * 720.0f;
+        if (delta > angle) delta = angle;
+        myModel.Rotate(Vector3.up * delta * rotdir);
+        transform.position = transform.position + myModel.forward * inputDir.magnitude * Time.deltaTime * moveSpeed;
     }
 }
 
