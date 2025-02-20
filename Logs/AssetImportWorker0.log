@@ -22,7 +22,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62607
+62922
 -job-worker-count
 3
 -background-job-worker-count
@@ -68,7 +68,7 @@ Successfully changed project path to: /Users/nayohan/Documents/GitHub/CS_Unity-p
     "memorysetup-temp-allocator-size-gfx=262144"
 Player connection [8601483328]  Target information:
 
-Player connection [8601483328]  * "[IP] 192.168.120.237 [Port] 0 [Flags] 2 [Guid] 3765898667 [EditorId] 3765898667 [Version] 1048832 [Id] OSXEditor(0,nayohan-ui-MacBookPro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8601483328]  * "[IP] 192.168.120.237 [Port] 0 [Flags] 2 [Guid] 2704624580 [EditorId] 2704624580 [Version] 1048832 [Id] OSXEditor(0,nayohan-ui-MacBookPro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8601483328] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8601483328] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -83,7 +83,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.03 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.37f1 (090b7797214c)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -98,53 +98,53 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56020
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56068
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.37f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.37f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.0.37f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.003956 seconds.
-- Loaded All Assemblies, in  0.250 seconds
+Registered in 0.004944 seconds.
+- Loaded All Assemblies, in  0.261 seconds
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 [usbmuxd] Send listen message
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 71 ms
+Android Extension - Scanning For ADB Devices 80 ms
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.344 seconds
-Domain Reload Profiling: 594ms
-	BeginReloadAssembly (80ms)
+- Finished resetting the current domain, in  0.435 seconds
+Domain Reload Profiling: 697ms
+	BeginReloadAssembly (84ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (26ms)
+	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (29ms)
-	LoadAllAssembliesAndSetupDomain (106ms)
-		LoadAssemblies (81ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (113ms)
+		LoadAssemblies (85ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (103ms)
-			TypeCache.Refresh (103ms)
-				TypeCache.ScanAssembly (93ms)
+		AnalyzeDomain (109ms)
+			TypeCache.Refresh (108ms)
+				TypeCache.ScanAssembly (98ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (345ms)
+	FinalizeReload (435ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (323ms)
+		SetupLoadedEditorAssemblies (408ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (189ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (64ms)
-			ProcessInitializeOnLoadMethodAttributes (37ms)
+			InitializePlatformSupportModulesInManaged (228ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (93ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -153,8 +153,8 @@ Domain Reload Profiling: 594ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.247 seconds
-Refreshing native plugins compatible for Editor in 0.18 ms, found 1 plugins.
+- Loaded All Assemblies, in  0.359 seconds
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
@@ -167,173 +167,1574 @@ Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.211 seconds
-Domain Reload Profiling: 458ms
-	BeginReloadAssembly (88ms)
+- Finished resetting the current domain, in  0.329 seconds
+Domain Reload Profiling: 688ms
+	BeginReloadAssembly (106ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (19ms)
-	LoadAllAssembliesAndSetupDomain (107ms)
-		LoadAssemblies (117ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (173ms)
+		LoadAssemblies (171ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (31ms)
-			TypeCache.Refresh (25ms)
-				TypeCache.ScanAssembly (18ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (42ms)
+				TypeCache.ScanAssembly (27ms)
 			BuildScriptInfoCaches (4ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (211ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (329ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (142ms)
+		SetupLoadedEditorAssemblies (245ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (25ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Launching external process: /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.15 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 983 unused Assets / (102.0 KB). Loaded Objects now: 1498.
+Memory consumption went from 78.2 MB to 78.1 MB.
+Total: 3.722375 ms (FindLiveObjects: 0.307375 ms CreateObjectMapping: 0.020916 ms MarkObjects: 3.215042 ms  DeleteObjects: 0.177917 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 359725.937956 seconds.
+  path: Assets/Scripts/PlayerMove.cs
+  artifactKey: Guid(d65bd0a3fa4ac4241b0aa1e3bca701a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerMove.cs using Guid(d65bd0a3fa4ac4241b0aa1e3bca701a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2cc02031a62b897485acf88815210736') in 0.005257041 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 977 unused Assets / (127.3 KB). Loaded Objects now: 1500.
+Memory consumption went from 75.7 MB to 75.6 MB.
+Total: 19.256959 ms (FindLiveObjects: 0.147834 ms CreateObjectMapping: 0.019125 ms MarkObjects: 18.934542 ms  DeleteObjects: 0.154750 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x171687000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.348 seconds
+Refreshing native plugins compatible for Editor in 0.15 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.205 seconds
+Domain Reload Profiling: 554ms
+	BeginReloadAssembly (145ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (47ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (142ms)
+		LoadAssemblies (167ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (33ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (14ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (205ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (134ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (18ms)
 			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (35ms)
-			ProcessInitializeOnLoadAttributes (68ms)
-			ProcessInitializeOnLoadMethodAttributes (18ms)
+			BeforeProcessingInitializeOnLoad (34ms)
+			ProcessInitializeOnLoadAttributes (63ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 981 unused Assets / (124.3 KB). Loaded Objects now: 1500.
+Memory consumption went from 82.4 MB to 82.2 MB.
+Total: 2.865916 ms (FindLiveObjects: 0.060958 ms CreateObjectMapping: 0.018250 ms MarkObjects: 2.666583 ms  DeleteObjects: 0.119916 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x33ae87000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.246 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.237 seconds
+Domain Reload Profiling: 483ms
+	BeginReloadAssembly (100ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (115ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (11ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (237ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (164ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (80ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
-Launching external process: /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 981 unused Assets / (31.9 KB). Loaded Objects now: 1500.
+Memory consumption went from 88.6 MB to 88.6 MB.
+Total: 3.388166 ms (FindLiveObjects: 0.166125 ms CreateObjectMapping: 0.024958 ms MarkObjects: 3.037875 ms  DeleteObjects: 0.159000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x175ec7000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.244 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.231 seconds
+Domain Reload Profiling: 475ms
+	BeginReloadAssembly (102ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (94ms)
+		LoadAssemblies (111ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (12ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (231ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (152ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 981 unused Assets / (28.8 KB). Loaded Objects now: 1500.
+Memory consumption went from 95.1 MB to 95.1 MB.
+Total: 3.043417 ms (FindLiveObjects: 0.064917 ms CreateObjectMapping: 0.019250 ms MarkObjects: 2.845458 ms  DeleteObjects: 0.113333 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.255 seconds
+Refreshing native plugins compatible for Editor in 0.14 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.237 seconds
+Domain Reload Profiling: 493ms
+	BeginReloadAssembly (101ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (106ms)
+		LoadAssemblies (113ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (29ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (15ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (238ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (169ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (82ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 981 unused Assets / (53.7 KB). Loaded Objects now: 1500.
+Memory consumption went from 101.6 MB to 101.5 MB.
+Total: 3.692458 ms (FindLiveObjects: 0.084917 ms CreateObjectMapping: 0.024125 ms MarkObjects: 3.436333 ms  DeleteObjects: 0.146625 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.243 seconds
+Refreshing native plugins compatible for Editor in 0.15 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.221 seconds
+Domain Reload Profiling: 472ms
+	BeginReloadAssembly (108ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (91ms)
+		LoadAssemblies (113ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (11ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (228ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (153ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 981 unused Assets / (32.0 KB). Loaded Objects now: 1500.
+Memory consumption went from 108.0 MB to 107.9 MB.
+Total: 5.890250 ms (FindLiveObjects: 0.078500 ms CreateObjectMapping: 0.018208 ms MarkObjects: 5.663167 ms  DeleteObjects: 0.130083 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 978 unused Assets / (160.7 KB). Loaded Objects now: 1501.
+Memory consumption went from 107.3 MB to 107.1 MB.
+Total: 32.392917 ms (FindLiveObjects: 0.088833 ms CreateObjectMapping: 0.019083 ms MarkObjects: 32.014000 ms  DeleteObjects: 0.270708 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 488.467021 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63dbe9b8e778230b25742e91609f193e') in 0.032226958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.512 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.792 seconds
+Domain Reload Profiling: 1305ms
+	BeginReloadAssembly (265ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (64ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (188ms)
+		LoadAssemblies (297ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (34ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (17ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (792ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (724ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (586ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (72ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.20 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (138.9 KB). Loaded Objects now: 1501.
+Memory consumption went from 113.6 MB to 113.5 MB.
+Total: 4.221833 ms (FindLiveObjects: 0.093458 ms CreateObjectMapping: 0.019250 ms MarkObjects: 3.967542 ms  DeleteObjects: 0.141041 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.541674 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.001701125 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.100584 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000313459 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.198314 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000379959 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.206928 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000644167 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.101587 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000565375 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.194452 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000479209 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.102649 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000719167 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.197343 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000621375 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099354 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000663666 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.191568 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000313792 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.107735 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000620417 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.198947 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000483584 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199067 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000646542 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.097990 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000314708 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.205448 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000588417 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.195207 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000319125 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.090595 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000513333 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.104367 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000882583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.203422 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000352666 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099719 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000427708 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.100767 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000249583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099666 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000542583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199604 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000328541 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.095225 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000217167 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.200181 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000385833 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.089537 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000287875 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.212561 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000319875 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.198309 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000368875 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.197706 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.00041925 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.098917 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000401208 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.205387 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000635833 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.088899 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000423041 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.094232 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.00037175 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.207186 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000687583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.101972 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000525875 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199677 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000541542 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199596 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000398125 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199305 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000484959 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.196188 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000682167 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199962 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000705667 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.097312 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000908625 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199701 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000781583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.191532 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000632542 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.106469 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.001070333 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.099873 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000388 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.096381 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.00056225 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.206173 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.003395875 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.186392 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000751625 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.192754 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000633584 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.106588 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000785667 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.093464 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000297291 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.203612 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.00524225 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.198296 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000532 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.197302 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000410583 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.098446 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000343667 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+  ERROR: Build asset version error: assets/scripts/rootmotion.cs in SourceAssetDB has modification time of '2025-02-20T07:00:26Z' while content on disk has modification time of '2025-02-20T07:00:31Z'
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.240 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.240 seconds
+Domain Reload Profiling: 482ms
+	BeginReloadAssembly (113ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (83ms)
+		LoadAssemblies (102ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (11ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (241ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (168ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (29ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (79ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.15 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (32.1 KB). Loaded Objects now: 1501.
+Memory consumption went from 120.1 MB to 120.0 MB.
+Total: 3.185667 ms (FindLiveObjects: 0.085459 ms CreateObjectMapping: 0.019500 ms MarkObjects: 2.954500 ms  DeleteObjects: 0.126125 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.357133 seconds.
+  path: Assets/Scripts/RootMotion.cs
+  artifactKey: Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RootMotion.cs using Guid(bde18175c49844560af8e244ba163d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d678ff77e782332782a74e6eadc80da') in 0.000843709 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.255 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.226 seconds
+Domain Reload Profiling: 481ms
+	BeginReloadAssembly (111ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (98ms)
+		LoadAssemblies (119ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (12ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (226ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (155ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (19ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (63.9 KB). Loaded Objects now: 1501.
+Memory consumption went from 126.4 MB to 126.4 MB.
+Total: 3.267833 ms (FindLiveObjects: 0.070000 ms CreateObjectMapping: 0.019375 ms MarkObjects: 3.000375 ms  DeleteObjects: 0.177292 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.247 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.236 seconds
+Domain Reload Profiling: 484ms
+	BeginReloadAssembly (105ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (12ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (114ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (11ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (236ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (163ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 0.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (24.7 KB). Loaded Objects now: 1501.
+Memory consumption went from 132.8 MB to 132.8 MB.
+Total: 3.077958 ms (FindLiveObjects: 0.153750 ms CreateObjectMapping: 0.028625 ms MarkObjects: 2.782334 ms  DeleteObjects: 0.112958 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.234 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.252 seconds
+Domain Reload Profiling: 487ms
+	BeginReloadAssembly (102ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (12ms)
+	LoadAllAssembliesAndSetupDomain (86ms)
+		LoadAssemblies (98ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (27ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (14ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (253ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (178ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (97ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (60.6 KB). Loaded Objects now: 1501.
+Memory consumption went from 139.3 MB to 139.2 MB.
+Total: 3.495416 ms (FindLiveObjects: 0.070333 ms CreateObjectMapping: 0.019292 ms MarkObjects: 3.262167 ms  DeleteObjects: 0.143416 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.247 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.227 seconds
+Domain Reload Profiling: 475ms
+	BeginReloadAssembly (107ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (94ms)
+		LoadAssemblies (111ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (11ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (227ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (158ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (42ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (32.1 KB). Loaded Objects now: 1501.
+Memory consumption went from 145.8 MB to 145.7 MB.
+Total: 3.479917 ms (FindLiveObjects: 0.071959 ms CreateObjectMapping: 0.018291 ms MarkObjects: 3.246542 ms  DeleteObjects: 0.142917 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.241 seconds
+Refreshing native plugins compatible for Editor in 0.15 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.242 seconds
+Domain Reload Profiling: 483ms
+	BeginReloadAssembly (103ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (91ms)
+		LoadAssemblies (106ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (12ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (242ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (172ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (86ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 0.19 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (149.7 KB). Loaded Objects now: 1501.
+Memory consumption went from 152.2 MB to 152.1 MB.
+Total: 3.358291 ms (FindLiveObjects: 0.110458 ms CreateObjectMapping: 0.021125 ms MarkObjects: 3.109833 ms  DeleteObjects: 0.116500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.240 seconds
+Refreshing native plugins compatible for Editor in 0.16 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.224 seconds
+Domain Reload Profiling: 464ms
+	BeginReloadAssembly (105ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (89ms)
+		LoadAssemblies (103ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (14ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (224ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (156ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (54.3 KB). Loaded Objects now: 1501.
+Memory consumption went from 158.7 MB to 158.7 MB.
+Total: 3.548291 ms (FindLiveObjects: 0.066125 ms CreateObjectMapping: 0.020000 ms MarkObjects: 3.300416 ms  DeleteObjects: 0.161416 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.261 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.234 seconds
+Domain Reload Profiling: 496ms
+	BeginReloadAssembly (119ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (15ms)
+	LoadAllAssembliesAndSetupDomain (97ms)
+		LoadAssemblies (119ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (12ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (234ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (160ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (33.1 KB). Loaded Objects now: 1501.
+Memory consumption went from 165.2 MB to 165.2 MB.
+Total: 3.681667 ms (FindLiveObjects: 0.066000 ms CreateObjectMapping: 0.019458 ms MarkObjects: 3.387083 ms  DeleteObjects: 0.208875 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.252 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.234 seconds
+Domain Reload Profiling: 487ms
+	BeginReloadAssembly (118ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (87ms)
+		LoadAssemblies (116ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (13ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (234ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (162ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (26ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
 Refreshing native plugins compatible for Editor in 0.23 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 976 unused Assets / (124.4 KB). Loaded Objects now: 1491.
-Memory consumption went from 78.0 MB to 77.9 MB.
-Total: 3.160417 ms (FindLiveObjects: 0.128917 ms CreateObjectMapping: 0.017917 ms MarkObjects: 2.852708 ms  DeleteObjects: 0.160542 ms)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (51.4 KB). Loaded Objects now: 1501.
+Memory consumption went from 171.6 MB to 171.6 MB.
+Total: 3.842625 ms (FindLiveObjects: 0.104750 ms CreateObjectMapping: 0.024375 ms MarkObjects: 3.524000 ms  DeleteObjects: 0.188875 ms)
 
+Prepare: number of updated asset objects reloaded= 0
 ========================================================================
-Received Import Request.
-  Time since last request: 358499.752131 seconds.
-  path: Assets/Model/Spring.fbx
-  artifactKey: Guid(eee15c3a07991674e9e8d2e609bde275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Spring.fbx using Guid(eee15c3a07991674e9e8d2e609bde275) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8306d0cc5184b7e9321c249bc02f8d2') in 0.417962584 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x1700fb000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.248 seconds
+Refreshing native plugins compatible for Editor in 0.13 ms, found 1 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.228 seconds
+Domain Reload Profiling: 476ms
+	BeginReloadAssembly (108ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (97ms)
+		LoadAssemblies (112ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (12ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (228ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (155ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.24 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 982 unused Assets / (190.5 KB). Loaded Objects now: 1501.
+Memory consumption went from 178.1 MB to 178.0 MB.
+Total: 3.452291 ms (FindLiveObjects: 0.084375 ms CreateObjectMapping: 0.033417 ms MarkObjects: 3.171708 ms  DeleteObjects: 0.162542 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.560870 seconds.
-  path: Assets/Model/Materials
-  artifactKey: Guid(7f8707338dfa10048863f5e5913ca383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials using Guid(7f8707338dfa10048863f5e5913ca383) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cde41a548601a578a94612092d378b4a') in 0.000288542 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.347256 seconds.
-  path: Assets/Model/Materials/Eyes_BaseColor.mat
-  artifactKey: Guid(4540fdc7e577cef4eaa08f8fa42dca57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/Eyes_BaseColor.mat using Guid(4540fdc7e577cef4eaa08f8fa42dca57) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd485d657380b3e904c48ac012548ee8') in 0.020069417 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Model/Materials/gold.mat
-  artifactKey: Guid(038797d2a6ce7dc4fa7b7c5734bc0ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/gold.mat using Guid(038797d2a6ce7dc4fa7b7c5734bc0ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '071339cf7e19f144c91ef95e3b598c73') in 0.002945292 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Model/Materials/Hair.mat
-  artifactKey: Guid(4325b4daace0e02489fc99b70f222c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/Hair.mat using Guid(4325b4daace0e02489fc99b70f222c16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e17f4538947ea8c41a7ecd6b55d0354e') in 0.00305625 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Model/Materials/gold 1.mat
-  artifactKey: Guid(d6a1f998327c22f45ad29bac9c13b676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/gold 1.mat using Guid(d6a1f998327c22f45ad29bac9c13b676) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8d2741c9be62879fadd71bc73621cdd') in 0.003003125 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.657224 seconds.
-  path: Assets/Model/Materials/Hair_BaseColor.mat
-  artifactKey: Guid(ece45d120633526438c15bce0e2f272f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/Hair_BaseColor.mat using Guid(ece45d120633526438c15bce0e2f272f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a66f001b963c8edf5b9d3e0cc4aeaafc') in 0.005281292 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.377171 seconds.
-  path: Assets/Model/Materials/Dress_BaseColor.mat
-  artifactKey: Guid(6fb788f9bcd798d41aa73455cbad61aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/Dress_BaseColor.mat using Guid(6fb788f9bcd798d41aa73455cbad61aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '445f502a2c3e4ed575e57c451791f187') in 0.005037375 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.104199 seconds.
-  path: Assets/Model/Materials/Dress.mat
-  artifactKey: Guid(2648b86ce5a449a498a169b56bf3ca98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Materials/Dress.mat using Guid(2648b86ce5a449a498a169b56bf3ca98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6576aada331d27568717bc0f50b87332') in 0.003194417 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.587929 seconds.
-  path: Assets/Model/Character
-  artifactKey: Guid(12fa3d0e70bf7a841acb76b196492975) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character using Guid(12fa3d0e70bf7a841acb76b196492975) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '295dab66fc01e777fb4d6d0afc353859') in 0.000224042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.092463 seconds.
-  path: Assets/Model/Character/Character.fbx
-  artifactKey: Guid(c92e51eceb2524dcabf12a2853ac03f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Character.fbx using Guid(c92e51eceb2524dcabf12a2853ac03f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '694d1f8a5b893a06d6f6aaa4f48b1997') in 0.162993291 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 234
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.581820 seconds.
-  path: Assets/Model/Character/Animation
-  artifactKey: Guid(aad726ad560c5400ba9588b711d183e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Animation using Guid(aad726ad560c5400ba9588b711d183e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6fa130882e2f98926d8c2c3d75b149f8') in 0.001019667 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.650876 seconds.
-  path: Assets/Model/Character/Animation/Catch.fbx
-  artifactKey: Guid(c35eeaec39c8b414bb3a0abb87ab181b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Animation/Catch.fbx using Guid(c35eeaec39c8b414bb3a0abb87ab181b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e9a0140618ab633d4cbc7deafe40d19') in 0.013530375 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 178
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Model/Character/Animation/UseKey.fbx
-  artifactKey: Guid(19a01930a93c84113abeca032b070ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Animation/UseKey.fbx using Guid(19a01930a93c84113abeca032b070ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f240f634bf51dd5f5fc336cab888e01') in 0.010449208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 178
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Model/Character/Animation/Jump.fbx
-  artifactKey: Guid(8e31f0785691d42bba1587188fa208f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Animation/Jump.fbx using Guid(8e31f0785691d42bba1587188fa208f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce87c4f189a680e4e6b43b7ff9f91fab') in 0.011803792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 178
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Model/Character/Animation/Walk.fbx
-  artifactKey: Guid(29efa06b13cda4b99bf2fa8b5b1108cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Model/Character/Animation/Walk.fbx using Guid(29efa06b13cda4b99bf2fa8b5b1108cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '174eae2c0d35512681392f189aaaab5c') in 0.012220875 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 178
-
+Prepare: number of updated asset objects reloaded= 0
