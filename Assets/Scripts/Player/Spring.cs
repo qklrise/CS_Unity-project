@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spring : AnimProperty
 {
     public Rigidbody key;
+    public LayerMask Doll;
 
     private bool canForce = true;
     IEnumerator On()
@@ -13,15 +14,13 @@ public class Spring : AnimProperty
         
         key.AddForce(Vector3.up * 10.0f, ForceMode.Impulse);
 
-        myAnim.SetBool("Using", true);
-        yield return new WaitForSeconds(1.0f);
-        myAnim.SetBool("Using", false);
+        myAnim.SetTrigger("Using");
+        yield return new WaitForSeconds(1.5f);
         canForce = true;
     }
 
 
 
-    public LayerMask Doll;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,11 +35,14 @@ public class Spring : AnimProperty
 
     void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && canForce)
+        if (canForce)
         {
-            if ((1 << other.gameObject.layer & Doll) != 0)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                StartCoroutine(On());
+                if ((1 << other.gameObject.layer & Doll) != 0) // 레이어 검사가 안됨 분명 맞게 했는데 무슨짓을 해도 안됨 제발살려주세요제이거보면아무나고쳐주세요..
+                {
+                    StartCoroutine(On());
+                }
             }
         }
     }
@@ -48,11 +50,14 @@ public class Spring : AnimProperty
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && canForce)
+        if (canForce)
         {
-            if ((1 << other.gameObject.layer & Doll) != 0)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                StartCoroutine(On());
+                if ((1 << other.gameObject.layer & Doll) != 0)
+                {
+                    StartCoroutine(On());
+                }
             }
         }
     }

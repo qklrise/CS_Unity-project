@@ -18,7 +18,6 @@ public class Interaction : AnimProperty
     IEnumerator GetKey1()
     {
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<Mover>().enabled = false;
         Vector3 dir = (KeySlot.transform.position - KeyObj.transform.position).normalized; // 방향 벡터 정규화
         float dist = Vector3.Distance(KeySlot.transform.position, KeyObj.transform.position); // 거리 계산
 
@@ -33,7 +32,6 @@ public class Interaction : AnimProperty
         KeyObj.transform.position = KeySlot.transform.position; // 이동이 끝난 뒤에 정확한 위치로 스냅
         KeyObj.transform.rotation = KeySlot.transform.rotation; // 이동이 끝난 뒤에 회전도 맞춤
 
-        gameObject.GetComponent<Mover>().enabled = true;
         getKey = false; // 딱 한 번만 작동되게
         KeyObj.transform.SetParent(KeySlot.transform); // 이동이 끝난 뒤엔 계속 플레이어를 따라다니게
     }
