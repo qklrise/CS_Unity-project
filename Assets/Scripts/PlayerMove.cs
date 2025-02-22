@@ -7,7 +7,7 @@ public class PlayerMove : AnimProperty
     //------점프할 때 쓰는 변수---------
     bool onGround;
     bool onLanding;
-    //-----------------------------
+    //-------------------------------
     
     public Transform myModel;
     public float moveSpeed = 1.0f;
@@ -30,21 +30,11 @@ public class PlayerMove : AnimProperty
         myModel.Rotate(Vector3.up * (delta * rotdir));
         myAnim.SetFloat("Speed", inputDir.magnitude);
 
-        /*Vector3 inpuDir = new Vector3(Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
-
-        Vector3 modelDir = myModel.localRotation * Vector3.forward;
-        float angle = Vector3.Angle(modelDir, inpuDir);
-        float rotdir = Vector3.Dot(inpuDir, myModel.localRotation * Vector3.right) < 0.0f ? -1.0f : 1.0f;
-
-        float delta = Time.deltaTime * 720.0f;
-        if (delta > angle) delta = angle;
-        myModel.Rotate(Vector3.up * delta * rotdir);
-        myAnim.SetFloat("Speed", inpuDir.magnitude);*/
+        
 
 
         onGround = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
         // 레이저가 바닥에 닿을 때 onGround를 true로 설정
-        
         
         if (onGround && Input.GetKeyDown(KeyCode.Space))
         {
@@ -70,7 +60,6 @@ public class PlayerMove : AnimProperty
                 transform.Translate(Vector3.right * Speed);
             }
         }
-        
         if (onLanding)
         {
             Land();
@@ -84,8 +73,9 @@ public class PlayerMove : AnimProperty
         {
             onLanding = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
             yield return null;
-        }
-        onGround = true;
+        } // 땅에 닿을 때 까지 레이저로 확인
+        onGround = true; // 땅에 닿은 시점에 while문에서 나오고 onGround를 true로
+
     }
     void Jump()
     {
