@@ -3,8 +3,12 @@ using System.Collections;
 public class PlayerMove : AnimProperty
 {
     public Rigidbody Character;
-    bool OnGround;
-
+    
+    //------점프할 때 쓰는 변수---------
+    bool onGround;
+    bool onLanding;
+    //-----------------------------
+    
     public Transform myModel;
     public float moveSpeed = 1.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +27,7 @@ public class PlayerMove : AnimProperty
 
         float delta = Time.deltaTime * 720.0f;
         if (delta > angle) delta = angle;
-        myModel.Rotate(Vector3.up * delta * rotdir);
+        myModel.Rotate(Vector3.up * (delta * rotdir));
         myAnim.SetFloat("Speed", inputDir.magnitude);
 
         /*Vector3 inpuDir = new Vector3(Input.GetAxis("Horizontal"), 0,Input.GetAxis("Vertical"));
@@ -38,20 +42,66 @@ public class PlayerMove : AnimProperty
         myAnim.SetFloat("Speed", inpuDir.magnitude);*/
 
 
-        OnGround = Physics.Raycast(transform.position, Vector3.down, 0.2f);
-        // 레이저가 무언가에 닿을 때 OnGround를 true로 설정
-        if (OnGround && Input.GetKeyDown(KeyCode.Space))
+        onGround = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
+        // 레이저가 바닥에 닿을 때 onGround를 true로 설정
+        
+        
+        if (onGround && Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Jump());
+            Jump();
+        }
+        else if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
+        {
+            float Speed = 2.0f * Time.deltaTime;
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(Vector3.forward * Speed);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(Vector3.back * Speed);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * Speed);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * Speed);
+            }
+        }
+        
+        if (onLanding)
+        {
+            Land();
         }
     }
-    IEnumerator Jump()
+
+    IEnumerator JumpCheck()
     {
+        yield return new WaitForSecondsRealtime(0.3f);
+        while (!onLanding)
+        {
+            onLanding = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
+            yield return null;
+        }
+        onGround = true;
+    }
+    void Jump()
+    {
+        onGround = false;
         myAnim.SetTrigger("OnJump");
+        Character.AddForce(Vector3.up * 5.0f, ForceMode.Impulse);
         
-        yield return new WaitForSecondsRealtime(0.1f);
+        StartCoroutine(JumpCheck()); 
+    }
+    
+    void Land()
+    {
+        myAnim.SetTrigger("OnLanding"); // 착지 애니메이션 트리거
         
-        Character.AddForce(Vector3.up * 3.0f, ForceMode.Impulse);
+        StopAllCoroutines();
+        onLanding = false;
     }
 }
 
