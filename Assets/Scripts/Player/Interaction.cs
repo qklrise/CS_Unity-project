@@ -1,41 +1,71 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Interaction : AnimProperty
 {
-    bool getKey = false;
-    bool hasKey = false;
-    
     public LayerMask Key;
     public LayerMask Door;
-
-    public GameObject KeyObj;
 
     public GameObject KeySlot;
     
     public GameObject DoorKeySlot;
     
-    IEnumerator GetKey1()
+    bool hasKey = false;
+
+
+    IEnumerator KeyCatch()
     {
-        yield return new WaitForSeconds(0.1f);
-        Vector3 dir = (KeySlot.transform.position - KeyObj.transform.position).normalized; // 방향 벡터 정규화
-        float dist = Vector3.Distance(KeySlot.transform.position, KeyObj.transform.position); // 거리 계산
-
-        while (dist > 0.01f) // 0이 아니라, 어느 정도 가까워질 때까지 반복
+        Collider[] list = Physics.OverlapSphere(transform.position, 1.7f, Key);
+        foreach (Collider col in list)
         {
-            float delta = 0.2f * Time.deltaTime; // 이동 속도 조절
-            KeyObj.transform.position = Vector3.MoveTowards(KeyObj.transform.position, KeySlot.transform.position, delta); // MoveTowards의 대상으로 이동
-            dist = Vector3.Distance(KeySlot.transform.position, KeyObj.transform.position); // 거리 갱신
-            yield return null;
+            col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // 애니메이션의 잡는 모션이 나올 때 다시 움직이게 함
+            
+            col.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            col.gameObject.GetComponent<Collider>().enabled = false;
+            
+            float dist = Vector3.Distance(col.transform.position, KeySlot.transform.position); // 거리 계산
+            
+            while (dist > 0.035f) // 정확히 0이 아니라 최대한 가까워질 때 까지 반복
+            {
+                float targetDist = Time.deltaTime * 3.0f;
+                
+                col.transform.position = Vector3.Lerp(col.transform.position, KeySlot.transform.position, targetDist);
+                col.transform.rotation = Quaternion.Lerp(col.transform.rotation, KeySlot.transform.rotation, targetDist);
+                
+                dist = Vector3.Distance(col.transform.position, KeySlot.transform.position); // 남은 거리 갱신
+                /*                
+                float delta = 3.0f * Time.deltaTime; // 이동 속도 조절
+                col.transform.position = Vector3.MoveTowards(col.transform.position, KeySlot.transform.position, delta); // MoveTowards의 대상으로 이동
+                dist = Vector3.Distance(KeySlot.transform.position, col.transform.position); // 거리 갱신
+                */
+                yield return null;
+            }
+            
+            col.transform.position = KeySlot.transform.position; // 이동이 끝난 뒤에 정확한 위치로 스냅
+            col.transform.rotation = KeySlot.transform.rotation; // 이동이 끝난 뒤에 회전도 맞춤
+            col.transform.SetParent(KeySlot.transform); // 이동이 끝난 뒤엔 계속 플레이어를 따라다니게
+
+            GetComponentInParent<PlayerMove>().enabled = true; // 동작이 끝나면 다시 움직일 수 있게
         }
-
-        KeyObj.transform.position = KeySlot.transform.position; // 이동이 끝난 뒤에 정확한 위치로 스냅
-        KeyObj.transform.rotation = KeySlot.transform.rotation; // 이동이 끝난 뒤에 회전도 맞춤
-
-        getKey = false; // 딱 한 번만 작동되게
-        KeyObj.transform.SetParent(KeySlot.transform); // 이동이 끝난 뒤엔 계속 플레이어를 따라다니게
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Collider[] list = Physics.OverlapSphere(transform.position, 1.7f, Key);
+            foreach (Collider col in list)
+            {
+                col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 움직임을 멈춤
+                myAnim.SetTrigger("OnCatch"); //잡는 애니메이션
+                
+                GetComponentInParent<PlayerMove>().enabled = false; // 잡는 동작 중엔 못 움직이게
+            }
+        }
+    }
+    /*
     IEnumerator UseKey() // 열쇠롤 사용
     {
         myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
@@ -58,56 +88,10 @@ public class Interaction : AnimProperty
         
         gameObject.GetComponent<Mover>().enabled = true;
     }
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (hasKey && getKey) StartCoroutine(GetKey1()); // 플레이어의 상호작용 가능 범위 내에 있을 때 열쇠와 상호작용 시 hasKey = true
-    }
-    
-    void OnTriggerEnter(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if ((1 << other.gameObject.layer & Key) != 0)
-            {
-                KeyInteract();
-            }
-
-            if ((1 << other.gameObject.layer & Door) != 0)
-            {
-                StartCoroutine(UseKey());
-            }
-        }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if ((1 << other.gameObject.layer & Key) != 0)
-            {
-                KeyInteract();
-            }
-            if ((1 << other.gameObject.layer & Door) != 0)
-            {
-                StartCoroutine(UseKey());
-            }
-        }
-    }
+    */
 
     void KeyInteract()
     {
-        myAnim.SetTrigger("OnCatch"); //잡는 애니메이션
-        KeyObj.transform.SetParent(null); // 열쇠 오브젝트의 부모를 끊어서 더이상 아무런 영향도 안 받게 해줌
-                
-        getKey = true;
-        hasKey = true;
+        StartCoroutine(KeyCatch());
     }
 }

@@ -31,10 +31,21 @@ public class Spring : AnimProperty
     public void OnPush()
     {
         Collider[] list = Physics.OverlapBox(myPannel.position, new Vector3(1, 1, 1), transform.rotation,pushLayer); // 함수가 실행될 때 위에 놓인 것들을 찾음
-        foreach(Collider col in list)
+        foreach (Collider col in list)
         {
-            col.GetComponent<Rigidbody>()?.AddForce(Vector3.up * 300.0f); // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 띄움
+            col.transform.SetParent(null);
+            col.GetComponent<Rigidbody>()?.AddForce(Vector3.up * 600.0f); // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 띄움
         }
+    }
+
+    public void OnSwitch()
+    {
+        Collider[] list = Physics.OverlapBox(myPannel.position, new Vector3(1, 1, 1), transform.rotation,pushLayer); // 함수가 실행될 때 위에 놓인 것들을 찾음
+        foreach(Collider c in list)
+        {
+            c.transform.SetParent(myPannel);
+        }
+        myAnim.SetTrigger("Using");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +68,7 @@ public class Spring : AnimProperty
                 if ((1 << other.gameObject.layer & Doll) != 0) // 레이어 검사가 안됨 분명 맞게 했는데 무슨짓을 해도 안됨 제발살려주세요제이거보면아무나고쳐주세요..
                 {
                     //StartCoroutine(On());
+                    OnSwitch();
                 }
             }
         
@@ -69,7 +81,7 @@ public class Spring : AnimProperty
             {
                 if ((1 << other.gameObject.layer & Doll) != 0)
                 {
-                    myAnim.SetTrigger("Using");
+                    OnSwitch();
                 }
             }
     }

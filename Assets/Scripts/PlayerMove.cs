@@ -7,6 +7,9 @@ public class PlayerMove : AnimProperty
     //------점프할 때 쓰는 변수---------
     bool onGround;
     bool onLanding;
+    bool onJumping;
+    
+    float waitTime = 0.0f;
     //-------------------------------
     
     public Transform myModel;
@@ -59,11 +62,25 @@ public class PlayerMove : AnimProperty
             {
                 transform.Translate(Vector3.right * Speed);
             }
+
+            if (!onJumping)
+            {
+                StartCoroutine(OnAirCheck());
+                waitTime = 1000000.0f;
+            }
         }
         if (onLanding)
         {
             Land();
         }
+    }
+
+    IEnumerator OnAirCheck()
+    {        
+        yield return new WaitForSeconds(waitTime);
+
+        myAnim.SetTrigger("OnAir");
+        StartCoroutine(JumpCheck());
     }
 
     IEnumerator JumpCheck()
@@ -79,6 +96,7 @@ public class PlayerMove : AnimProperty
     }
     void Jump()
     {
+        onJumping = true;
         onGround = false;
         myAnim.SetTrigger("OnJump");
         Character.AddForce(Vector3.up * 5.0f, ForceMode.Impulse);
@@ -92,6 +110,9 @@ public class PlayerMove : AnimProperty
         
         StopAllCoroutines();
         onLanding = false;
+        onJumping = false;
+        
+        waitTime = 0.0f;
     }
 }
 
