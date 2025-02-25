@@ -8,6 +8,8 @@ public class PlayerControll : MonoBehaviour
     public GameObject cameraArm;
     [SerializeField]
     GameObject puzzleCam;
+    [SerializeField]
+    Rigidbody rig;
     void Start()
     {
         
@@ -30,8 +32,9 @@ public class PlayerControll : MonoBehaviour
            puzzleCam.SetActive(true);  
            Player.GetComponent<PlayerMove>().enabled = false;   
            cameraArm.GetComponent<PlayerCam>().enabled = false; 
+           Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
            yield return new WaitForSeconds(0.5f);
-
+           
         }
 
         else if (myCam.activeSelf == false && puzzleCam.activeSelf == true)
@@ -40,6 +43,7 @@ public class PlayerControll : MonoBehaviour
             puzzleCam.SetActive(false);
             Player.GetComponent<PlayerMove>().enabled = true;
             cameraArm.GetComponent<PlayerCam>().enabled = true; 
+            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             yield return new WaitForSeconds(0.5f);
         }
     }
