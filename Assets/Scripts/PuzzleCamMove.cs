@@ -103,6 +103,6 @@ public class PuzzleCamMove : MonoBehaviour
 
             transform.Translate(Vector3.up * temp3, Space.World);
         }
-        //rig.linearVelocity = Vector3.zero;
+        rig.linearVelocity = Vector3.zero;
     }
 }

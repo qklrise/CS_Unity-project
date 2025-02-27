@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public class PlayerControll : MonoBehaviour
+public class PlayerControll : AnimProperty
 {
     [SerializeField]
     GameObject myCam;
@@ -10,6 +10,9 @@ public class PlayerControll : MonoBehaviour
     GameObject puzzleCam;
     [SerializeField]
     Rigidbody rig;
+
+
+    bool onGround = false;
     void Start()
     {
         
@@ -28,6 +31,17 @@ public class PlayerControll : MonoBehaviour
     {
         if(myCam.activeSelf == true && puzzleCam.activeSelf == false)
         { 
+           while (!onGround)
+           {
+                onGround = Physics.Raycast(transform.position, Vector3.down, 0.1f);
+               yield return null;
+           }
+           if (onGround)
+           {
+            myAnim.SetTrigger("OnLanding");
+            onGround = false;
+           }
+           
            myCam.SetActive(false);
            puzzleCam.SetActive(true);  
            Player.GetComponent<PlayerMove>().enabled = false;   
