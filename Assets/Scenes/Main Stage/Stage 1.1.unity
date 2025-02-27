@@ -798,6 +798,7 @@ MonoBehaviour:
   dropAble:
     serializedVersion: 2
     m_Bits: 256
+  CameraTrans: {fileID: 0}
   dropSpeed: 1
   smoothSpeed: 2
 --- !u!4 &34567229
@@ -7397,7 +7398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spring:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 0
 --- !u!135 &476794751
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7446,22 +7447,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &476794755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476794748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2783f0e13b2785748bfa0f079ce27004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myState: 0
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 264
 --- !u!136 &476794756
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7485,6 +7470,23 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &476794758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476794748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myState: 0
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8
+  CameraTrans: {fileID: 59190790}
 --- !u!1001 &476861593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16953,13 +16955,13 @@ PrefabInstance:
       addedObject: {fileID: 476794750}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 476794758}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 476794751}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 476794753}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 476794755}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 476794756}
@@ -19460,7 +19462,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
@@ -19480,7 +19482,8 @@ MonoBehaviour:
   myState: 0
   dropAble:
     serializedVersion: 2
-    m_Bits: 264
+    m_Bits: 8
+  CameraTrans: {fileID: 59190790}
 --- !u!1001 &1164890559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24825,6 +24828,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eee15c3a07991674e9e8d2e609bde275, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1959820342564087044, guid: eee15c3a07991674e9e8d2e609bde275, type: 3}
       propertyPath: m_Layer
       value: 13
@@ -26166,10 +26173,10 @@ MonoBehaviour:
   myPannel: {fileID: 1744311532}
   Doll:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
   pushLayer:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 0
 --- !u!95 &1611237577
 Animator:
   serializedVersion: 7

@@ -5,33 +5,10 @@ public class UseInterpolation : DragState
     [SerializeField] float dropSpeed = 1.0f;
     [SerializeField] float smoothSpeed = 2.0f;
     float targetY,posY = 0.0f;
+    /*
     public override void ChangeState(State s)
     {
-        if (s == myState) return;
-        myState = s;
-
-        switch (myState)
-        {
-            case State.Stop:
-                oriPosition = Vector3.zero;
-                oriRotation = Vector3.zero;
-                CameraTrans = null;
-                mousePosition = Vector3.zero;
-                IsRotation = false;
-                GridMouse = Vector3.zero;
-                camMove.enabled = true;
-                preDragPoint = null;
-                newDragPoint = null;
-                ori = default;
-                break;
-
-            case State.Drag:
-                if (CameraTrans == null) CameraTrans = Camera.allCameras[0].transform;
-                if (camMove == null) camMove = CameraTrans.GetComponentInParent<PuzzleCamMove>();
-                oriPosition = transform.position;
-                oriRotation = transform.eulerAngles; //처음 위치와 회전값 저장
-                floatPosition = transform.position += Vector3.up * 2.0f;
-                break;
+        
 
             case State.Drop:
                 if (Physics.Raycast(GridMouse, Vector3.down, 2.7f, dropAble)) // 드래그 오브젝트의 중심점에서 카메라에서 드래그 오브젝트 방향으로 레이져를 쏴서, 드랍할 수 있는 레이어인지 판단 
@@ -41,13 +18,13 @@ public class UseInterpolation : DragState
                 }
                 else
                 {
-                    transform.SetPositionAndRotation(oriPosition, Quaternion.Euler(oriRotation));
+                    //transform.SetPositionAndRotation(oriPosition, Quaternion.Euler(oriRotation));
                     ChangeState(State.Stop);
                 }
                 break;
         }
     }
-    
+    */
     public override void StateProcess()
     {
         switch (myState)
@@ -60,8 +37,7 @@ public class UseInterpolation : DragState
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     IsRotation = !IsRotation;
-                    if (camMove.enabled) camMove.enabled = false;
-                    else camMove.enabled = true;
+                    
                 }
 
                 if (IsRotation)
