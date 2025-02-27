@@ -8,8 +8,11 @@ public class PlayerControll : MonoBehaviour
     public GameObject cameraArm;
     [SerializeField]
     GameObject puzzleCam;
+    [SerializeField]
+    Rigidbody rig;
     void Start()
     {
+        
     }
 
     // Update is called once per frame

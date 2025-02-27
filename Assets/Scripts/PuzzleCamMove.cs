@@ -17,26 +17,21 @@ public class PuzzleCamMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //카메라 rotation
-
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
-            transform.rotation = Quaternion.Euler(90,0, 0);
-            //rotX = targetRotX = transform.rotation.eulerAngles.x;
-
+            //카메라 rotation
             float temp = -Input.GetAxis("Mouse Y") * rotSpeed;
-            targetRotX = Mathf.Clamp (targetRotX + temp, -80.0f, 80.0f);
+            targetRotX += temp;
 
             float temp2 = Input.GetAxis("Mouse X") * rotSpeed;
             targetRotY += temp2;
+
 
             rotX = Mathf.Lerp(rotX, targetRotX, Time.deltaTime * smoothSpeed);
             rotY = Mathf.Lerp(rotY, targetRotY, Time.deltaTime * smoothSpeed);
 
             transform.localRotation = Quaternion.Euler(rotX, rotY, 0);
         }
-
-        
         //카메라 position
         Vector3 inputDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         transform.Translate(inputDir * Time.deltaTime * moveSpeed,Space.Self);
@@ -108,6 +103,6 @@ public class PuzzleCamMove : MonoBehaviour
 
             transform.Translate(Vector3.up * temp3, Space.World);
         }
-        rig.linearVelocity = Vector3.zero;
+        //rig.linearVelocity = Vector3.zero;
     }
 }
