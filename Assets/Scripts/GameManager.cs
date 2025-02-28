@@ -6,10 +6,9 @@ public class GameManager : MonoBehaviour
    public static bool isDrag = false;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl)&& isDrag == false)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isDrag == false)
         {
             isPuzzle = !isPuzzle;
         }
-        
     }
 }

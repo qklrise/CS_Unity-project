@@ -17,7 +17,7 @@ public class Sensor : AnimProperty
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && !GameManager.isPuzzle)
         {
             on = false;
             StartCoroutine(Searching());

@@ -32,7 +32,7 @@ IEnumerator On()
 
     public void OnPush()
     {
-        Collider[] list = Physics.OverlapBox(myPannel.position, new Vector3(1, 1, 1), transform.rotation,pushLayer); // 함수가 실행될 때 위에 놓인 것들을 찾음
+        Collider[] list = Physics.OverlapBox(myPannel.position, new Vector3(0.5f, 1.0f, 0.5f), transform.rotation,pushLayer); // 함수가 실행될 때 위에 놓인 것들을 찾음
         foreach (Collider col in list)
         {
             col.transform.SetParent(null);
