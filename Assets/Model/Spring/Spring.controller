@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8346066586255130924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d458569bbf4d448ba157af244f81b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paraName: On
 --- !u!1102 &-7778142263163990650
 AnimatorState:
   serializedVersion: 6
@@ -12,7 +25,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4106935906375465680}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -8346066586255130924}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -65,6 +79,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Using
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: On
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7778142263163990650}
   m_Solo: 0
@@ -112,6 +129,12 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: Using
     m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: On
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
