@@ -5,28 +5,30 @@ using UnityEngine;
 public class Spring : AnimProperty
 {
     public Transform myPannel;
-    public LayerMask Doll;
     public LayerMask pushLayer;
 
     /*
-    IEnumerator On()
+public LayerMask Doll;
+
+
+IEnumerator On()
+{
+    canForce = false;
+
+    Collider[] Obj = Physics.OverlapBox(transform.position, transform.up * 1.0f);
+
+    foreach (Collider c in Obj)
     {
-        canForce = false;
-
-        Collider[] Obj = Physics.OverlapBox(transform.position, transform.up * 1.0f);
-
-        foreach (Collider c in Obj)
-        {
-                c.GetComponent<Rigidbody>().AddForce(Vector3.up * 10.0f);
-                yield return null ;
-                myAnim.SetTrigger("Using");
-                canForce = true;
-            
-        }
-        yield return new WaitForSeconds(2.5f);
+            c.GetComponent<Rigidbody>().AddForce(Vector3.up * 10.0f);
+            yield return null ;
+            myAnim.SetTrigger("Using");
+            canForce = true;
 
     }
-    */
+    yield return new WaitForSeconds(2.5f);
+
+}
+*/
 
     public void OnPush()
     {
@@ -38,6 +40,7 @@ public class Spring : AnimProperty
         }
     }
 
+    /*
     public void OnSwitch()
     {
         Collider[] list = Physics.OverlapBox(myPannel.position, new Vector3(1, 1, 1), transform.rotation,pushLayer); // 함수가 실행될 때 위에 놓인 것들을 찾음
@@ -85,6 +88,6 @@ public class Spring : AnimProperty
                 }
             }
     }
-
+    */
 
 }
