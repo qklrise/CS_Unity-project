@@ -8,6 +8,7 @@ public class PlayerCam : MonoBehaviour
     [SerializeField] float zoomSpeed = 1.0f;
     [SerializeField] Vector2 zoomRange = new Vector2(1.0f, 10.0f);
     [SerializeField] float smoothSpeed = 1.0f;
+    [SerializeField] Transform Player;
     public Transform myCam;
     float camDist = 0.0f;
     float targetDist;    
@@ -35,7 +36,10 @@ public class PlayerCam : MonoBehaviour
 
         rotX = Mathf.Lerp(rotX, targetRotX, Time.deltaTime * smoothSpeed);
         rotY = Mathf.Lerp(rotY, targetRotY, Time.deltaTime * smoothSpeed);
-            
+
+        //Vector3 lookforward = new Vector3(myCam.forward.x, 0, myCam.forward.z).normalized;
+        //Player.forward = lookforward;
+
         transform.localRotation = Quaternion.Euler(rotX, 0, 0);
         transform.parent.localRotation = Quaternion.Euler(0, rotY, 0);
 

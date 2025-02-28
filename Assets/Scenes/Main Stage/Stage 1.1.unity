@@ -9395,6 +9395,7 @@ MonoBehaviour:
   zoomSpeed: 10
   zoomRange: {x: 1, y: 10}
   smoothSpeed: 10
+  Player: {fileID: 1985082401}
   myCam: {fileID: 956501881}
 --- !u!4 &617287188
 Transform:
@@ -17122,6 +17123,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595495095368793939, guid: dab962cf3255c8f4baa8695aa64d79f3, type: 3}
   m_PrefabInstance: {fileID: 1032377639}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033802827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033802828}
+  - component: {fileID: 1033802829}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1033802828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033802827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9454591, y: 1.0980248, z: 0.7302378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033802829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033802827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc35510df4cc4a128021172ec0aa790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1040797401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28257,6 +28302,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5803710253656541837, guid: 2a88744b4542740debd69f72f3f88eea, type: 3}
   m_PrefabInstance: {fileID: 3800429530334490811}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1741475405 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 462401184687214839, guid: 2a88744b4542740debd69f72f3f88eea, type: 3}
+  m_PrefabInstance: {fileID: 3800429530334490811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1744311531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2595339795850406833, guid: eee15c3a07991674e9e8d2e609bde275, type: 3}
@@ -32091,7 +32141,8 @@ MonoBehaviour:
   Player: {fileID: 1985082398}
   cameraArm: {fileID: 617287186}
   puzzleCam: {fileID: 1846375292}
-  rig: {fileID: 0}
+  rig: {fileID: 1985082403}
+  playerAnim: {fileID: 1741475405}
 --- !u!114 &1985082400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35537,3 +35588,4 @@ SceneRoots:
   - {fileID: 758337302}
   - {fileID: 1360424326}
   - {fileID: 2072082079}
+  - {fileID: 1033802828}

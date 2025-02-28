@@ -9,6 +9,8 @@ public class PuzzleCamMove : MonoBehaviour
     float rotX, rotY, targetRotX, targetRotY;
     public Rigidbody rig;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+   
     void Start()
     {
         
@@ -17,6 +19,7 @@ public class PuzzleCamMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButton(1))
         {
             //카메라 rotation
@@ -105,4 +108,6 @@ public class PuzzleCamMove : MonoBehaviour
         }
         rig.linearVelocity = Vector3.zero;
     }
+    
 }
+

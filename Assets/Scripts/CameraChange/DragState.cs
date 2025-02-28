@@ -8,7 +8,7 @@ public class DragState : MonoBehaviour
     protected Vector3 sceanOriPosition = Vector3.zero;
     protected Vector3 sceanOriRotation = Vector3.zero;
     protected float floatYpos = 0.0f;
-    public LayerMask dropAble; // µå¶øÇÒ ¼ö ÀÖ´Â ·¹ÀÌ¾î ¼³Á¤
+    public LayerMask dropAble; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
     public Transform CameraTrans;
     protected PuzzleCamMove camMove = null;
     protected bool IsRotation = false;
@@ -64,7 +64,7 @@ public class DragState : MonoBehaviour
     protected Vector3 WorldMousePoint()
     {
         Vector3 CameraDel = transform.position - CameraTrans.position;
-        float cameraDist = CameraDel.magnitude;// Ä«¸Þ¶ó¿ÍÀÇ °Å¸® ±¸ÇÔ
+        float cameraDist = CameraDel.magnitude;// Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         Vector3 mousePosition = new(Input.mousePosition.x, Input.mousePosition.y, cameraDist);
         mousePosition = Camera.allCameras[0].ScreenToWorldPoint(mousePosition);
@@ -76,14 +76,16 @@ public class DragState : MonoBehaviour
     {
         preDragPoint = null;
         newDragPoint = null;
+        if(GameManager.isDrag) GameManager.isDrag = false;
     }
     protected virtual void OnDragSet()
     {
         dragStartPos = transform.position;
-        dragStartRot = transform.eulerAngles; //Ã³À½ À§Ä¡¿Í È¸Àü°ª ÀúÀå
+        dragStartRot = transform.eulerAngles; //Ã³ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         transform.position += Vector3.up * 2.0f;
         floatYpos = transform.position.y;
         if(camMove == null) camMove = CameraTrans.GetComponentInParent<PuzzleCamMove>();
+        if(GameManager.isDrag == false) GameManager.isDrag = true;
     }
 
     protected virtual void EndDragSet()
@@ -91,7 +93,7 @@ public class DragState : MonoBehaviour
         IsRotation = false;
         camMove.enabled = true;
 
-        if (Physics.Raycast(GridMouse, Vector3.down, 2.7f, dropAble)) // µå·¡±× ¿ÀºêÁ§Æ®ÀÇ Áß½ÉÁ¡¿¡¼­ Ä«¸Þ¶ó¿¡¼­ µå·¡±× ¿ÀºêÁ§Æ® ¹æÇâÀ¸·Î ·¹ÀÌÁ®¸¦ ½÷¼­, µå¶øÇÒ ¼ö ÀÖ´Â ·¹ÀÌ¾îÀÎÁö ÆÇ´Ü 
+        if (Physics.Raycast(GridMouse, Vector3.down, 2.7f, dropAble)) // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ 
         {
             newDragPoint.material.color = ori;
         }
@@ -137,18 +139,18 @@ public class DragState : MonoBehaviour
     {
         GridMouse = WorldMousePoint();
         Debug.DrawLine(GridMouse, GridMouse + Vector3.down * 2.7f, Color.red);
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit, 2.7f, dropAble)) // ³ì»ö »óÀÚ¿¡¼­ Ä«¸Þ¶ó ¹æÇâ(zÃà ¾ÕÀ¸·Î)·¹ÀÌÁ®¸¦ ½÷¼­, µå¶øÇÒ ¼ö ÀÖ´Â ·¹ÀÌ¾îÀÎÁö ÆÇ´Ü 
+        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit, 2.7f, dropAble)) // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½(zï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ 
         {
-            newDragPoint = hit.transform.GetComponent<MeshRenderer>(); // µå¶øÇÒ ¼ö ÀÖ´Â ¿ÀºêÁ§Æ®ÀÇ ÄÄÆ÷³ÍÆ® ÀúÀå
+            newDragPoint = hit.transform.GetComponent<MeshRenderer>(); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             if (preDragPoint == newDragPoint) return;
             else
             {
-                if (preDragPoint != null) preDragPoint.material.color = ori;//±âÁ¸ ¿ÀºêÁ§Æ®ÀÇ »öÀ» ¿øº» »öÀ¸·Î µÇµ¹¸²
+                if (preDragPoint != null) preDragPoint.material.color = ori;//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Çµï¿½ï¿½ï¿½
                 ori = newDragPoint.material.color;
                 newDragPoint.material.color = Color.yellow;
                 transform.position = hit.transform.position + Vector3.up * 3.0f;
             }
-            preDragPoint = hit.transform.GetComponent<MeshRenderer>(); // »õ ¿ÀºêÁ§Æ®ÀÇ °ªÀ» ±âÁ¸ ¿ÀºêÁ§Æ®·Î ÀúÀå
+            preDragPoint = hit.transform.GetComponent<MeshRenderer>(); // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else if (newDragPoint != null)
         {
@@ -162,17 +164,17 @@ public class DragState : MonoBehaviour
     {
 
     }
-    public void OnMouseDown() // µå·¡±× ½ÃÀÛÇÒ ¶§ È£ÃâÇÏ´Â ÀÎÅÍÆäÀÌ½º
+    public void OnMouseDown() // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½
     {
         if (Input.GetMouseButton(1) || Input.GetMouseButton(2)) return;
         if (CameraTrans.gameObject.activeInHierarchy && myState == State.Stop) ChangeState(State.Drag);
     }
 
-    public void OnMouseUp() // µå·¡±×°¡ ³¡³¯ ¶§ È£ÃâÇÏ´Â ÀÎÅÍÆäÀÌ½º
+    public void OnMouseUp() // ï¿½å·¡ï¿½×°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½
     {
         if (Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(2)) return;
         if (myState == State.Drag) ChangeState(State.Drop);
-        // µå·¡±×¸¦ ³¡³½ °÷ÀÌ ¿ÀºêÁ§Æ®¸¦ ³õÀ» ¼ö ÀÖ´Â °÷ÀÌ ¾Æ´Ï¶ó¸é Ã³À½ µå·¡±×ÇÑ À§Ä¡¿Í È¸Àü°ªÀ¸·Î µ¹¾Æ°¨.
+        // ï¿½å·¡ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½å·¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½.
     }
     protected virtual void Start()
     {

@@ -10,12 +10,13 @@ public class PlayerControll : AnimProperty
     GameObject puzzleCam;
     [SerializeField]
     Rigidbody rig;
+    [SerializeField]
+    Animator playerAnim;
 
 
     bool onGround = false;
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,35 +30,42 @@ public class PlayerControll : AnimProperty
 
     IEnumerator ChangeCam()
     {
-        if(myCam.activeSelf == true && puzzleCam.activeSelf == false)
+        
+        if(GameManager.isPuzzle == true)
         { 
-           while (!onGround)
-           {
+            while (!onGround)
+            {
                 onGround = Physics.Raycast(transform.position, Vector3.down, 0.1f);
                yield return null;
-           }
-           if (onGround)
-           {
+            }
+            if (onGround)
+            {
             myAnim.SetTrigger("OnLanding");
             onGround = false;
-           }
+            }
            
            myCam.SetActive(false);
            puzzleCam.SetActive(true);  
            Player.GetComponent<PlayerMove>().enabled = false;   
            cameraArm.GetComponent<PlayerCam>().enabled = false; 
            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+           rig.linearVelocity = Vector3.zero;
+           playerAnim.SetFloat("Speed", 0.0f);
            yield return new WaitForSeconds(0.5f);
            
         }
+        
+        
 
-        else if (myCam.activeSelf == false && puzzleCam.activeSelf == true)
+        else if (GameManager.isPuzzle == false)
         {
             myCam.SetActive(true);
             puzzleCam.SetActive(false);
             Player.GetComponent<PlayerMove>().enabled = true;
             cameraArm.GetComponent<PlayerCam>().enabled = true; 
             Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            playerAnim.SetFloat("Speed", 1.0f);
+            GameManager.isPuzzle = false;
             yield return new WaitForSeconds(0.5f);
         }
     }

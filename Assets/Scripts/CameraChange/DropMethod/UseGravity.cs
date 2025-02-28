@@ -8,18 +8,13 @@ public class UseGravity : DragState
     float newYpos = 0.0f;
     float dropDist = 0.0f;
     float dropYpos = 0.0f;
-    protected override void DragStartSet()
-    {
-        preDragPoint = null;
-        newDragPoint = null;
-    }
     
     protected override void EndDragSet()
     {
         IsRotation = false;
         camMove.enabled = true;
 
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit,2.7f, dropAble)) // µå·¡±× ¿ÀºêÁ§Æ®ÀÇ Áß½ÉÁ¡¿¡¼­ Ä«¸Þ¶ó¿¡¼­ µå·¡±× ¿ÀºêÁ§Æ® ¹æÇâÀ¸·Î ·¹ÀÌÁ®¸¦ ½÷¼­, µå¶øÇÒ ¼ö ÀÖ´Â ·¹ÀÌ¾îÀÎÁö ÆÇ´Ü 
+        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit,2.7f, dropAble)) // ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½Þ¶ó¿¡¼ï¿½ ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ 
         {
             newDragPoint.material.color = ori;
             rb.useGravity = true;
