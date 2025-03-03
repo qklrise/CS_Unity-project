@@ -6,9 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Doll : AnimProperty
 {
-    public LayerMask Button;
-    public BoxCollider collider;
-    public Transform target;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,18 +33,5 @@ public class Doll : AnimProperty
 
     }
 
-    IEnumerator Searching()
-    {
-        while (true)
-        {
-            target = null;
-            Collider[] list = Physics.OverlapBox(collider.transform.position, collider.size * 0.5f, collider.transform.rotation);
-            foreach (Collider c in list)
-            {
-                target = c.transform;
-                c.GetComponent<Animator>()?.SetTrigger("Using");
-            }
-            yield return null;
-        }
-    }
+
 }
