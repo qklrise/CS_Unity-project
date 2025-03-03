@@ -36,8 +36,10 @@ public class Sensor : AnimProperty
                 target = c.transform;
 
                 c.GetComponentInParent<Animator>()?.SetTrigger("Using");
-                on = true;
+                //on = true; // foreach 문 안에서 on 값을 바꿔주면, 버튼 앞이 아닌 곳에서 e키를 누른 뒤,
+                //인형을 버튼 앞으로 옮길 때 퍼즐 모드로 전환하자마자 스프링이 작동함
             }
+            on = true; // on 값을 foreach 문 안에서 on 값을 바꿔주면 그런 문제가 없음
             yield return null;
         }
     }

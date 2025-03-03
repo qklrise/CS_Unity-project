@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class UseGravity : DragState
 {
-    Rigidbody rb = null;
-    float targetDist = 0.0f;
-    float preYpos = 0.0f;
-    float newYpos = 0.0f;
-    float dropDist = 0.0f;
-    float dropYpos = 0.0f;
-    
+    protected Rigidbody rb = null;
+    protected float targetDist = 0.0f;
+    protected float preYpos = 0.0f;
+    protected float newYpos = 0.0f;
+    protected float dropDist = 0.0f;
+    protected float dropYpos = 0.0f;
+
     protected override void EndDragSet()
     {
         IsRotation = false;
         camMove.enabled = true;
 
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit,2.7f, dropAble)) // �巡�� ������Ʈ�� �߽������� ī�޶󿡼� �巡�� ������Ʈ �������� �������� ����, ����� �� �ִ� ���̾����� �Ǵ� 
+        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit,2.7f, dropAble)) 
         {
             newDragPoint.material.color = ori;
             rb.useGravity = true;
