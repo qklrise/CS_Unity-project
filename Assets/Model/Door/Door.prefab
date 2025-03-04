@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2607732758429949366
+--- !u!1001 &5123921180951073523
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52,38 +52,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1441522274355466868}
+      addedObject: {fileID: 8594928704011320861}
   m_SourcePrefab: {fileID: 100100000, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
---- !u!1 &2950401951827812583 stripped
+--- !u!1 &5465886686908870562 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: db96d36c187f04d02946d84eee6b9df5, type: 3}
-  m_PrefabInstance: {fileID: 2607732758429949366}
+  m_PrefabInstance: {fileID: 5123921180951073523}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1441522274355466868
-Animator:
-  serializedVersion: 7
+--- !u!65 &8594928704011320861
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2950401951827812583}
+  m_GameObject: {fileID: 5465886686908870562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 28e27816074cb50499f32db0d652cb7a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 3
+  m_Size: {x: 0.010609165, y: 0.0017069796, z: 0.018413091}
+  m_Center: {x: -2.3283064e-10, y: -0.00027995295, z: 0.009206546}

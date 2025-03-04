@@ -80,8 +80,7 @@ public class Interaction : AnimProperty
         // 열쇠를 든 채로 문과 상호작용 시 해야 할 동작
         // 문이 열린다던가 하는 그런것들 실행
         yield return new WaitForSeconds(2.0f);
-        DoorKeySlot.GetComponentInParent<Animator>().SetTrigger("Open");
-        InteractTarget.transform.SetParent(DoorKeySlot.transform);
+        Destroy(InteractTarget);
         InteractTarget = null;
         DoorKeySlot = null;
         //----------------------------------------------
