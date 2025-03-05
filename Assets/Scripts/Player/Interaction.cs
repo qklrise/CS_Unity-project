@@ -12,12 +12,12 @@ public class Interaction : AnimProperty
     GameObject InteractTarget;
     GameObject DoorKeySlot;
     
-    void KeyInteract() // 애니메이션 이벤트로 작동시키는 함수
+    void KeyInteract() // 애니메이션 이벤트로 호출하는 함수
     {
         StartCoroutine(KeyCatch());
     }
 
-    void UseKey() // 애니메이션 이벤트로 작동시키는 함수
+    void UseKey() // 애니메이션 이벤트로 호출하는 함수
     {
         StartCoroutine(UsingKey());
     }
@@ -48,9 +48,9 @@ public class Interaction : AnimProperty
             col.transform.position = KeySlot.transform.position; // 이동이 끝난 뒤에 정확한 위치로 스냅
             col.transform.rotation = KeySlot.transform.rotation; // 이동이 끝난 뒤에 회전도 맞춤
             col.transform.SetParent(KeySlot.transform); // 이동이 끝난 뒤엔 계속 플레이어를 따라다니게
-            col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 손에 붙은 뒤로는 못움직이게(손에서 안 떨어지게)
+            col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 플레이어의 손에 붙은 뒤로는 못움직이게(손에서 안 떨어지게)
 
-            GetComponentInParent<PlayerMove>().enabled = true; // 동작이 끝나면 플레이어가 다시 움직일 수 있게
+            GetComponentInParent<PlayerMove>().enabled = true; // 열쇠를 잡는 동작이 끝나면 플레이어가 다시 움직일 수 있게
         }
     }
     IEnumerator UsingKey()
@@ -80,7 +80,8 @@ public class Interaction : AnimProperty
         // 열쇠를 든 채로 문과 상호작용 시 해야 할 동작
         // 문이 열린다던가 하는 그런것들 실행
         yield return new WaitForSeconds(2.0f);
-        Destroy(InteractTarget);
+        DoorKeySlot.GetComponentInParent<Animator>().SetTrigger("Open");
+        InteractTarget.transform.SetParent(DoorKeySlot.transform);
         InteractTarget = null;
         DoorKeySlot = null;
         //----------------------------------------------
@@ -97,27 +98,29 @@ public class Interaction : AnimProperty
             Collider[] list = Physics.OverlapSphere(transform.position, 1.7f);
             foreach (Collider col in list)
             {
-                //----------------------------------------------------------------------------------------------------------------------------------------------------------
+             //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                if ((1 << col.gameObject.layer & Key) != 0) // 상호작용 대상이 'key' 일 때
+                if ((1 << col.gameObject.layer & Key) != 0)
+                    // 상호작용 대상이 'key' 일 때
                 {
                     InteractTarget = col.gameObject;
-                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 움직임을 멈춤
+                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 상호작용한 오브젝트의 움직임을 멈춤
                     myAnim.SetTrigger("Catch"); //잡는 애니메이션
 
                     GetComponentInParent<PlayerMove>().enabled = false; // 잡는 동작 중엔 못 움직이게
                     myAnim.SetFloat("Speed", 0.0f);
 
                 }
-                //----------------------------------------------------------------------------------------------------------------------------------------------------------
-                if ((1 << col.gameObject.layer & Door) != 0) // 상호작용 대상이 'door' 일 때
+             //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                if ((1 << col.gameObject.layer & Door) != 0)
+                    // 상호작용 대상이 'door' 일 때
                 {
                     DoorKeySlot = col.gameObject;
                     myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
                 }
             }
-            //-----------------------------------------------------------------------------------------------------------------------
-
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------
         }
     }
 }
