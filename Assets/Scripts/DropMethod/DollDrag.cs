@@ -16,7 +16,7 @@ public class DollDrag : UseGravity
     protected override void RaySet()
     {
         rayOri = GridMouse + Vector3.up * 0.3f;
-        rayDist = floatDist + 1.0f;
+        rayDist = floatDist + 0.7f;
     }
 
 
