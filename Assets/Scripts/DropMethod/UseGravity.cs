@@ -3,11 +3,14 @@ using UnityEngine;
 public class UseGravity : DragState
 {
     Rigidbody rb = null; 
+    protected Vector3 rayOri = Vector3.zero;
+    protected float rayDist = 0.0f;
     float targetDist = 0.0f; // 드랍할 거리를 저장
     float preYpos = 0.0f; // 이전 y 좌표를 저장
     float newYpos = 0.0f; // 현재 y 좌표를 저장
     float dropDist = 0.0f; // 떨어진 거리를 저장
     float dropTerYpos = 0.0f; // 드랍된 물체의 목표 y 좌표 
+    protected float correctionYpos = 1.0f; // 레이저를 맞은 오브젝트의 기준점(pivot)에서 드래그 중인 오브젝트의 기준점(pivot)까지의 거리
 
     protected override void StartSet()
     {
@@ -26,13 +29,15 @@ public class UseGravity : DragState
 
     protected override void EndDragSetRay()
     {
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit, floatDist + 0.7f, dropAble | stackAble)) 
+        RaySet();
+        if (Physics.Raycast(rayOri, Vector3.down, out RaycastHit hit, rayDist, dropAble | stackAble))
         {
+            ChildEndRaySet();
             if (newDragPoint != null) newDragPoint.material.color = ori;
             //현재 마우스 커서가 있는 바닥의 색을 원래대로 돌림
             rb.isKinematic = false;
             //중력을 활성화하기 위해 isKinematic을 비활성화
-            dropTerYpos = hit.transform.position.y + 1.0f;
+            dropTerYpos = hit.transform.position.y + correctionYpos;
             //목표 y값을 설정
             targetDist = floatYpos - dropTerYpos;
             // 떨어질 거리 저장
@@ -40,7 +45,6 @@ public class UseGravity : DragState
             // 다시 드래그했을 때 띄울 높이 설정
             preYpos = newYpos = floatYpos;
             //현재 높이 정보 저장
-            OnTrigger();
         }
         else
         {
@@ -52,7 +56,12 @@ public class UseGravity : DragState
             ChangeState(State.Stop);
         }
     }
-    protected virtual void OnTrigger() //상속해서 내용을 정할 가상함수
+    protected virtual void RaySet()
+    {
+        rayOri = GridMouse;
+        rayDist = floatDist + 0.7f;
+    }
+    protected virtual void ChildEndRaySet() //상속해서 내용을 정할 가상함수
     {
 
     }
@@ -69,7 +78,7 @@ public class UseGravity : DragState
         if (Mathf.Approximately(targetDist, 0.0f) || targetDist < 0.0f)
         {
             //드랍할 목표 거리가 0의 근사치거나 0보다 작으면
-            OffTrigger();
+            ChildLanding();
             rb.isKinematic = true;
             transform.position = new(transform.position.x, dropTerYpos, transform.position.z);
             //중력으로 이동해서 목표한 y좌표에 정확히 도착하지 않기 때문에 y좌표를 직접 설정해줌
@@ -77,7 +86,7 @@ public class UseGravity : DragState
         }
     }
 
-    protected virtual void OffTrigger() //상속해서 내용을 정할 가상함수
+    protected virtual void ChildLanding() //상속해서 내용을 정할 가상함수
     {
 
     }

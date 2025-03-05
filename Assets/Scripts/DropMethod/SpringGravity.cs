@@ -7,12 +7,12 @@ public class SpringGravity : UseGravity
     //isTriger를 활성화하기 위해 BoxCollider 컴포넌트 정보를 저장
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    protected override void OnTrigger()
+    protected override void ChildEndRaySet()
     {
         boxCol.isTrigger = true;
     }
 
-    protected override void OffTrigger()
+    protected override void ChildLanding()
     {
         boxCol.isTrigger = false;
     }
