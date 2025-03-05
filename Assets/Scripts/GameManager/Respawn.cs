@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    LayerMask playerLayer;
+    public LayerMask playerLayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +16,7 @@ public class Respawn : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == playerLayer)
+        if ((1<<other.gameObject.layer & playerLayer) != 0)
         {
             other.transform.position = new Vector3(0, 0, 0);
         }
