@@ -41,19 +41,19 @@ public class PlayerMove : AnimProperty
             float Speed = 2.0f * Time.deltaTime;
             if (Input.GetKey(KeyCode.W))
             {
-                transform.Translate(Vector3.forward * Speed);
+                transform.Translate(cameraTransform.forward * Speed);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                transform.Translate(Vector3.back * Speed);
+                transform.Translate(-cameraTransform.forward * Speed);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(Vector3.left * Speed);
+                transform.Translate(-cameraTransform.right * Speed);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(Vector3.right * Speed);
+                transform.Translate(cameraTransform.right * Speed);
             }
 
             if (!onJumping)
