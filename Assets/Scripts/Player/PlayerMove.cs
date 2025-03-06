@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
 using System.Collections;
 public class PlayerMove : AnimProperty
 {
-    public Rigidbody Character;
-    
     //------점프할 때 쓰는 변수---------
     bool onGround;
     bool onLanding;
     bool onJumping;
+    private bool jumpForce = false; 
     
     float waitTime = 0.0f;
     //-------------------------------
@@ -41,11 +41,11 @@ public class PlayerMove : AnimProperty
             float Speed = 2.0f * Time.deltaTime;
             if (Input.GetKey(KeyCode.W))
             {
-                transform.Translate(cameraTransform.forward * Speed);
+                transform.Translate(cameraTransform.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                transform.Translate(-cameraTransform.forward * Speed);
+                transform.Translate(-cameraTransform.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -107,8 +107,9 @@ public class PlayerMove : AnimProperty
     {
         onJumping = true;
         onGround = false;
+        jumpForce = true;
         myAnim.SetTrigger("OnJump");
-        Character.AddForce(Vector3.up * 5.0f, ForceMode.Impulse);
+        
         
         StartCoroutine(JumpCheck()); 
     }
@@ -122,6 +123,16 @@ public class PlayerMove : AnimProperty
         onJumping = false;
         
         waitTime = 0.0f;
+    }
+
+    private void FixedUpdate()
+    {
+        if (jumpForce)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * 300.0f * Time.deltaTime, ForceMode.Impulse);
+            jumpForce = false;  
+        }
+            
     }
 }
 

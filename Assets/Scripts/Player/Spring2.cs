@@ -12,7 +12,7 @@ public class Spring2 : MonoBehaviour
         // 판넬 방향으로 한칸 이동한 정육면체 모양의 감지 모양을 만듦
         foreach (Collider col in list)
         {
-            col.GetComponent<Rigidbody>()?.AddForce(transform.up * 600.0f); // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 띄움
+            col.GetComponent<Rigidbody>()?.AddForce(transform.up * 50000.0f * Time.deltaTime); // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 띄움
         }
     }
 }
