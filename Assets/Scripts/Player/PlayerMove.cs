@@ -14,6 +14,8 @@ public class PlayerMove : AnimProperty
     
     public Transform myModel;
     public float moveSpeed = 1.0f;
+    public Transform cameraTransform;
+    Vector3 inputDir;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,20 +23,11 @@ public class PlayerMove : AnimProperty
 
     // Update is called once per frame
     void Update()
-    {
-        Vector3 inputDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+    {   
+        inputDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); //키보드 입력
 
-        Vector3 modelDir = myModel.localRotation * Vector3.forward;
-        float angle = Vector3.Angle(modelDir, inputDir);
-        float rotdir = Vector3.Dot(inputDir, myModel.localRotation * Vector3.right) < 0.0f ? -1.0f : 1.0f;
-
-        float delta = Time.deltaTime * 720.0f;
-        if (delta > angle) delta = angle;
-        myModel.Rotate(Vector3.up * (delta * rotdir));
-        myAnim.SetFloat("Speed", inputDir.magnitude);
-
+        Move();
         
-
 
         onGround = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
         // 레이저가 바닥에 닿을 때 onGround를 true로 설정
@@ -75,6 +68,22 @@ public class PlayerMove : AnimProperty
         }
     }
 
+    private void Move()
+    {
+        bool isMove =  inputDir.magnitude !=0; //이동중인지 확인
+        if(isMove)
+        {
+            Vector3 lookForward = new Vector3(cameraTransform.forward.x, 0f, cameraTransform.forward.z).normalized; //카메라의 전방 벡터
+            Vector3 lookRight = new Vector3(cameraTransform.right.x, 0f, cameraTransform.right.z).normalized;   //카메라의 오른쪽 벡터
+            Vector3 moveDir = lookForward * inputDir.y + lookRight * inputDir.x; //이동 방향 설정
+        
+            Quaternion viewRot = Quaternion.LookRotation(moveDir.normalized); //이동 방향으로 회전
+
+            myModel.transform.rotation = Quaternion.Lerp(myModel.transform.rotation, viewRot, Time.deltaTime * 20.0f); //모델 회전
+
+            myAnim.SetFloat("Speed", moveDir.magnitude); //애니메이션 속도 설정
+        }
+    }
     IEnumerator OnAirCheck()
     {        
         yield return new WaitForSeconds(waitTime);

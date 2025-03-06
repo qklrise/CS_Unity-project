@@ -40,8 +40,8 @@ public class PlayerCam : MonoBehaviour
         //Vector3 lookforward = new Vector3(myCam.forward.x, 0, myCam.forward.z).normalized;
         //Player.forward = lookforward;
 
-        transform.localRotation = Quaternion.Euler(rotX, 0, 0);
-        transform.parent.localRotation = Quaternion.Euler(0, rotY, 0);
+        transform.localRotation = Quaternion.Euler(rotX, rotY, 0);
+        //transform.parent.localRotation = Quaternion.Euler(0, rotY, 0);
 
         float delta = Input.GetAxis("Mouse ScrollWheel");
         
