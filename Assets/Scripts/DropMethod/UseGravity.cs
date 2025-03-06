@@ -16,7 +16,6 @@ public class UseGravity : DragState
     {
         if (rb == null) rb = GetComponent<Rigidbody>();
         if (!rb.useGravity) rb.useGravity = true;
-        if (!rb.isKinematic) rb.isKinematic = true;
         // useGravity로 이동을 제한하면 collider가 있는 오브젝트끼리 충돌했을 때 반동이 있어
         // isKinematic으로 이동을 제한
         GetColComponet();
@@ -35,7 +34,7 @@ public class UseGravity : DragState
             ChildEndRaySet();
             if (newDragPoint != null) newDragPoint.material.color = ori;
             //현재 마우스 커서가 있는 바닥의 색을 원래대로 돌림
-            rb.isKinematic = false;
+            if(rb.isKinematic) rb.isKinematic = false;
             //중력을 활성화하기 위해 isKinematic을 비활성화
             dropTerYpos = hit.transform.position.y + correctionYpos;
             //목표 y값을 설정
