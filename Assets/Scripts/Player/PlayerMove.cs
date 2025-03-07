@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 public class PlayerMove : AnimProperty
 {
     //------점프할 때 쓰는 변수---------
@@ -41,19 +42,19 @@ public class PlayerMove : AnimProperty
             float Speed = 2.0f * Time.deltaTime;
             if (Input.GetKey(KeyCode.W))
             {
-                transform.Translate(cameraTransform.forward * Speed, Space.Self);
+                transform.Translate(myModel.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                transform.Translate(-cameraTransform.forward * Speed, Space.Self);
+                transform.Translate(myModel.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(-cameraTransform.right * Speed);
+                transform.Translate(myModel.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(cameraTransform.right * Speed);
+                transform.Translate(myModel.forward * Speed, Space.Self);
             }
 
             if (!onJumping)
