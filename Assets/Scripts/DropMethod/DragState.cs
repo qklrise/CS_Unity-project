@@ -4,12 +4,13 @@ using UnityEngine;
 public class DragState : MonoBehaviour
 {
     public State myState = State.Create;
-    protected Vector3 dragStartPos = Vector3.zero; //드래그 시작할 때 위치 정보
-    protected Vector3 dragStartRot = Vector3.zero; //드래그 시작할 때 회전 정보
     protected Vector3 sceanOriPosition = Vector3.zero; //씬 시작할 때 위치 정보
     protected Vector3 sceanOriRotation = Vector3.zero; //씬 시작할 때 회전 정보
     [SerializeField] float standardFloatDist = 2.0f; // 드래그 시 떠있을 기준 높이를 정함
     protected float floatDist = 0.0f; // 드래그 시 띄울 높이를 저장
+    protected Rigidbody rb = null;
+    protected Vector3 dragStartPos = Vector3.zero; //드래그 시작할 때 위치 정보
+    protected Vector3 dragStartRot = Vector3.zero; //드래그 시작할 때 회전 정보
     protected float floatYpos = 0.0f; //드래그 시 띄울 y 좌표
     public LayerMask dropAble; // 드랍할 수 있는 바닥 레이어
     public LayerMask stackAble; // 드래그해서 쌓을 수 있는 오브젝트를 정하는  레이어 
@@ -73,6 +74,8 @@ public class DragState : MonoBehaviour
         sceanOriPosition = transform.position;
         sceanOriRotation = transform.eulerAngles; // 씬 시작할 때 위치와 회전 정보를 저장함
         floatDist = standardFloatDist; // 띄울 높이를 기준 높이로 변경해 줌
+        if (rb == null) rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
         StartSet(); 
     }
 

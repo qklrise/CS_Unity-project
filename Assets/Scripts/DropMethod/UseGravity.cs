@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class UseGravity : DragState
 {
-    Rigidbody rb = null; 
     protected Vector3 rayOri = Vector3.zero;
     protected float rayDist = 0.0f;
     float targetDist = 0.0f; // 드랍할 거리를 저장
@@ -14,10 +13,7 @@ public class UseGravity : DragState
 
     protected override void StartSet()
     {
-        if (rb == null) rb = GetComponent<Rigidbody>();
         if (!rb.useGravity) rb.useGravity = true;
-        // useGravity로 이동을 제한하면 collider가 있는 오브젝트끼리 충돌했을 때 반동이 있어
-        // isKinematic으로 이동을 제한
         GetColComponet();
     }
 

@@ -6,11 +6,13 @@ public class Interaction : AnimProperty
 {
     public LayerMask Key;
     public LayerMask Door;
+    public LayerMask Grow;
 
     public GameObject KeySlot;
 
     GameObject InteractTarget;
     GameObject DoorKeySlot;
+    GameObject GrowSlot;
     
     void KeyInteract() // 애니메이션 이벤트로 호출하는 함수
     {
@@ -19,7 +21,8 @@ public class Interaction : AnimProperty
 
     void UseKey() // 애니메이션 이벤트로 호출하는 함수
     {
-        StartCoroutine(UsingKey());
+        if (DoorKeySlot != null) StartCoroutine(UsingKey());
+        else if (GrowSlot != null) StartCoroutine(UsingGrowingPosion());
     }
 
     IEnumerator KeyCatch()
@@ -79,14 +82,43 @@ public class Interaction : AnimProperty
         //----------------------------------------------
         // 열쇠를 든 채로 문과 상호작용 시 해야 할 동작
         // 문이 열린다던가 하는 그런것들 실행
-        yield return new WaitForSeconds(2.0f);
+        yield return GameTime.GetWait(2.0f);
         DoorKeySlot.GetComponentInParent<Animator>().SetTrigger("Open");
         InteractTarget.transform.SetParent(DoorKeySlot.transform);
         InteractTarget = null;
         DoorKeySlot = null;
         //----------------------------------------------
+    }
 
+    IEnumerator UsingGrowingPosion()
+    {
+        InteractTarget.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // 문과 상호작용 시 열쇠를 다시 움직일 수 있게 함
+        InteractTarget.transform.SetParent(null); // 열쇠가 더이상 플레이어를 안 따라오게
+
+
+        gameObject.GetComponentInParent<PlayerMove>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
+        myAnim.SetFloat("Speed", 0.0f);
+
+        Vector3 dir = (GrowSlot.transform.position - InteractTarget.transform.position).normalized;
+        float dist = Vector3.Distance(GrowSlot.transform.position, InteractTarget.transform.position);
+        while (dist > 0.01f) // 0이 아니라 최대한 근접할 때 까지 이동
+        {
+            float targetDist = Time.deltaTime * 1.4f;
+            InteractTarget.transform.position = Vector3.Lerp(InteractTarget.transform.position, GrowSlot.transform.position, targetDist);
+            InteractTarget.transform.rotation = Quaternion.Lerp(InteractTarget.transform.rotation, GrowSlot.transform.rotation, targetDist);
+            dist = Vector3.Distance(GrowSlot.transform.position, InteractTarget.transform.position);
+            yield return null;
+        }
         
+        gameObject.GetComponentInParent<PlayerMove>().enabled = true; // 모션이 끝나면 움직일 수 있게
+
+        //----------------------------------------------
+        yield return GameTime.GetWait(2.0f);
+        GrowSlot.GetComponentInParent<Animator>().SetTrigger("OnGrow");
+        InteractTarget.transform.SetParent(GrowSlot.transform);
+        InteractTarget = null;
+        GrowSlot = null;
+        //----------------------------------------------
     }
 
 
@@ -111,13 +143,23 @@ public class Interaction : AnimProperty
                     myAnim.SetFloat("Speed", 0.0f);
 
                 }
-             //----------------------------------------------------------------------------------------------------------------------------------------------------------
+                //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                if ((1 << col.gameObject.layer & Door) != 0)
-                    // 상호작용 대상이 'door' 일 때
+                if (InteractTarget != null && (1 << InteractTarget.gameObject.layer & Key) != 0) //열쇠를 가지고 있다면
                 {
-                    DoorKeySlot = col.gameObject;
-                    myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                    if ((1 << col.gameObject.layer & Door) != 0)
+                    // 상호작용 대상이 'door' 일 때
+                    {
+                        DoorKeySlot = col.gameObject;
+                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                    }
+
+                    else if ((1 << col.gameObject.layer & Grow) != 0)
+
+                    {
+                        GrowSlot = col.gameObject;
+                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                    }
                 }
             }
             //----------------------------------------------------------------------------------------------------------------------------------------------------------

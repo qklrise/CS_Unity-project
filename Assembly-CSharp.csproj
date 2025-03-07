@@ -61,19 +61,23 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Doll\Doll_red_Sensor.cs" />
+    <Compile Include="Assets\Scripts\Doll\DollSensor.cs" />
     <Compile Include="Assets\Model\Animation\Player\Catch.cs" />
-    <Compile Include="Assets\Scripts\Doll\Doll_blue_Sensor.cs" />
-    <Compile Include="Assets\Scripts\Doll\Doll_yellow_Sensor.cs" />
+    <Compile Include="Assets\Scripts\Doll\RockRolling\Doll_red_Rolling.cs" />
+    <Compile Include="Assets\Scripts\Doll\SpringButton\DollSpring.cs" />
     <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\RootMotion.cs" />
     <Compile Include="Assets\test.cs" />
+    <Compile Include="Assets\Scripts\Doll\SpringButton\Doll_blue_SpringButton.cs" />
     <Compile Include="Assets\Scripts\DropMethod\UseGravity.cs" />
     <Compile Include="Assets\Scripts\Player\Interaction.cs" />
     <Compile Include="Assets\Scripts\DropMethod\SpringGravity.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerControll.cs" />
     <Compile Include="Assets\Scripts\Player\Anim Property.cs" />
-    <Compile Include="Assets\Scripts\Player\Spring.cs" />
+    <Compile Include="Assets\Scripts\Doll\SpringButton\Doll_red_SpringButton.cs" />
+    <Compile Include="Assets\Scripts\GameTime.cs" />
+    <Compile Include="Assets\Scripts\Doll\SpringButton\Doll_yellow_SpringButton.cs" />
+    <Compile Include="Assets\Scripts\PhysicsMove\MoveFinish.cs" />
     <Compile Include="Assets\Model\Animation\Spring\Button.cs" />
     <Compile Include="Assets\Scripts\GameManager\Respawn.cs" />
     <Compile Include="Assets\Scripts\Player\MoveCam.cs" />
@@ -81,8 +85,11 @@
     <Compile Include="Assets\Scripts\Player\PuzzleCamMove.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Player\Spring2.cs" />
+    <Compile Include="Assets\Scripts\Doll\RockRolling\Doll_yellow_Rolling.cs" />
+    <Compile Include="Assets\Scripts\Doll\RockRolling\Doll_blue_Rolling.cs" />
     <Compile Include="Assets\Scripts\DropMethod\DragState.cs" />
     <Compile Include="Assets\Scripts\GameManager\ModeChane.cs" />
+    <Compile Include="Assets\Scripts\Doll\RockRolling\DollRolling.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Data\Asset\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
@@ -674,26 +681,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@60ef35ffd3cd\net40\unity-custom\nunit.framework.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.Apple.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.Apple.Extensions.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
