@@ -3,8 +3,8 @@ using UnityEngine;
 public class SpringGravity : UseGravity
 {
     BoxCollider boxCol = null;
-    //µå¶øÇÒ ¶§ ¼­·Î collider°¡ ÀÖ´Â ¿ÀºêÁ§Æ®³¢¸® ´êÀ¸¸é ¸ØÃß±â ¶§¹®¿¡
-    //isTriger¸¦ È°¼ºÈ­ÇÏ±â À§ÇØ BoxCollider ÄÄÆ÷³ÍÆ® Á¤º¸¸¦ ÀúÀå
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ colliderï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //isTrigerï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ BoxCollider ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void ChildEndRaySet()

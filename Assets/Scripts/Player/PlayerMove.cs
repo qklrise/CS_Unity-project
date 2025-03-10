@@ -28,6 +28,7 @@ public class PlayerMove : AnimProperty
         inputDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); //키보드 입력
 
         Move();
+        float Speed = 2.0f * Time.deltaTime;
         
 
         onGround = Physics.Raycast(myModel.position, Vector3.down, 0.1f);
@@ -39,13 +40,16 @@ public class PlayerMove : AnimProperty
         }
         else if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
         {
-            float Speed = 2.0f * Time.deltaTime;
             if (Input.GetKey(KeyCode.W))
             {
+                if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))
+                Speed /= 1.5f;
                 transform.Translate(myModel.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.S))
             {
+                if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))
+                Speed /= 1.5f;
                 transform.Translate(myModel.forward * Speed, Space.Self);
             }
             if (Input.GetKey(KeyCode.A))
