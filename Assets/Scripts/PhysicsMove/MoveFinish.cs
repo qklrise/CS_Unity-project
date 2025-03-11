@@ -8,7 +8,7 @@ public class MoveFinish : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (!rb.isKinematic && !GameManager.isPuzzle && rb.linearVelocity == Vector3.zero)
         {

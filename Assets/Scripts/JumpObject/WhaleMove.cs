@@ -13,7 +13,7 @@ public class WhaleMove : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if ((1 << collision.gameObject.layer & playerMask) != 0 
-            && collision.transform.position.y >= transform.position.y + 0.5f)
+            && collision.transform.position.y >= transform.position.y + 0.495f)
         {
             // 충돌한 물체가 플레이어 레이어를 가지고 있고, 충돌한 물체가 이 오브젝트 위에서 충돌했다면
             player = collision.transform;
@@ -52,7 +52,7 @@ public class WhaleMove : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if ((1 << collision.gameObject.layer & playerMask) != 0
-            && collision.transform.position.y >= transform.position.y + 0.5f)
+            && collision.transform.parent != null)
             collision.transform.SetParent(null);
         // 충돌이 끝나면 설정한 부모 자식 관계를 품
     }

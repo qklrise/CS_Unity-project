@@ -6,22 +6,25 @@ public class PlayerMove2 : AnimProperty
 {
     //------점프할 때 쓰는 변수---------
     bool onGround = true; // 
-    bool onJumping = false;
+    bool inputJumpKey = false;
 
     bool jumpForce = false; //점프하는 힘을 가할지 결정하는 변수
 
     //-------------------------------
-
     public Transform myModel;
     public float moveSpeed = 1.0f;
+    Vector3 jumpDir = Vector3.zero;
     public Transform cameraTransform;
     Vector3 inputDir = Vector3.zero;
-    Rigidbody rb = null; 
-    int correctVelocity = 0; // 보정된 벨로시티 값을 저장할 변수
+    int jumpCount = 2;
+    Rigidbody rb = null;
+    CapsuleCollider col = null;
+    Vector3 StartPos;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
     }
     void Update()
     {
@@ -30,34 +33,34 @@ public class PlayerMove2 : AnimProperty
         Move();
         float Speed = 2.0f * Time.deltaTime;
 
-        if (onGround && Input.GetKeyDown(KeyCode.Space))
+        if (jumpCount != 0 && Input.GetKeyDown(KeyCode.Space))
         {
-            onJumping = true;
+            inputJumpKey = true;
             jumpForce = true;
+            jumpCount--;
             myAnim.SetTrigger("OnJump");
         }
         else if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
         {
             if (Input.GetKey(KeyCode.W))
             {
-                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-                    Speed /= 1.5f;
-                transform.Translate(myModel.forward * Speed, Space.Self);
+                jumpDir += myModel.forward;
             }
             else if (Input.GetKey(KeyCode.S))
-            {
-                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-                    Speed /= 1.5f;
-                transform.Translate(myModel.forward * Speed, Space.Self);
+            { 
+                jumpDir += myModel.forward;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(myModel.forward * Speed, Space.Self);
+                jumpDir += myModel.forward;
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(myModel.forward * Speed, Space.Self);
+                jumpDir += myModel.forward;
             }
+            jumpDir.Normalize();
+            transform.Translate(jumpDir * Speed, Space.Self);
+            jumpDir = Vector3.zero;
         }
     }
 
@@ -72,7 +75,7 @@ public class PlayerMove2 : AnimProperty
 
             Quaternion viewRot = Quaternion.LookRotation(moveDir.normalized); //이동 방향으로 회전
 
-            myModel.transform.rotation = Quaternion.Lerp(myModel.transform.rotation, viewRot, Time.deltaTime * 20.0f); //모델 회전
+            myModel.rotation = Quaternion.Lerp(myModel.rotation, viewRot, Time.deltaTime * 20.0f); //모델 회전
 
             myAnim.SetFloat("Speed", moveDir.magnitude); //애니메이션 속도 설정
         }
@@ -82,41 +85,43 @@ public class PlayerMove2 : AnimProperty
     {
         if (jumpForce)
         {
+            rb.linearVelocity = Vector3.zero;
             rb.AddForce(Vector3.up * 6.0f, ForceMode.Impulse);
             jumpForce = false;
         }
 
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        SetCorrectVelo();
-        if (correctVelocity == 0 && !onGround) 
+        if (!onGround && Physics.SphereCast(transform.position + Vector3.up * col.radius,
+            col.radius, Vector3.down, out RaycastHit hit, 0.1f))
         {
-            // 벨로시티가 0이고 떠 있는 때,
-            // 벽 옆면에 충돌할 경우에는 벨로시티의 y값 0이 아니기에 if문 안으로 들어오지 않음
-
             onGround = true; //착지 상태로 판정
-            myAnim.SetTrigger("OnLanding"); // jump3 애니메이션 실행
-            if (onJumping) onJumping = false; // 점프 상태(점프키를 누른 경우)였을 경우 해제함
+            myAnim.SetBool("OnLanding",true); // jump3 애니메이션 실행
+            jumpCount = 2;
+         
+            /*
+            Vector3 terminalPos = transform.position;
+            Vector3 jumpVec = terminalPos - StartPos;
+            Debug.Log(jumpVec.magnitude);
+            */
         }
-    }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        SetCorrectVelo();
-        if (correctVelocity != 0 && onGround)
+        else if (!Physics.SphereCast(transform.position + Vector3.up * col.radius,
+            col.radius, Vector3.down, out hit, 0.2f) && onGround && !myAnim.GetBool("OnLanding"))
         {
             // 착지 상태일 때 y축으로 떨어진다면
-
             onGround = false; // 체공 상태로 판정
-            if (!onJumping) myAnim.SetTrigger("OnAir"); 
-            // 점프 상태(점프키를 누른 경우)가 아니라면 jump2 애니메이션 실행
+            if (!inputJumpKey)
+            {
+                myAnim.SetTrigger("OnAir");
+                // 점프 상태(점프키를 누른 경우)가 아니라면 jump2 애니메이션 실행
+                jumpCount--;
+            }
+            if (inputJumpKey) inputJumpKey = false; // 점프 상태(점프키를 누른 경우)였을 경우 해제함
+            //StartPos = transform.position;
         }
     }
-
-    void SetCorrectVelo()
+    
+    private void OnCollisionExit(Collision collision)
     {
-        float velocity = rb.linearVelocity.y; // 벨로시티의 y값 저장함
-        correctVelocity = (int)velocity; // 소수점 이하 값을 버림
+        if (myAnim.GetBool("OnLanding")) myAnim.SetBool("OnLanding", false);
     }
 }

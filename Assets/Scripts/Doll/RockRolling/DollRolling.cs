@@ -3,6 +3,7 @@ using UnityEngine;
 public class DollRolling : DollSensor
 {
     bool IsRolling = false;
+    Rigidbody rb = null;
     
     protected override void Operate()
     {
@@ -15,7 +16,9 @@ public class DollRolling : DollSensor
         {
             foreach (Collider c in list)
             {
-                c.GetComponent<Rigidbody>().AddForce(transform.forward * 1000.0f);
+                if (rb == null) rb = c.GetComponent<Rigidbody>();
+                rb.isKinematic = false;
+                rb.AddForce(transform.forward * 1000.0f);
             }
             IsRolling = false;
         }

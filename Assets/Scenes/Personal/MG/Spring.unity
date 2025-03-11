@@ -20359,7 +20359,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -29551,7 +29551,7 @@ Transform:
   m_GameObject: {fileID: 1985082398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63, y: 0, z: -6}
+  m_LocalPosition: {x: -5.63, y: 0.05, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31802,6 +31802,7 @@ GameObject:
   - component: {fileID: 2132414957}
   - component: {fileID: 2132414956}
   - component: {fileID: 2132414955}
+  - component: {fileID: 2132414959}
   - component: {fileID: 2132414954}
   - component: {fileID: 2132414958}
   m_Layer: 15
@@ -31927,6 +31928,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2132414959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132414953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2135621003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5849077449960974431, guid: 79fa7a2255798e845a77519233daef64, type: 3}
@@ -32789,6 +32802,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3491256179909743437, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8448342470688142834, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
