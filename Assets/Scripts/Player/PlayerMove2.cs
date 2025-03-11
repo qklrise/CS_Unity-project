@@ -31,36 +31,13 @@ public class PlayerMove2 : AnimProperty
         inputDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); //키보드 입력
 
         Move();
-        float Speed = 2.0f * Time.deltaTime;
-
+       
         if (jumpCount != 0 && Input.GetKeyDown(KeyCode.Space))
         {
             inputJumpKey = true;
             jumpForce = true;
             jumpCount--;
             myAnim.SetTrigger("OnJump");
-        }
-        else if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
-        {
-            if (Input.GetKey(KeyCode.W))
-            {
-                jumpDir += myModel.forward;
-            }
-            else if (Input.GetKey(KeyCode.S))
-            { 
-                jumpDir += myModel.forward;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                jumpDir += myModel.forward;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                jumpDir += myModel.forward;
-            }
-            jumpDir.Normalize();
-            transform.Translate(jumpDir * Speed, Space.Self);
-            jumpDir = Vector3.zero;
         }
     }
 
@@ -83,6 +60,30 @@ public class PlayerMove2 : AnimProperty
 
     private void FixedUpdate()
     {
+        float Speed = 2.0f * Time.deltaTime;
+        if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                jumpDir += myModel.forward;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                jumpDir += myModel.forward;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                jumpDir += myModel.forward;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                jumpDir += myModel.forward;
+            }
+            jumpDir.Normalize();
+            transform.Translate(jumpDir * Speed, Space.Self);
+            jumpDir = Vector3.zero;
+        }
+
         if (jumpForce)
         {
             rb.linearVelocity = Vector3.zero;
@@ -90,8 +91,9 @@ public class PlayerMove2 : AnimProperty
             jumpForce = false;
         }
 
-        if (!onGround && Physics.SphereCast(transform.position + Vector3.up * col.radius,
-            col.radius, Vector3.down, out RaycastHit hit, 0.1f))
+        Collider[] overlapCol = Physics.OverlapSphere(transform.position + Vector3.up * (col.radius - 0.1f), col.radius - 0.03f);
+
+        if (!onGround && overlapCol.Length > 1)
         {
             onGround = true; //착지 상태로 판정
             myAnim.SetBool("OnLanding",true); // jump3 애니메이션 실행
@@ -104,9 +106,9 @@ public class PlayerMove2 : AnimProperty
             */
         }
 
-        else if (!Physics.SphereCast(transform.position + Vector3.up * col.radius,
-            col.radius, Vector3.down, out hit, 0.2f) && onGround && !myAnim.GetBool("OnLanding"))
+        else if (overlapCol.Length == 1 && onGround)
         {
+            Debug.Log(overlapCol.Length);
             // 착지 상태일 때 y축으로 떨어진다면
             onGround = false; // 체공 상태로 판정
             if (!inputJumpKey)
