@@ -61,7 +61,7 @@ public class PlayerControll : AnimProperty
         {
             myCam.SetActive(true);
             puzzleCam.SetActive(false);
-            Player.GetComponent<PlayerMove>().enabled = true;
+            Player.GetComponent<PlayerMove2>().enabled = true;
             cameraArm.GetComponent<PlayerCam>().enabled = true; 
             Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
             playerAnim.SetFloat("Speed", 1.0f);

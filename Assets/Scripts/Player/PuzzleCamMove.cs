@@ -5,7 +5,7 @@ public class PuzzleCamMove : MonoBehaviour
     [SerializeField] float rotSpeed = 1.0f;
     [SerializeField] float smoothSpeed = 1.0f;
     public float Setting = 0.0f;   
-    public float moveSpeed = 5.0f;
+    public float moveSpeed =0f;
     float rotX, rotY, targetRotX, targetRotY;
     public Rigidbody rig;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,16 +17,19 @@ public class PuzzleCamMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        rig.isKinematic = true;
         if(Input.GetMouseButton(1))
         {
             CameraRot();
+            rig.isKinematic = false;
         }
         //카메라 position
         Vector3 inputDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.Translate(inputDir * Time.deltaTime * moveSpeed,Space.Self);
+        inputDir = transform.rotation * inputDir;
+        inputDir *= Time.fixedDeltaTime * moveSpeed;
+        //transform.Translate(inputDir * Time.smoothDeltaTime * moveSpeed,Space.Self);
        /*if (Input.GetKey(KeyCode.W))
         {
             float delMoveSpeed = Time.deltaTime * moveSpeed;
@@ -56,9 +59,9 @@ public class PuzzleCamMove : MonoBehaviour
             }
         }*/
        
-        if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q))
-        {
-            float delMoveSpeed = Time.deltaTime * moveSpeed;
+        //if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.Q))
+        //{
+            float delMoveSpeed = Time.fixedDeltaTime * moveSpeed;
             float temp3 = 0.0f;
             float delta = delMoveSpeed;
             float offset = 0.5f;
@@ -69,17 +72,16 @@ public class PuzzleCamMove : MonoBehaviour
                     delta = hit.point.y - (transform.position.y + offset);
                 temp3 += delta;
             }
-            else
+            else if(Input.GetKey(KeyCode.Q))
             {
                 if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, offset + delta))
                     delta = transform.position.y - (offset + hit.point.y);
                 temp3 -= delta;
             }
 
-            transform.Translate(Vector3.up * temp3, Space.World);
-        }
-        rig.linearVelocity = Vector3.zero;
-
+            //transform.Translate(Vector3.up * temp3, Space.World);
+        //}
+        transform.Translate(inputDir + Vector3.up * temp3, Space.World);
     }
     private void CameraRot()
     {
