@@ -46,7 +46,7 @@ public class PlayerControll : AnimProperty
            
            myCam.SetActive(false);
            puzzleCam.SetActive(true);  
-           Player.GetComponent<PlayerMove>().enabled = false;   
+           Player.GetComponent<PlayerMove2>().enabled = false;   
            cameraArm.GetComponent<PlayerCam>().enabled = false; 
            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
            rig.linearVelocity = Vector3.zero;
