@@ -53,7 +53,7 @@ public class Interaction : AnimProperty
             col.transform.SetParent(KeySlot.transform); // 이동이 끝난 뒤엔 계속 플레이어를 따라다니게
             col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 플레이어의 손에 붙은 뒤로는 못움직이게(손에서 안 떨어지게)
 
-            GetComponentInParent<PlayerMove>().enabled = true; // 열쇠를 잡는 동작이 끝나면 플레이어가 다시 움직일 수 있게
+            GetComponentInParent<PlayerMove2>().enabled = true; // 열쇠를 잡는 동작이 끝나면 플레이어가 다시 움직일 수 있게
         }
     }
     IEnumerator UsingKey()
@@ -62,7 +62,7 @@ public class Interaction : AnimProperty
         InteractTarget.transform.SetParent(null); // 열쇠가 더이상 플레이어를 안 따라오게
 
 
-        gameObject.GetComponentInParent<PlayerMove>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
         myAnim.SetFloat("Speed", 0.0f);
 
         Vector3 dir = (DoorKeySlot.transform.position - InteractTarget.transform.position).normalized;
@@ -77,7 +77,7 @@ public class Interaction : AnimProperty
         }
         InteractTarget.transform.position = DoorKeySlot.transform.position; // 대략적인 이동이 끝난 후 정확한 위치에 스냅
         InteractTarget.transform.rotation = DoorKeySlot.transform.rotation;
-        gameObject.GetComponentInParent<PlayerMove>().enabled = true; // 모션이 끝나면 움직일 수 있게
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = true; // 모션이 끝나면 움직일 수 있게
 
         //----------------------------------------------
         // 열쇠를 든 채로 문과 상호작용 시 해야 할 동작
@@ -96,7 +96,7 @@ public class Interaction : AnimProperty
         InteractTarget.transform.SetParent(null); // 열쇠가 더이상 플레이어를 안 따라오게
 
 
-        gameObject.GetComponentInParent<PlayerMove>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
         myAnim.SetFloat("Speed", 0.0f);
 
         Vector3 dir = (GrowSlot.transform.position - InteractTarget.transform.position).normalized;
@@ -110,7 +110,7 @@ public class Interaction : AnimProperty
             yield return null;
         }
         
-        gameObject.GetComponentInParent<PlayerMove>().enabled = true; // 모션이 끝나면 움직일 수 있게
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = true; // 모션이 끝나면 움직일 수 있게
 
         //----------------------------------------------
         yield return GameTime.GetWait(2.0f);
@@ -139,7 +139,7 @@ public class Interaction : AnimProperty
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 상호작용한 오브젝트의 움직임을 멈춤
                     myAnim.SetTrigger("Catch"); //잡는 애니메이션
 
-                    GetComponentInParent<PlayerMove>().enabled = false; // 잡는 동작 중엔 못 움직이게
+                    GetComponentInParent<PlayerMove2>().enabled = false; // 잡는 동작 중엔 못 움직이게
                     myAnim.SetFloat("Speed", 0.0f);
 
                 }

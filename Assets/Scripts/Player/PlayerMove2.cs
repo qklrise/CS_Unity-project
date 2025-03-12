@@ -14,13 +14,11 @@ public class PlayerMove2 : AnimProperty
     public Transform myModel;
     public float moveSpeed = 3.0f;
     Vector3 jumpDir = Vector3.zero;
-    Vector3 jumpFixedDir = Vector3.zero;
     public Transform cameraTransform;
     Vector3 inputDir = Vector3.zero;
     int jumpCount = 2;
     Rigidbody rb = null;
     CapsuleCollider col = null;
-    Vector3 StartPos;
 
     private void Start()
     {
@@ -60,8 +58,6 @@ public class PlayerMove2 : AnimProperty
                 jumpDir += myModel.forward;
             }
             jumpDir.Normalize();
-            jumpFixedDir += jumpDir;
-            jumpDir = Vector3.zero;
         }
     }
 
@@ -87,8 +83,8 @@ public class PlayerMove2 : AnimProperty
         float Speed = moveSpeed * Time.fixedDeltaTime;
         if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
         {
-            transform.Translate(jumpFixedDir * Speed, Space.Self);
-            jumpFixedDir = Vector3.zero;
+            transform.Translate(jumpDir * Speed, Space.Self);
+            jumpDir = Vector3.zero;
         }
 
         if (jumpForce)
@@ -107,12 +103,6 @@ public class PlayerMove2 : AnimProperty
             onGround = true; //착지 상태로 판정
             myAnim.SetBool("OnLanding", true); // jump3 애니메이션 실행
             jumpCount = 2;
-
-            /*
-            Vector3 terminalPos = transform.position;
-            Vector3 jumpVec = terminalPos - StartPos;
-            Debug.Log(jumpVec.magnitude);
-            */
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -131,7 +121,6 @@ public class PlayerMove2 : AnimProperty
                 jumpCount--;
             }
             if (inputJumpKey) inputJumpKey = false; // 점프 상태(점프키를 누른 경우)였을 경우 해제함
-            //StartPos = transform.position;
         }
     }
 }

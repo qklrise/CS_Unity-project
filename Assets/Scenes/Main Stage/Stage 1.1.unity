@@ -29185,7 +29185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985082401}
-  - component: {fileID: 1985082400}
+  - component: {fileID: 1985082405}
   - component: {fileID: 1985082399}
   - component: {fileID: 1985082403}
   - component: {fileID: 1985082404}
@@ -29214,21 +29214,6 @@ MonoBehaviour:
   puzzleCam: {fileID: 1846375292}
   rig: {fileID: 1985082403}
   playerAnim: {fileID: 1741475405}
---- !u!114 &1985082400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985082398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65bd0a3fa4ac4241b0aa1e3bca701a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myModel: {fileID: 1741475401}
-  moveSpeed: 10
-  cameraTransform: {fileID: 956501881}
 --- !u!4 &1985082401
 Transform:
   m_ObjectHideFlags: 0
@@ -29296,6 +29281,21 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.74, z: 0}
+--- !u!114 &1985082405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985082398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c307d885f422c2a43a363e7dfd5725a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myModel: {fileID: 1741475401}
+  moveSpeed: 3
+  cameraTransform: {fileID: 956501881}
 --- !u!1001 &1985422699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32222,6 +32222,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1325558627656528558, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351767514101919767, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401222702372672887, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936717101150209500, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114634173169123572, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8448342470688142834, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -32265,6 +32285,10 @@ PrefabInstance:
     - target: {fileID: 9112288496697356104, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112288496697356104, guid: 475d3773bca40534f8eebb479cab7a97, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
