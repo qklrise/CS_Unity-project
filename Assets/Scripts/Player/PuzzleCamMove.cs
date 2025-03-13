@@ -98,16 +98,7 @@ public class PuzzleCamMove : MonoBehaviour
 
             transform.localRotation = Quaternion.Euler(rotX + Setting, rotY, 0);
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        
-        
-    }
-    /*public float cameraSetting(float a)
-    {
-        Setting = a;
-        return Setting;
-    }*/
+    
 
 }
 

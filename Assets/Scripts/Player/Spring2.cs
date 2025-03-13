@@ -15,7 +15,7 @@ public class Spring2 : MonoBehaviour
             if (rb != null)
             {
                 rb.isKinematic = false; // 힘을 받아 움직이도록 isKinematic을 끔
-                rb.AddForce(transform.up * 600.0f);  // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 밈
+                rb.AddForce(transform.up * 900.0f);  // 찾아진 오브젝트에 릿지드 바디가 있으면 해당 오브젝트를 밈
             } 
         }
     }
