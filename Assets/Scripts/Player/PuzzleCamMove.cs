@@ -91,7 +91,10 @@ public class PuzzleCamMove : MonoBehaviour
 
             float temp2 = Input.GetAxis("Mouse X") * rotSpeed;
             targetRotY += temp2;
-
+            if (targetRotX >= 0.0f)
+                targetRotX = 0.0f;
+            else if (targetRotX <= -180.0f)
+                targetRotX = -180.0f;
 
             rotX = Mathf.Lerp(rotX, targetRotX, Time.deltaTime * smoothSpeed);
             rotY = Mathf.Lerp(rotY, targetRotY, Time.deltaTime * smoothSpeed);

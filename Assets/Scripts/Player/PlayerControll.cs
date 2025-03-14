@@ -64,7 +64,6 @@ public class PlayerControll : AnimProperty
             Player.GetComponent<PlayerMove2>().enabled = true;
             cameraArm.GetComponent<PlayerCam>().enabled = true; 
             Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
-            playerAnim.SetFloat("Speed", 1.0f);
             GameManager.isPuzzle = false;
             yield return new WaitForSeconds(0.5f);
         }
