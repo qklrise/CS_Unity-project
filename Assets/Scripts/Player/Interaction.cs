@@ -9,10 +9,52 @@ public class Interaction : AnimProperty
     public LayerMask Grow;
 
     public GameObject KeySlot;
-
+    
     GameObject InteractTarget;
     GameObject DoorKeySlot;
     GameObject GrowSlot;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Collider[] list = Physics.OverlapBox(transform.position + transform.up * 0.7f + transform.forward * 0.5f, new Vector3(0.4f ,1.4f ,1.0f) * 0.5f, transform.rotation);
+            foreach (Collider col in list)
+            {
+             //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                if ((1 << col.gameObject.layer & Key) != 0)
+                    // 상호작용 대상이 'key' 일 때
+                {
+                    InteractTarget = col.gameObject;
+                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 상호작용한 오브젝트의 움직임을 멈춤
+                    myAnim.SetTrigger("Catch"); //잡는 애니메이션
+
+                    GetComponentInParent<PlayerMove2>().enabled = false; // 잡는 동작 중엔 못 움직이게
+                    myAnim.SetFloat("Speed", 0.0f);
+
+                }
+                //----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                if (InteractTarget != null && (1 << InteractTarget.gameObject.layer & Key) != 0) // 열쇠를 가지고 있다면
+                {
+                    if ((1 << col.gameObject.layer & Door) != 0)
+                    // 상호작용 대상이 'door' 일 때
+                    {
+                        DoorKeySlot = col.gameObject;
+                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                    }
+
+                    else if ((1 << col.gameObject.layer & Grow) != 0)
+
+                    {
+                        GrowSlot = col.gameObject;
+                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                    }
+                }
+            }
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------
+        }
+    }
     
     void KeyInteract() // 애니메이션 이벤트로 호출하는 함수
     {
@@ -27,7 +69,7 @@ public class Interaction : AnimProperty
 
     IEnumerator KeyCatch()
     {
-        Collider[] list = Physics.OverlapSphere(transform.position, 2.0f, Key);
+        Collider[] list = Physics.OverlapBox(transform.position + transform.up * 0.7f + transform.forward * 0.5f, new Vector3(0.4f ,1.4f ,1.0f) * 0.5f, transform.rotation, Key);
         foreach (Collider col in list)
         {
             col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // 애니메이션의 잡는 모션이 나올 때 열쇠가 다시 움직이게 함
@@ -121,49 +163,10 @@ public class Interaction : AnimProperty
         //----------------------------------------------
     }
 
-
-
-    private void Update()
+    public void SpeedReset()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Collider[] list = Physics.OverlapSphere(transform.position, 1.7f);
-            foreach (Collider col in list)
-            {
-             //----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-                if ((1 << col.gameObject.layer & Key) != 0)
-                    // 상호작용 대상이 'key' 일 때
-                {
-                    InteractTarget = col.gameObject;
-                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // 상호작용 성공한 시점에 상호작용한 오브젝트의 움직임을 멈춤
-                    myAnim.SetTrigger("Catch"); //잡는 애니메이션
-
-                    GetComponentInParent<PlayerMove2>().enabled = false; // 잡는 동작 중엔 못 움직이게
-                    myAnim.SetFloat("Speed", 0.0f);
-
-                }
-                //----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-                if (InteractTarget != null && (1 << InteractTarget.gameObject.layer & Key) != 0) //열쇠를 가지고 있다면
-                {
-                    if ((1 << col.gameObject.layer & Door) != 0)
-                    // 상호작용 대상이 'door' 일 때
-                    {
-                        DoorKeySlot = col.gameObject;
-                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
-                    }
-
-                    else if ((1 << col.gameObject.layer & Grow) != 0)
-
-                    {
-                        GrowSlot = col.gameObject;
-                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
-                    }
-                }
-            }
-            //----------------------------------------------------------------------------------------------------------------------------------------------------------
-        }
+        myAnim.SetFloat("Speed", 0.0f);
+        // 애니메이션이 끝날 때 호출
     }
 }
 
