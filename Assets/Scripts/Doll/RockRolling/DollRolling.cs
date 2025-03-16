@@ -4,6 +4,7 @@ public class DollRolling : DollSensor
 {
     bool IsRolling = false;
     Rigidbody rb = null;
+    [SerializeField] float pushPower = 1000.0f;
     
     protected override void Operate()
     {
@@ -18,7 +19,7 @@ public class DollRolling : DollSensor
             {
                 if (rb == null) rb = c.GetComponent<Rigidbody>();
                 rb.isKinematic = false;
-                rb.AddForce(transform.forward * 1000.0f);
+                rb.AddForce(transform.forward * pushPower);
             }
             IsRolling = false;
         }

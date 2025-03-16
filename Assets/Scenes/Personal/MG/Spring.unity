@@ -1693,6 +1693,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595495095368793939, guid: dab962cf3255c8f4baa8695aa64d79f3, type: 3}
   m_PrefabInstance: {fileID: 87546917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &91669569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+  m_PrefabInstance: {fileID: 433078980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &111202059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6375,17 +6380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
   standardFloatDist: 2
   dropAble:
     serializedVersion: 2
-    m_Bits: 8
-  stackAble:
-    serializedVersion: 2
-    m_Bits: 8192
-  notDrop:
-    serializedVersion: 2
-    m_Bits: 5184
+    m_Bits: 8200
   puzzleCameraArm: {fileID: 1846375294}
 --- !u!4 &377910681
 Transform:
@@ -6783,10 +6781,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7898602239969628470, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1348120081}
   m_SourcePrefab: {fileID: 100100000, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
 --- !u!1001 &436449787
 PrefabInstance:
@@ -9983,10 +9985,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7898602239969628470, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1591244797}
   m_SourcePrefab: {fileID: 100100000, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
 --- !u!1001 &676123233
 PrefabInstance:
@@ -20078,6 +20084,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3538408251277612960, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
   m_PrefabInstance: {fileID: 433078980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348120081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91669569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9138738176e4a4fa1ebd2e4d070e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushLayer:
+    serializedVersion: 2
+    m_Bits: 5184
+  pushPowar: 900
 --- !u!1001 &1352245758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20360,7 +20382,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -21023,17 +21045,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
   standardFloatDist: 2
   dropAble:
     serializedVersion: 2
-    m_Bits: 8
-  stackAble:
-    serializedVersion: 2
-    m_Bits: 8192
-  notDrop:
-    serializedVersion: 2
-    m_Bits: 5184
+    m_Bits: 8200
   puzzleCameraArm: {fileID: 1846375294}
 --- !u!114 &1400190449
 MonoBehaviour:
@@ -22977,7 +22992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: dropAble.m_Bits
-      value: 8
+      value: 8200
       objectReference: {fileID: 0}
     - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: puzzleCameraArm
@@ -23388,6 +23403,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4595495095368793939, guid: dab962cf3255c8f4baa8695aa64d79f3, type: 3}
   m_PrefabInstance: {fileID: 1586991950}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1591244795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+  m_PrefabInstance: {fileID: 669943199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591244797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591244795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9138738176e4a4fa1ebd2e4d070e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushLayer:
+    serializedVersion: 2
+    m_Bits: 5184
+  pushPowar: 900
 --- !u!1001 &1592105771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25025,6 +25061,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4595495095368793939, guid: dab962cf3255c8f4baa8695aa64d79f3, type: 3}
   m_PrefabInstance: {fileID: 1694846939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1696444658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+  m_PrefabInstance: {fileID: 6143569675986477789}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699092331
 PrefabInstance:
@@ -27697,6 +27738,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3538408251277612960, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
   m_PrefabInstance: {fileID: 6143569675986477789}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861969359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696444658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9138738176e4a4fa1ebd2e4d070e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushLayer:
+    serializedVersion: 2
+    m_Bits: 5184
+  pushPowar: 900
 --- !u!1001 &1866882695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29465,17 +29522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
   standardFloatDist: 2
   dropAble:
     serializedVersion: 2
-    m_Bits: 8
-  stackAble:
-    serializedVersion: 2
-    m_Bits: 8192
-  notDrop:
-    serializedVersion: 2
-    m_Bits: 5184
+    m_Bits: 8200
   puzzleCameraArm: {fileID: 1846375294}
 --- !u!4 &1984910346
 Transform:
@@ -31422,6 +31472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doll_red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 344670030989742623, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      propertyPath: pushPower
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1106327009711998652, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0000002
@@ -31461,6 +31515,10 @@ PrefabInstance:
     - target: {fileID: 1106327009711998652, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      propertyPath: dropAble.m_Bits
+      value: 8200
       objectReference: {fileID: 0}
     - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: puzzleCameraArm
@@ -32211,6 +32269,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      propertyPath: dropAble.m_Bits
+      value: 8200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
       propertyPath: puzzleCameraArm
       value: 
       objectReference: {fileID: 1846375294}
@@ -32533,6 +32595,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4286309131796676938, guid: d3d85368ea35dda4386e0a807f1c115c, type: 3}
+      propertyPath: dropAble.m_Bits
+      value: 8200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286309131796676938, guid: d3d85368ea35dda4386e0a807f1c115c, type: 3}
       propertyPath: puzzleCameraArm
       value: 
       objectReference: {fileID: 1846375294}
@@ -32662,6 +32728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6313977552868830594, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+      propertyPath: dropAble.m_Bits
+      value: 8200
+      objectReference: {fileID: 0}
     - target: {fileID: 6313977552868830594, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
       propertyPath: puzzleCameraArm
       value: 
@@ -32859,10 +32929,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -51.816113
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7898602239969628470, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4202178557273099546, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1861969359}
   m_SourcePrefab: {fileID: 100100000, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
 --- !u!1001 &8436136646545942370
 PrefabInstance:

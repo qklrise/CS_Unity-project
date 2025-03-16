@@ -98,7 +98,7 @@ public class PlayerMove2 : AnimProperty
     {
         if (onGround) return;
         if (Physics.SphereCast(transform.position + Vector3.up * 0.2f, 
-            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.2f))
+            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.3f))
         {
             onGround = true; //착지 상태로 판정
             myAnim.SetBool("OnLanding", true); // jump3 애니메이션 실행

@@ -24,15 +24,14 @@ public class UseGravity : DragState
 
     protected override void EndDragSetRay()
     {
-        RaySet();
-        if (Physics.Raycast(rayOri, Vector3.down, out RaycastHit hit, rayDist, dropAble | stackAble))
+        if (canDrop)
         {
-            ChildEndRaySet();
+            ChildFall();
             if (newDragPoint != null) newDragPoint.material.color = ori;
             //현재 마우스 커서가 있는 바닥의 색을 원래대로 돌림
             if(rb.isKinematic) rb.isKinematic = false;
             //중력을 활성화하기 위해 isKinematic을 비활성화
-            dropTerYpos = hit.transform.position.y + correctionYpos;
+            dropTerYpos = rayHitTranY + correctionYpos;
             //목표 y값을 설정
             targetDist = floatYpos - dropTerYpos;
             // 떨어질 거리 저장
@@ -43,6 +42,7 @@ public class UseGravity : DragState
         }
         else
         {
+            if(newDragPoint != null) newDragPoint.material.color = ori;
             //현재 마우스 커서의 지정한 거리 아래에, 설정한 레이어를 가진 오브젝트가 없다면
             transform.SetPositionAndRotation(dragStartPos, Quaternion.Euler(dragStartRot));
             // 드래그 시작한 위치와 회전 값으로 되돌림
@@ -51,12 +51,8 @@ public class UseGravity : DragState
             ChangeState(State.Stop);
         }
     }
-    protected virtual void RaySet()
-    {
-        rayOri = GridMouse;
-        rayDist = floatDist + 0.7f;
-    }
-    protected virtual void ChildEndRaySet() //상속해서 내용을 정할 가상함수
+    
+    protected virtual void ChildFall() //상속해서 내용을 정할 가상함수
     {
 
     }

@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 // 드래그로 이동하는 스크립트의 부모 스크립트
 public class DragState : MonoBehaviour
 {
-    public State myState = State.Create;
+    private State myState = State.Create;
     protected Vector3 sceanOriPosition = Vector3.zero; //씬 시작할 때 위치 정보
     protected Vector3 sceanOriRotation = Vector3.zero; //씬 시작할 때 회전 정보
     [SerializeField] float standardFloatDist = 2.0f; // 드래그 시 떠있을 기준 높이를 정함
@@ -13,8 +14,6 @@ public class DragState : MonoBehaviour
     protected Vector3 dragStartRot = Vector3.zero; //드래그 시작할 때 회전 정보
     protected float floatYpos = 0.0f; //드래그 시 띄울 y 좌표
     public LayerMask dropAble; // 드랍할 수 있는 바닥 레이어
-    public LayerMask stackAble; // 드래그해서 쌓을 수 있는 오브젝트를 정하는  레이어 
-    public LayerMask notDrop; // 드랍할 수 없는 오브젝트를 정하는 레이어
     public Transform puzzleCameraArm; //퍼즐 캠 암 transform 정보
     PuzzleCamMove camMove = null; // PuzzleCamMove 활성화 여부 결정
     protected bool IsRotation = false; // 현재 회전 상태 여부 확인
@@ -22,6 +21,8 @@ public class DragState : MonoBehaviour
     protected MeshRenderer preDragPoint = null; // 이전 마우스 커서가 있던 바닥의 MeshRenderer 정보
     protected MeshRenderer newDragPoint = null; // 현재 마우스 커서가 있던 바닥의 MeshRenderer 정보
     protected Color ori = default; //색상 정보 
+    protected bool canDrop = false;
+    protected float rayHitTranY = 0.0f;
 
     public enum State
     {
@@ -165,67 +166,152 @@ public class DragState : MonoBehaviour
     {
         if (IsRotation)
         {
-            if (Input.GetKeyDown(KeyCode.W)) transform.Rotate(0, 0, 90.0f);
-            else if (Input.GetKeyDown(KeyCode.S)) transform.Rotate(0, 0, -90.0f);
-            else if (Input.GetKeyDown(KeyCode.A)) transform.Rotate(-90.0f, 0, 0);
-            else if (Input.GetKeyDown(KeyCode.D)) transform.Rotate(90.0f, 0, 0);
+            if (Input.GetKeyDown(KeyCode.W)) 
+            {
+                RotateDir(puzzleCameraArm.transform.right);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                RotateDir(-puzzleCameraArm.transform.right);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                RotateDir(puzzleCameraArm.transform.up);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                RotateDir(-puzzleCameraArm.transform.up);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                RotateDir(puzzleCameraArm.transform.forward);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                RotateDir(-puzzleCameraArm.transform.forward);
+            }
+
         }
         // 회전상태일 때 wasd로 회전
+    }
+
+    void RotateDir(Vector3 dir)
+    {
+        Vector3 rotKeyDown = dir;
+        RotateAngleSet(ref rotKeyDown.x, ref rotKeyDown.y, ref rotKeyDown.z);
+        transform.Rotate(rotKeyDown * 90.0f, Space.World);
+    }
+    void RotateAngleSet(ref float x, ref float y, ref float z)
+    {
+        if(Mathf.Abs(x) >= Mathf.Abs(y) && Mathf.Abs(x) >= Mathf.Abs(z))
+        {
+            CompareAxis(ref x, ref y, ref z);
+        }
+
+        else if (Mathf.Abs(y) > Mathf.Abs(x) && Mathf.Abs(y) >= Mathf.Abs(z))
+        {
+            CompareAxis(ref y, ref x, ref z);
+        }
+
+        else if (Mathf.Abs(z) > Mathf.Abs(x) && Mathf.Abs(z) > Mathf.Abs(y))
+        {
+            CompareAxis(ref z, ref x, ref y);
+        }
+
+    }
+
+    void CompareAxis(ref float a, ref float b, ref float c)
+    {
+        if (a < 0) a = -1;
+        else a = 1;
+        b = 0f;
+        c = 0f;
     }
 
     protected virtual void OnDragPro()
     {
         GridMouse = WorldMousePoint();
         //현재 마우스의 위치 정보를 저장
-        Debug.DrawLine(GridMouse, GridMouse + Vector3.down * (floatDist + 0.7f), Color.red);
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit hit, floatDist + 0.7f, dropAble | stackAble)) 
-        {
-            // 현재 마우스 위치에서 y축 방향으로 레이져를 쐈을 때 일정 위치에 지정한 레이어가 있다면
-            Vector3 terminalPos = hit.transform.position;
-            terminalPos.y = floatYpos;
-            // 레이저에 적중한 물체의 중심 위치의 좌표를 저장하고, y좌표를 떠 있는 높이로 설정
-            if ((1 << hit.transform.gameObject.layer & stackAble) != 0)
-            {
-                // 적중한 오브젝트가 쌓을 수 있는 오브젝트라면
-                if (preDragPoint != null)
-                { 
-                    preDragPoint.material.color = ori; 
-                    preDragPoint = null;
-                    //마우스 커서가 있던 바닥의 색을 원래대로 돌림
-                }
 
+        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit rayHit, floatDist + 0.7f, dropAble))
+        {
+            if (rayHit.transform.GetComponent<MeshRenderer>() != null)
+            {
+                newDragPoint = rayHit.transform.GetComponent<MeshRenderer>();
+                if (preDragPoint == newDragPoint) return;
+                if (preDragPoint != null) preDragPoint.material.color = ori;
+                ori = newDragPoint.material.color;
+                // 현재 바닥의 색 정보를 저장
+
+                Vector3 terminalPos = rayHit.transform.position;
+                rayHitTranY = rayHit.transform.position.y;
+                terminalPos.y = floatYpos;
                 transform.position = terminalPos;
-                // 저장한 좌표로 오브젝트를 옮김
+
+                if (Physics.BoxCast(terminalPos, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down, 
+                    out RaycastHit boxHit, Quaternion.identity, floatDist + 0.3f))
+                {
+                    if ((1 << boxHit.transform.gameObject.layer & dropAble) != 0 || preDragPoint == null)
+                    {
+                        newDragPoint.material.color = Color.yellow;
+                        canDrop = true;
+                    }
+
+                    else
+                    {
+                        newDragPoint.material.color = Color.red;
+                        canDrop = false;
+                    }
+                }
+                preDragPoint = newDragPoint;
             }
             else
             {
-                newDragPoint = hit.transform.GetComponent<MeshRenderer>();
-                // 바닥의 MeshRenderer 정보를 저장
-                if (preDragPoint == newDragPoint) return;
-                else
+                if (preDragPoint != null) preDragPoint.material.color = ori;
+               
+                Vector3 terminalPos = rayHit.transform.position;
+                rayHitTranY = rayHit.transform.position.y;
+                terminalPos.y = floatYpos;
+                transform.position = terminalPos;
+
+                if (Physics.BoxCast(terminalPos, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down, out RaycastHit boxHit, Quaternion.identity, floatDist + 0.3f))
                 {
-                    if (preDragPoint != null) preDragPoint.material.color = ori;
-                    //이전 바닥의 정보가 있다면 전 바닥을 색을 원색으로 되돌림
-                    ori = newDragPoint.material.color;
-                    // 현재 바닥의 색 정보를 저장
-                    newDragPoint.material.color = Color.yellow;
-                    // 현재 바닥의 색을 노란색으로 변경
-                    transform.position = terminalPos;
-                    //드래그한 물체의 위치를 레이저가 닿은 위치의 중심의 위로 이동
-                    preDragPoint = newDragPoint;
-                    //이전 바닥의 정보에 현재 바닥 정보를 입력
+                    if ((1 << boxHit.transform.gameObject.layer & dropAble) != 0 || preDragPoint == null)
+                    {
+                        canDrop = true;
+                    }
+
+                    else
+                    {
+                        canDrop = false;
+                    }
                 }
+
+                preDragPoint = null;
+                newDragPoint = null;
             }
         }
-        else if (newDragPoint != null)
+            
+        else
         {
             // 현재 마우스 위치에서 y축 방향으로 레이져를 쐈을 때 일정 좌표 아래까지 지정한 레이어가 없다면
-            preDragPoint.material.color = ori;
-            //이전 마우스 커서가 있던 바닥의 색을 원래 색으로 변경
-            preDragPoint = null;
-            newDragPoint = null;
-            //저장한 정보 초기화
+            NotDropable();
         }
+    }
+
+    void NotDropable()
+    {
+        if (preDragPoint != null) preDragPoint.material.color = ori;
+        //이전 마우스 커서가 있던 바닥의 색을 원래 색으로 변경
+        preDragPoint = null;
+        newDragPoint = null;
+        //저장한 정보 초기화
+        canDrop = false;
     }
 
     Vector3 WorldMousePoint()
