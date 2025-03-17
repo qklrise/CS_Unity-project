@@ -110,7 +110,7 @@ public class PlayerMove2 : AnimProperty
         if (myAnim.GetBool("OnLanding")) myAnim.SetBool("OnLanding", false);
         if (!onGround) return;
         if (!Physics.SphereCast(transform.position + Vector3.up * 0.2f,
-            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.17f))
+            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.15f))
         {
             // 착지 상태일 때 y축으로 떨어진다면
             onGround = false; // 체공 상태로 판정
