@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove2 : AnimProperty
 {
     //------점프할 때 쓰는 변수---------
-    bool onGround = true; // 
+    public bool onGround { get; private set; } = true; // 
     bool inputJumpKey = false;
 
     bool jumpForce = false; //점프하는 힘을 가할지 결정하는 변수
@@ -15,7 +15,7 @@ public class PlayerMove2 : AnimProperty
     public float moveSpeed = 3.0f;
     Vector3 jumpDir = Vector3.zero;
     public Transform cameraTransform;
-    Vector3 inputDir = Vector3.zero;
+    public Vector3 inputDir { get; private set; } = Vector3.zero;
     int jumpCount = 2;
     Rigidbody rb = null;
     CapsuleCollider col = null;
@@ -110,7 +110,7 @@ public class PlayerMove2 : AnimProperty
         if (myAnim.GetBool("OnLanding")) myAnim.SetBool("OnLanding", false);
         if (!onGround) return;
         if (!Physics.SphereCast(transform.position + Vector3.up * 0.2f,
-            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.11f))
+            col.radius - 0.03f, Vector3.down, out RaycastHit hit, 0.17f))
         {
             // 착지 상태일 때 y축으로 떨어진다면
             onGround = false; // 체공 상태로 판정
