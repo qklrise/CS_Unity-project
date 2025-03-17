@@ -20742,7 +20742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400190445}
-  - component: {fileID: 1400190448}
+  - component: {fileID: 1400190450}
   - component: {fileID: 1400190449}
   - component: {fileID: 1400190447}
   - component: {fileID: 1400190446}
@@ -20817,30 +20817,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1400190448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400190444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myState: 0
-  standardFloatDist: 2
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 8
-  stackAble:
-    serializedVersion: 2
-    m_Bits: 8192
-  notDrop:
-    serializedVersion: 2
-    m_Bits: 5184
-  puzzleCameraArm: {fileID: 1846375294}
 --- !u!114 &1400190449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20853,6 +20829,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1400190450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400190444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &1406792791
 PrefabInstance:
   m_ObjectHideFlags: 0

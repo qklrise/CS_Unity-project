@@ -6309,7 +6309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 377910681}
-  - component: {fileID: 377910680}
+  - component: {fileID: 377910683}
   - component: {fileID: 377910682}
   - component: {fileID: 377910679}
   - component: {fileID: 377910678}
@@ -6368,23 +6368,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &377910680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377910677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standardFloatDist: 2
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 8200
-  puzzleCameraArm: {fileID: 1846375294}
 --- !u!4 &377910681
 Transform:
   m_ObjectHideFlags: 0
@@ -6413,6 +6396,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &377910683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377910677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &382623449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9986,7 +9986,7 @@ PrefabInstance:
       value: Spring
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7898602239969628470, guid: fceb9e66abb50a84eb922f833807a873, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -11661,6 +11661,10 @@ PrefabInstance:
     - target: {fileID: 6514395700356952805, guid: 79fa7a2255798e845a77519233daef64, type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514395700356952805, guid: 79fa7a2255798e845a77519233daef64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7304976276598532367, guid: 79fa7a2255798e845a77519233daef64, type: 3}
       propertyPath: m_Layer
@@ -20958,7 +20962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400190445}
-  - component: {fileID: 1400190448}
+  - component: {fileID: 1400190450}
   - component: {fileID: 1400190449}
   - component: {fileID: 1400190447}
   - component: {fileID: 1400190446}
@@ -21033,7 +21037,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1400190448
+--- !u!114 &1400190449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400190444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1400190450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21050,18 +21066,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8200
   puzzleCameraArm: {fileID: 1846375294}
---- !u!114 &1400190449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400190444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1406792791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23009,10 +23013,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6122486706933709896, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
     - {fileID: 1068558235020398524, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+    - {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+    - {fileID: 1355225065422684589, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1564759510}
   m_SourcePrefab: {fileID: 100100000, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+--- !u!1 &1564759502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+  m_PrefabInstance: {fileID: 1564759501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564759510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564759502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &1565203347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29451,7 +29482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984910346}
-  - component: {fileID: 1984910345}
+  - component: {fileID: 1984910348}
   - component: {fileID: 1984910347}
   - component: {fileID: 1984910344}
   - component: {fileID: 1984910343}
@@ -29510,23 +29541,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1984910345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984910342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standardFloatDist: 2
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 8200
-  puzzleCameraArm: {fileID: 1846375294}
 --- !u!4 &1984910346
 Transform:
   m_ObjectHideFlags: 0
@@ -29555,6 +29569,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e186c96bdb0334d80ae031bdfe6216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1984910348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984910342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf32cf31945d6542ae256f13d98d2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1 &1985082398
 GameObject:
   m_ObjectHideFlags: 0
@@ -31524,11 +31555,38 @@ PrefabInstance:
       propertyPath: puzzleCameraArm
       value: 
       objectReference: {fileID: 1846375294}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2673403734670913156, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+    - {fileID: 1355225065422684589, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2091545514}
   m_SourcePrefab: {fileID: 100100000, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+--- !u!1 &2091545506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+  m_PrefabInstance: {fileID: 2091545505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2091545514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091545506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &2100170739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32276,11 +32334,37 @@ PrefabInstance:
       propertyPath: puzzleCameraArm
       value: 
       objectReference: {fileID: 1846375294}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 3868506418182908071}
   m_SourcePrefab: {fileID: 100100000, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+--- !u!1 &3868506418182908063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 293198112929717254, guid: da12bf1201a3a804e805d41977debbf2, type: 3}
+  m_PrefabInstance: {fileID: 3868506418182908062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3868506418182908071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3868506418182908063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &4809537226942626704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32372,6 +32456,10 @@ PrefabInstance:
     - target: {fileID: 8118866578991072606, guid: 9f84107515f53a54d91e45e455c4b2c7, type: 3}
       propertyPath: m_Name
       value: tree 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118866578991072606, guid: 9f84107515f53a54d91e45e455c4b2c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8928336301283712996, guid: 9f84107515f53a54d91e45e455c4b2c7, type: 3}
       propertyPath: m_LocalScale.x
@@ -32646,11 +32734,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doll_yellow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9216742054582420996, guid: d3d85368ea35dda4386e0a807f1c115c, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 5725896304995902370}
   m_SourcePrefab: {fileID: 100100000, guid: d3d85368ea35dda4386e0a807f1c115c, type: 3}
+--- !u!1 &5725896304995902362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9216742054582420996, guid: d3d85368ea35dda4386e0a807f1c115c, type: 3}
+  m_PrefabInstance: {fileID: 5725896304995902361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5725896304995902370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5725896304995902362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &5729807781108184380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32714,6 +32828,10 @@ PrefabInstance:
     - target: {fileID: 6514395700356952805, guid: 79fa7a2255798e845a77519233daef64, type: 3}
       propertyPath: m_Name
       value: tree 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514395700356952805, guid: 79fa7a2255798e845a77519233daef64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32780,11 +32898,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doll_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6678055460351674607, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 5973300956565852058}
   m_SourcePrefab: {fileID: 100100000, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+--- !u!1 &5973300956565852050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6678055460351674607, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+  m_PrefabInstance: {fileID: 5973300956565852049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5973300956565852058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973300956565852050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardFloatDist: 2
+  dropAble:
+    serializedVersion: 2
+    m_Bits: 8200
+  puzzleCameraArm: {fileID: 1846375294}
 --- !u!1001 &6143569675986477789
 PrefabInstance:
   m_ObjectHideFlags: 0

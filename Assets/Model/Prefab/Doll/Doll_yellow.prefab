@@ -462,9 +462,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4286309131796676938}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4097525805097899382}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
       insertIndex: -1
@@ -489,30 +486,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8532755a91e5212478f7606c5272aaa1, type: 3}
   m_PrefabInstance: {fileID: 8298194304447757141}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4286309131796676938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216742054582420996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myState: 0
-  standardFloatDist: 2
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 8
-  stackAble:
-    serializedVersion: 2
-    m_Bits: 8192
-  notDrop:
-    serializedVersion: 2
-    m_Bits: 5184
-  puzzleCameraArm: {fileID: 0}
 --- !u!114 &4097525805097899382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +516,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 32768
+  pushPower: 1000
 --- !u!114 &4701613217108193787
 MonoBehaviour:
   m_ObjectHideFlags: 0
