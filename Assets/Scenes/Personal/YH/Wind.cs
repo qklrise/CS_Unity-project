@@ -4,19 +4,18 @@ public class Wind : MonoBehaviour
 {
     public bool onWind;
     public Rigidbody rig;
-    float power;
+    public float power;
+    public Vector3 windDirection;
     void Start()
     {
-        rig = gameObject.GetComponent<Rigidbody>();   
     }
 
     void Update()
     {
-        
     }
 
     void OnTriggerStay(Collider other)
     {
-        rig.AddForce(Vector3.forward * power);
+        rig.AddForce(windDirection *power);
     }
 }
