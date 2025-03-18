@@ -7,12 +7,16 @@ public class Interaction : AnimProperty
     public LayerMask Key;
     public LayerMask Door;
     public LayerMask Grow;
-
+    public LayerMask PickAxe;
+    public LayerMask Wall;
     public GameObject KeySlot;
     
     GameObject InteractTarget;
     GameObject DoorKeySlot;
     GameObject GrowSlot;
+    GameObject WallSlot;
+    [SerializeField]
+    GameObject wallObj;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -22,7 +26,7 @@ public class Interaction : AnimProperty
             {
              //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                if ((1 << col.gameObject.layer & Key) != 0)
+                if ((1 << col.gameObject.layer & Key ) != 0)
                     // 상호작용 대상이 'key' 일 때
                 {
                     InteractTarget = col.gameObject;
@@ -32,6 +36,14 @@ public class Interaction : AnimProperty
                     GetComponentInParent<PlayerMove2>().enabled = false; // 잡는 동작 중엔 못 움직이게
                     myAnim.SetFloat("Speed", 0.0f);
 
+                }
+                if ((1 << col.gameObject.layer & PickAxe) != 0)
+                {
+                    InteractTarget = col.gameObject;
+                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                    myAnim.SetTrigger("Catch");
+                    GetComponentInParent<PlayerMove2>().enabled = false;
+                    myAnim.SetFloat("Speed", 0.0f);
                 }
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,6 +63,14 @@ public class Interaction : AnimProperty
                         myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
                     }
                 }
+                if(InteractTarget != null && (1 << InteractTarget.gameObject.layer & PickAxe) != 0)
+                {
+                    if ((1 << col.gameObject.layer & Wall) != 0)
+                    {
+                        WallSlot = col.gameObject;
+                        myAnim.SetTrigger("UseKey");
+                    }
+                }
             }
             //----------------------------------------------------------------------------------------------------------------------------------------------------------
         }
@@ -58,18 +78,23 @@ public class Interaction : AnimProperty
     
     void KeyInteract() // 애니메이션 이벤트로 호출하는 함수
     {
-        StartCoroutine(KeyCatch());
+        StartCoroutine(KeyCatch(Key));
+    }
+    void PickAxeInteract()
+    {
+        StartCoroutine(KeyCatch(PickAxe));
     }
 
     void UseKey() // 애니메이션 이벤트로 호출하는 함수
     {
         if (DoorKeySlot != null) StartCoroutine(UsingKey());
         else if (GrowSlot != null) StartCoroutine(UsingGrowingPosion());
+        else if (WallSlot != null) StartCoroutine(UsingPickAxe());
     }
 
-    IEnumerator KeyCatch()
+    IEnumerator KeyCatch(LayerMask layer)
     {
-        Collider[] list = Physics.OverlapBox(transform.position + transform.up * 0.7f + transform.forward * 0.5f, new Vector3(0.4f ,1.4f ,1.0f) * 0.5f, transform.rotation, Key);
+        Collider[] list = Physics.OverlapBox(transform.position + transform.up * 0.7f + transform.forward * 0.5f, new Vector3(0.4f ,1.4f ,1.0f) * 0.5f, transform.rotation, layer);
         foreach (Collider col in list)
         {
             col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // 애니메이션의 잡는 모션이 나올 때 열쇠가 다시 움직이게 함
@@ -161,6 +186,33 @@ public class Interaction : AnimProperty
         InteractTarget = null;
         GrowSlot = null;
         //----------------------------------------------
+    }
+    IEnumerator UsingPickAxe()
+    {
+        InteractTarget.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        InteractTarget.transform.SetParent(null); // 열쇠가 더이상 플레이어를 안 따라오게
+        
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = false; // 모션 중엔 플레이어가 움직이지 못하게
+        myAnim.SetFloat("Speed", 0.0f);
+
+        Vector3 dir = (WallSlot.transform.position - InteractTarget.transform.position).normalized;
+        float dist = Vector3.Distance(WallSlot.transform.position, InteractTarget.transform.position);
+        while (dist > 0.01f) // 0이 아니라 최대한 근접할 때 까지 이동
+        {
+            float targetDist = Time.deltaTime * 1.4f;
+            InteractTarget.transform.position = Vector3.Lerp(InteractTarget.transform.position, WallSlot.transform.position, targetDist);
+            InteractTarget.transform.rotation = Quaternion.Lerp(InteractTarget.transform.rotation, WallSlot.transform.rotation, targetDist);
+            dist = Vector3.Distance(WallSlot.transform.position, InteractTarget.transform.position);
+            yield return null;
+        }
+        
+        gameObject.GetComponentInParent<PlayerMove2>().enabled = true; // 모션이 끝나면 움직일 수 있게
+
+        yield return GameTime.GetWait(1.0f);
+        Destroy(wallObj);
+        InteractTarget = null;
+        WallSlot = null;
+
     }
 
     public void SpeedReset()
