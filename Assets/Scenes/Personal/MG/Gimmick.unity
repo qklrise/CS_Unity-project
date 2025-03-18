@@ -53676,7 +53676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myModel: {fileID: 1741475401}
-  moveSpeed: 2
+  moveSpeed: 3
   cameraTransform: {fileID: 956501881}
 --- !u!114 &1985082406
 MonoBehaviour:
@@ -53693,9 +53693,9 @@ MonoBehaviour:
   iceMask:
     serializedVersion: 2
     m_Bits: 131072
-  playerMove: {fileID: 1985082405}
-  iceSpeed: 4
-  maxIceSpeed: 5.5
+  character: {fileID: 1741475401}
+  iceSpeed: 3
+  maxIceSpeed: 4
 --- !u!1001 &1985422699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58809,6 +58809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1985082401}
     m_Modifications:
+    - target: {fileID: 462401184687214839, guid: 2a88744b4542740debd69f72f3f88eea, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e4d103c741f6282418faf6c609180615, type: 2}
     - target: {fileID: 462401184687214839, guid: 2a88744b4542740debd69f72f3f88eea, type: 3}
       propertyPath: m_UpdateMode
       value: 1
