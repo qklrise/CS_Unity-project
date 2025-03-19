@@ -4,7 +4,8 @@ using UnityEngine;
 public class Powdery_Snow : MonoBehaviour
 {
     public GameObject player;
-    public int a;
+    [SerializeField]
+    float snowSpeed;
     void Start()
     {
     }
@@ -12,13 +13,15 @@ public class Powdery_Snow : MonoBehaviour
     {   
         //player.GetComponent<PlayerMove2>().jumpCount = 0;
         Animator anim = player.GetComponent<Animator>();
-        anim.SetFloat("Slow", 0.5f);
+        snowSpeed = 0.5f;
+        anim.SetFloat("Slow", snowSpeed);
     }
 
     void OnTriggerExit(Collider other)
     {
         //player.GetComponent<PlayerMove2>().jumpCount = 2;
         Animator anim = player.GetComponent<Animator>();
-        anim.SetFloat("Slow", 1.0f);
+        snowSpeed = 1.0f;
+        anim.SetFloat("Slow", snowSpeed);
     }
 }
