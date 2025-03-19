@@ -19,6 +19,7 @@ public class PlayerMove2 : AnimProperty
     int jumpCount = 2;
     Rigidbody rb = null;
     CapsuleCollider col = null;
+    float maxSpeed = 1.0f;
 
     private void Start()
     {
@@ -74,10 +75,15 @@ public class PlayerMove2 : AnimProperty
 
             myModel.rotation = Quaternion.Lerp(myModel.rotation, viewRot, Time.deltaTime * 20.0f); //모델 회전
 
-            myAnim.SetFloat("Speed", moveDir.magnitude); //애니메이션 속도 설정
+            float rootMotionSpeed = moveDir.magnitude;
+            rootMotionSpeed = Mathf.Clamp(rootMotionSpeed, 0, maxSpeed);
+            myAnim.SetFloat("Speed", rootMotionSpeed); //애니메이션 속도 설정
         }
     }
-
+    public void SetMaxSpeed(float speed)
+    {
+        if(maxSpeed != speed) maxSpeed = speed;   
+    }
     private void FixedUpdate()
     {
         float Speed = moveSpeed * Time.fixedDeltaTime;
