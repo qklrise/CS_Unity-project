@@ -7,13 +7,13 @@ public class Cobweb : MonoBehaviour
 {
     public GameObject CobwebHandle;
 
-    public LayerMask Player;
-
     public GameObject PlayerCharacter;
 
     public Transform cameraTransform;
 
     bool canMove = true;
+
+    RigidbodyConstraints orgRb;
 
 
     float maxAngle = 30.0f;
@@ -39,6 +39,11 @@ public class Cobweb : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             StartCoroutine(resetRot());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Out();
         }
     }
 
@@ -74,35 +79,41 @@ public class Cobweb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((1 << other.gameObject.layer & Player) != 0)
-        {
-            GetComponent<Cobweb>().enabled = true;
-
-            other.GetComponent<PlayerMove2>().enabled = false;
-            other.GetComponentInChildren<Interaction>().enabled = false;
-
-            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; // 가속도를 초기화
-
-            other.GetComponent<Rigidbody>().useGravity = false;
-
-            CobwebHandle.GetComponent<HingeJoint>().connectedBody = other.gameObject.GetComponent<Rigidbody>();
-
-
-            PlayerCharacter.transform.SetParent(CobwebHandle.transform);
-        }
+        In();
     }
     private void OnTriggerExit(Collider other)
     {
-
-        GetComponent<Cobweb>().enabled = false;
-        other.GetComponent<PlayerMove2>().enabled = true;
-        other.GetComponentInChildren<Interaction>().enabled = true;
-        other.GetComponent<Rigidbody>().useGravity = true;
-
-        PlayerCharacter.transform.SetParent(other.transform);
-
+        Out();
     }
+
+    void In()
+    {
+            GetComponent<Cobweb>().enabled = true;
+
+            PlayerCharacter.GetComponent<PlayerMove2>().enabled = false;
+            PlayerCharacter.GetComponentInChildren<Interaction>().enabled = false;
+
+            Rigidbody rb = PlayerCharacter.GetComponent<Rigidbody>();
+            orgRb = rb.constraints;
+
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            PlayerCharacter.GetComponent<Rigidbody>().constraints = orgRb; // 가속도를 초기화
+
+            PlayerCharacter.GetComponent<Rigidbody>().useGravity = false;
+
+            PlayerCharacter.transform.SetParent(CobwebHandle.transform);
+    }
+
+    void Out()
+    {
+        GetComponent<Cobweb>().enabled = false;
+        PlayerCharacter.GetComponent<PlayerMove2>().enabled = true;
+        PlayerCharacter.GetComponentInChildren<Interaction>().enabled = true;
+        PlayerCharacter.GetComponent<Rigidbody>().useGravity = true;
+
+        PlayerCharacter.transform.SetParent(PlayerCharacter.transform);
+    }
+
 }
 
 // 최대 각도 제한을 걸어두고 그 제한에 도달할 때마다 최대 각도를 조금씩 늘리는 식으로 가속 구현?
