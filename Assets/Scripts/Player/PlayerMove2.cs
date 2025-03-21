@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove2 : AnimProperty
 {
     //------점프할 때 쓰는 변수---------
-    public bool onGround { get; private set; } = true; // 
+    public bool onGround { get; set; } = true; // 
     bool inputJumpKey = false;
 
     bool jumpForce = false; //점프하는 힘을 가할지 결정하는 변수
