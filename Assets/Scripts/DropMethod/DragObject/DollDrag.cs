@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DollDrag : DropStateGravity
 {
-    
     protected override void RotateMove()
     {
         if (IsRotation)

@@ -20,7 +20,7 @@ public class PlayerMove2 : AnimProperty
     Rigidbody rb = null;
     CapsuleCollider col = null;
     float maxSpeed = 1.0f;
-
+    [SerializeField] float jumpPower = 6.0f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -59,7 +59,12 @@ public class PlayerMove2 : AnimProperty
                 jumpDir += myModel.forward;
             }
             jumpDir.Normalize();
+
+            float Speed = moveSpeed * Time.deltaTime;
+            transform.Translate(jumpDir * Speed, Space.Self);
+            jumpDir = Vector3.zero;
         }
+        
     }
 
     private void Move()
@@ -86,17 +91,10 @@ public class PlayerMove2 : AnimProperty
     }
     private void FixedUpdate()
     {
-        float Speed = moveSpeed * Time.fixedDeltaTime;
-        if (!onGround) // 공중에 있을 때도 조금씩 이동할 수 있게
-        {
-            transform.Translate(jumpDir * Speed, Space.Self);
-            jumpDir = Vector3.zero;
-        }
-
         if (jumpForce)
         {
             rb.linearVelocity = Vector3.zero;
-            rb.AddForce(Vector3.up * 6.0f, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             jumpForce = false;
         }
     }

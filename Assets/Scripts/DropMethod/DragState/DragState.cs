@@ -7,17 +7,24 @@ public class DragState : StopState
     public LayerMask dropAble; // 드랍할 수 있는 바닥 레이어
     public Transform puzzleCameraArm; //퍼즐 캠 암 transform 정보
     protected float floatYpos = 0.0f; //드래그 시 띄울 y 좌표
-    Vector3 GridMouse = Vector3.zero; // 현재 마우스 위치 정보
     protected bool canDrop = false;
     protected Color ori = default; //색상 정보 
     protected float rayHitTranY = 0.0f;
+    float rayDistVar = 0f;
+    protected float maxRayYAxisVar { get; set; } = 0f;
 
+    protected override void StartSet()
+    {
+        float maxRayDist = transform.localScale.y * maxRayYAxisVar + floatDist;
+        rayDistVar = maxRayDist + 0.5f;
+    }
     protected override void OnDragSet()
     {
         dragStartPos = transform.position;
         dragStartRot = transform.eulerAngles; // 드래그 시작할 때의 위치와 회전 정보를 저장 
         transform.position += Vector3.up * floatDist; // 드래그한 오브젝트를 띄움
         floatYpos = transform.position.y; // 띄운 y좌표를 저장함
+        myCol.enabled = false;
         // PuzzleCamMove 컴포넌트 정보 저장
         if (!GameManager.isDrag) GameManager.isDrag = true;
         // static 변수 GameManager.isDrag를 변경, drag 상태로 설정.
@@ -27,10 +34,12 @@ public class DragState : StopState
 
     protected override void OnDragPro()
     {
-        GridMouse = WorldMousePoint();
-        //현재 마우스의 위치 정보를 저장
+        Ray ray = Camera.allCameras[0].ScreenPointToRay(Input.mousePosition);
+        Vector3 camDir = puzzleCameraArm.position - transform.position;
+        float camDist = camDir.magnitude;
+        float rayDist = camDist + rayDistVar;
         
-        if (Physics.Raycast(GridMouse, Vector3.down, out RaycastHit rayHit, floatDist + 0.7f, dropAble))
+        if (Physics.Raycast(ray, out RaycastHit rayHit, rayDist, dropAble))
         {
             if (rayHit.transform.GetComponent<MeshRenderer>() != null)
             {
@@ -45,8 +54,8 @@ public class DragState : StopState
                 terminalPos.y = floatYpos;
                 transform.position = terminalPos;
 
-                if (Physics.BoxCast(terminalPos, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down,
-                    out RaycastHit boxHit, Quaternion.identity, floatDist + 0.3f))
+                if (Physics.BoxCast(terminalPos + Vector3.up, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down,
+                    out RaycastHit boxHit, Quaternion.identity, floatDist + 1.3f))
                 {
                     if ((1 << boxHit.transform.gameObject.layer & dropAble) != 0 || preDragPoint == null)
                     {
@@ -104,20 +113,5 @@ public class DragState : StopState
         newDragPoint = null;
         //저장한 정보 초기화
         canDrop = false;
-    }
-
-    Vector3 WorldMousePoint()
-    {
-        Vector3 CameraDel = transform.position - puzzleCameraArm.position;
-        //카메라와 드래그한 물체 사이의 방향을 구함
-        float cameraDist = CameraDel.magnitude;// 
-        Vector3 mousePosition = new(Input.mousePosition.x, Input.mousePosition.y, cameraDist);
-        // z 좌표는 카메라와의 거리를 의미
-        mousePosition = Camera.allCameras[0].ScreenToWorldPoint(mousePosition);
-        //현재 카메라에서 화면 상의 좌표를 월드상의 좌표로 변경하는 함수
-        mousePosition.y = floatYpos;
-        // y 좌표를 띄울 높이로 변경
-        return mousePosition;
-        // 구한 마우스 커서 좌표값을 반환
     }
 }

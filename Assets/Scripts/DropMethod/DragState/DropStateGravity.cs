@@ -11,15 +11,11 @@ public class DropStateGravity : DragRotate
 
     protected override void StartSet()
     {
+        base.StartSet();
         if (!rb.useGravity) rb.useGravity = true;
-        GetColComponet();
     }
 
-    protected virtual void GetColComponet() //상속해서 내용을 정할 가상함수
-    {
-
-    }
-
+    
     protected override void EndDragSet()
     {
         if (IsRotation) IsRotation = false;
@@ -72,16 +68,10 @@ public class DropStateGravity : DragRotate
         if (Mathf.Approximately(targetDist, 0.0f) || targetDist < 0.0f)
         {
             //드랍할 목표 거리가 0의 근사치거나 0보다 작으면
-            ChildLanding();
             rb.isKinematic = true;
             transform.position = new(transform.position.x, dropTerYpos, transform.position.z);
             //중력으로 이동해서 목표한 y좌표에 정확히 도착하지 않기 때문에 y좌표를 직접 설정해줌
             ChangeState(State.Stop);
         }
-    }
-
-    protected virtual void ChildLanding() //상속해서 내용을 정할 가상함수
-    {
-
     }
 }
