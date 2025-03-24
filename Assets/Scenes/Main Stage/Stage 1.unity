@@ -9114,6 +9114,7 @@ MonoBehaviour:
   zoomSpeed: 10
   zoomRange: {x: 1, y: 10}
   smoothSpeed: 10
+  Player: {fileID: 0}
   myCam: {fileID: 956501881}
 --- !u!4 &617287188
 Transform:
@@ -21248,6 +21249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a95b5ffccf44bafb7d5471ee46a1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1337096666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23952,8 +23956,17 @@ MonoBehaviour:
   Door:
     serializedVersion: 2
     m_Bits: 2048
+  Grow:
+    serializedVersion: 2
+    m_Bits: 0
+  PickAxe:
+    serializedVersion: 2
+    m_Bits: 0
+  Wall:
+    serializedVersion: 2
+    m_Bits: 0
   KeySlot: {fileID: 1804076390}
-  DoorKeySlot: {fileID: 0}
+  wallObj: {fileID: 0}
 --- !u!1001 &1531526239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28763,6 +28776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 10
   smoothSpeed: 10
+  Setting: 0
   moveSpeed: 5
   rig: {fileID: 0}
 --- !u!4 &1846375294
@@ -30804,6 +30818,8 @@ MonoBehaviour:
   Player: {fileID: 1985082398}
   cameraArm: {fileID: 617287186}
   puzzleCam: {fileID: 1846375292}
+  rig: {fileID: 0}
+  playerAnim: {fileID: 0}
 --- !u!114 &1985082400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30816,9 +30832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65bd0a3fa4ac4241b0aa1e3bca701a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 1985082403}
   myModel: {fileID: 1741475401}
   moveSpeed: 10
+  cameraTransform: {fileID: 0}
 --- !u!4 &1985082401
 Transform:
   m_ObjectHideFlags: 0
