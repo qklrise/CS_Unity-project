@@ -6,12 +6,9 @@ public class SpringGravity : DragAlpha
     //����� �� ���� collider�� �ִ� ������Ʈ���� ������ ���߱� ������
     //isTriger�� Ȱ��ȭ�ϱ� ���� BoxCollider ������Ʈ ������ ����
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
-    protected override void StartSet()
+    protected override void OnDragSet()
     {
-        base.StartSet();
-        maxRayYAxisVar = 0.5f;
+        pivotDist = 0.5f;
+        base.OnDragSet();
     }
-    
 }
