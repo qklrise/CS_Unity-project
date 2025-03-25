@@ -39,7 +39,7 @@ public class DragState : StopState
         float camDist = camDir.magnitude;
         float rayDist = camDist + rayDistVar;
         
-        if (Physics.Raycast(ray, out RaycastHit rayHit, rayDist, dropAble))
+        if (Physics.Raycast(ray, out RaycastHit rayHit, Mathf.Infinity, dropAble))
         {
             if (rayHit.transform.GetComponent<MeshRenderer>() != null)
             {
@@ -55,18 +55,22 @@ public class DragState : StopState
                 transform.position = terminalPos;
 
                 if (Physics.BoxCast(terminalPos + Vector3.up, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down,
-                    out RaycastHit boxHit, Quaternion.identity, floatDist + 1.3f))
+                    out RaycastHit boxHit, Quaternion.identity, Mathf.Infinity)) 
+
+                        //floatDist + 1.3f;
                 {
                     if ((1 << boxHit.transform.gameObject.layer & dropAble) != 0 || preDragPoint == null)
                     {
                         newDragPoint.material.color = Color.yellow;
                         canDrop = true;
+                        DragAlphaTF(true);
                     }
 
                     else
                     {
                         newDragPoint.material.color = Color.red;
                         canDrop = false;
+                        DragAlphaTF(false);
                     }
                 }
                 preDragPoint = newDragPoint;
@@ -85,11 +89,13 @@ public class DragState : StopState
                     if ((1 << boxHit.transform.gameObject.layer & dropAble) != 0 || preDragPoint == null)
                     {
                         canDrop = true;
+                        DragAlphaTF(true);
                     }
 
                     else
                     {
                         canDrop = false;
+                        DragAlphaTF(false);
                     }
                 }
 
@@ -101,17 +107,18 @@ public class DragState : StopState
         else
         {
             // 현재 마우스 위치에서 y축 방향으로 레이져를 쐈을 때 일정 좌표 아래까지 지정한 레이어가 없다면
-            NotDropable();
+            if (preDragPoint != null) preDragPoint.material.color = ori;
+            //이전 마우스 커서가 있던 바닥의 색을 원래 색으로 변경
+            preDragPoint = null;
+            newDragPoint = null;
+            //저장한 정보 초기화
+            canDrop = false;
+            DragAlphaTF(false);
         }
     }
 
-    void NotDropable()
+    protected virtual void DragAlphaTF(bool tf)
     {
-        if (preDragPoint != null) preDragPoint.material.color = ori;
-        //이전 마우스 커서가 있던 바닥의 색을 원래 색으로 변경
-        preDragPoint = null;
-        newDragPoint = null;
-        //저장한 정보 초기화
-        canDrop = false;
+
     }
 }

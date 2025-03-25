@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DollDrag : DropStateGravity
+public class DollDrag : DragAlpha
 {
     protected override void RotateMove()
     {

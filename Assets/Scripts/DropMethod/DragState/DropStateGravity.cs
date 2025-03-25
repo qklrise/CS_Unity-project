@@ -12,7 +12,7 @@ public class DropStateGravity : DragRotate
     protected override void StartSet()
     {
         base.StartSet();
-        if (!rb.useGravity) rb.useGravity = true;
+        //if (!rb.useGravity) rb.useGravity = true;
     }
 
     

@@ -24,6 +24,7 @@ public class PlayerControll : AnimProperty
     {
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
+            GameManager.ChangeGameMode();
             StartCoroutine(ChangeCam());
         }
     }

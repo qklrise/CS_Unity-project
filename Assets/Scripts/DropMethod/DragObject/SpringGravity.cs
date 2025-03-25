@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpringGravity : DropStateGravity
+public class SpringGravity : DragAlpha
 {
     //BoxCollider boxCol = null;
     //����� �� ���� collider�� �ִ� ������Ʈ���� ������ ���߱� ������
