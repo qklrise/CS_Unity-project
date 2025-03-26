@@ -2305,13 +2305,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6313977552868830594, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
-      propertyPath: dropAble.m_Bits
-      value: 8200
+    - target: {fileID: 2278411540026800314, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+      propertyPath: Spring1_Button.m_Bits
+      value: 8192
       objectReference: {fileID: 0}
-    - target: {fileID: 6313977552868830594, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
-      propertyPath: puzzleCameraArm
-      value: 
+    - target: {fileID: 2278411540026800314, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+      propertyPath: Spring2_Button.m_Bits
+      value: 16384
       objectReference: {fileID: 0}
     - target: {fileID: 6334005715575689813, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2357,41 +2357,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doll_blue
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 1482323290332584789, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 4521803102636057309, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+    - target: {fileID: 6986507325711346248, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
+      propertyPath: puzzleCameraArm
+      value: 
+      objectReference: {fileID: 1073430950}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6678055460351674607, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 351866946}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
---- !u!1 &351866945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6678055460351674607, guid: 45c3373039220034dbce43f9c18bc0cc, type: 3}
-  m_PrefabInstance: {fileID: 351866944}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &351866946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351866945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00bb0a1dab045445aa8f3ba2cef0e52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatDist: 1
-  dropAble:
-    serializedVersion: 2
-    m_Bits: 8200
-  puzzleCameraArm: {fileID: 1073430950}
-  dragAlpha: {fileID: 2100000, guid: c10dd3c49e4740a4fa57825e93b56eb6, type: 2}
-  alphaValue: 0.4
 --- !u!4 &357325670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4595495095368793939, guid: dab962cf3255c8f4baa8695aa64d79f3, type: 3}
@@ -8647,6 +8621,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 83220521}
     m_Modifications:
+    - target: {fileID: 1453561649147747, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5938125085884560718, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
       propertyPath: m_Name
       value: Spring 2
@@ -8713,6 +8691,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5938125085884560718, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1181029318}
+    - targetCorrespondingSourceObject: {fileID: 1453561649147747, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181029320}
   m_SourcePrefab: {fileID: 100100000, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
 --- !u!4 &1181029315 stripped
 Transform:
@@ -8762,6 +8743,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1181029319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1453561649147747, guid: 6c2276a76f5a144bd9ee1373a4f829d0, type: 3}
+  m_PrefabInstance: {fileID: 1181029314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1181029320
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181029319}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0013183234, y: 0.0037336203, z: 0.002377328}
+  m_Center: {x: -0.010150356, y: 0.000000007625204, z: 0.008587519}
 --- !u!1001 &1181663704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14407,6 +14414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1128976131}
     m_Modifications:
+    - target: {fileID: 1532495302840457041, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5127870545387261308, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
       propertyPath: m_Name
       value: Spring 1
@@ -14461,6 +14472,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5127870545387261308, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2347559488182972645}
+    - targetCorrespondingSourceObject: {fileID: 1532495302840457041, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2347559488182972647}
   m_SourcePrefab: {fileID: 100100000, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
 --- !u!4 &2347559488182972643 stripped
 Transform:
@@ -14505,6 +14519,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2347559488182972646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532495302840457041, guid: d7a06494351fe446d8ace2f55729e00c, type: 3}
+  m_PrefabInstance: {fileID: 2347559488182972642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2347559488182972647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347559488182972646}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0013183234, y: 0.0037336203, z: 0.002377328}
+  m_Center: {x: -0.0101503525, y: 1.7462295e-10, z: 0.008587515}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

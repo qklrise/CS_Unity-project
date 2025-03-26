@@ -10,22 +10,12 @@ public class Spring : AnimProperty
 
     bool On = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public void OnPush()
     {
-
+        StartCoroutine(OnButton());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // �ӽ÷� ��������� �ص� ��
-        if (Input.GetKey(KeyCode.G)) StartCoroutine(OnPiston());
-        if (Input.GetKey(KeyCode.H)) OutPiston();
-        // �ִϸ��̼� �̺�Ʈ�� ��ü �� ����
-    }
-
-    public IEnumerator OnPiston() // �ִϸ��̼� �̺�Ʈ�� ȣ���ϴ� �Լ�
+    public IEnumerator OnButton() // �ִϸ��̼� �̺�Ʈ�� ȣ���ϴ� �Լ�
     {
         myAnim.SetTrigger("Spring1On");
         On = true;
@@ -46,7 +36,7 @@ public class Spring : AnimProperty
     }
 
 
-    public void OutPiston() // �ִϸ��̼� �̺�Ʈ�� ȣ���ϴ� �Լ�
+    public void OutButton() // �ִϸ��̼� �̺�Ʈ�� ȣ���ϴ� �Լ�
     {
         myAnim.SetTrigger("Spring1Off");
         On = false;
