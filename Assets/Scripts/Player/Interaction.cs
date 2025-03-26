@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Interaction : AnimProperty
 {
@@ -10,7 +11,7 @@ public class Interaction : AnimProperty
     public LayerMask PickAxe;
     public LayerMask Wall;
     public GameObject KeySlot;
-    
+    public Collider Goal;
     GameObject InteractTarget;
     GameObject DoorKeySlot;
     GameObject GrowSlot;
@@ -53,7 +54,8 @@ public class Interaction : AnimProperty
                     // 상호작용 대상이 'door' 일 때
                     {
                         DoorKeySlot = col.gameObject;
-                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행
+                        myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행    
+                        Goal.enabled = true;
                     }
 
                     else if ((1 << col.gameObject.layer & Grow) != 0)
@@ -75,7 +77,6 @@ public class Interaction : AnimProperty
             //----------------------------------------------------------------------------------------------------------------------------------------------------------
         }
     }
-    
     void KeyInteract() // 애니메이션 이벤트로 호출하는 함수
     {
         StartCoroutine(KeyCatch(Key));
