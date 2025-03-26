@@ -16,13 +16,13 @@ public class PlayerCam : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        /*
+        
         targetDist = camDist = Mathf.Abs(myCam.transform.localPosition.z);
         rotX = transform.localRotation.eulerAngles.x;
         if (rotX > 180.0f) rotX -= 360.0f;
         targetRotX = rotX;
         targetRotY = rotY = transform.parent.localRotation.eulerAngles.y;        
-        */
+        
     }
 
     // Update is called once per frame
