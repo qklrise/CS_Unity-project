@@ -1,29 +1,36 @@
+Unity Editor version:    6000.0.37f1 (090b7797214c)
+Branch:                  6000.0/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.3.2 (Build 24D81)
+Darwin version:          24.3.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        36864 MB
 Using pre-set license
-Built from '6000.0/staging' branch; Version is '6000.0.37f1 (090b7797214c) revision 592759'; Using compiler version '193933523'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'ko' Physical Memory: 32525 MB
-BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+Pro License: YES
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Unity.exe
+/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/MacOS/Unity
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/halfd/OneDrive/문서/GitHub/CS_Unity-project
+/Users/areuzu/Documents/GitHub/CS_Unity-project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51496
+50788
 -job-worker-count
 5
 -background-job-worker-count
 8
 -gc-helper-count
 1
-Successfully changed project path to: C:/Users/halfd/OneDrive/문서/GitHub/CS_Unity-project
-C:/Users/halfd/OneDrive/문서/GitHub/CS_Unity-project
+Successfully changed project path to: /Users/areuzu/Documents/GitHub/CS_Unity-project
+/Users/areuzu/Documents/GitHub/CS_Unity-project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,12 +66,12 @@ C:/Users/halfd/OneDrive/문서/GitHub/CS_Unity-project
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15232]  Target information:
+Player connection [8453294144]  Target information:
 
-Player connection [15232]  * "[IP] 172.30.1.78 [Port] 0 [Flags] 2 [Guid] 2430291270 [EditorId] 2430291270 [Version] 1048832 [Id] WindowsEditor(7,Choi) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [8453294144]  * "[IP] 192.168.120.239 [Port] 0 [Flags] 2 [Guid] 3040366993 [EditorId] 3040366993 [Version] 1048832 [Id] OSXEditor(0,joung-ui-MacBookPro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
-Player connection [15232] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [15232] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8453294144] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8453294144] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,59 +83,58 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.06 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.37f1 (090b7797214c)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.37f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/halfd/OneDrive/문서/GitHub/CS_Unity-project/Assets
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/areuzu/Documents/GitHub/CS_Unity-project/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
-    Vendor:   NVIDIA
-    VRAM:     8024 MB
-    Driver:   32.0.15.6636
+ preferred device: Apple M3 Pro (high power)
+Metal devices available: 1
+0: Apple M3 Pro (high power)
+Using device Apple M3 Pro (high power)
+Initializing Metal device caps: Apple M3 Pro
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.37f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.37f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.37f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56364
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56945
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.37f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002558 seconds.
-- Loaded All Assemblies, in  0.381 seconds
-Native extension for WindowsStandalone target not found
+Register platform support module: /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000622 seconds.
+- Loaded All Assemblies, in  0.193 seconds
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.298 seconds
-Domain Reload Profiling: 678ms
-	BeginReloadAssembly (129ms)
+- Finished resetting the current domain, in  0.205 seconds
+Domain Reload Profiling: 398ms
+	BeginReloadAssembly (43ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (154ms)
-		LoadAssemblies (127ms)
+		CreateAndSetChildDomain (0ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (94ms)
+		LoadAssemblies (42ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (151ms)
-			TypeCache.Refresh (149ms)
-				TypeCache.ScanAssembly (130ms)
+		AnalyzeDomain (92ms)
+			TypeCache.Refresh (91ms)
+				TypeCache.ScanAssembly (84ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (299ms)
+	FinalizeReload (205ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (267ms)
+		SetupLoadedEditorAssemblies (184ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (45ms)
-			ProcessInitializeOnLoadAttributes (148ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			InitializePlatformSupportModulesInManaged (24ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (34ms)
+			ProcessInitializeOnLoadAttributes (80ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,312 +143,851 @@ Domain Reload Profiling: 678ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.375 seconds
-Refreshing native plugins compatible for Editor in 0.12 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
+- Loaded All Assemblies, in  0.201 seconds
+Refreshing native plugins compatible for Editor in 0.04 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.325 seconds
-Domain Reload Profiling: 699ms
-	BeginReloadAssembly (157ms)
+- Finished resetting the current domain, in  0.205 seconds
+Domain Reload Profiling: 406ms
+	BeginReloadAssembly (77ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (138ms)
-		LoadAssemblies (199ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (73ms)
+		LoadAssemblies (82ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (34ms)
-			TypeCache.Refresh (23ms)
-				TypeCache.ScanAssembly (16ms)
-			BuildScriptInfoCaches (6ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (11ms)
+			BuildScriptInfoCaches (3ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (325ms)
+	FinalizeReload (205ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (227ms)
+		SetupLoadedEditorAssemblies (146ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (58ms)
-			ProcessInitializeOnLoadAttributes (128ms)
-			ProcessInitializeOnLoadMethodAttributes (33ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (41ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (3ms)
+Launching external process: /Applications/Unity/Hub/Editor/6000.0.37f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 132 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 953 unused Assets / (14.7 MB). Loaded Objects now: 1417.
-Memory consumption went from 114.6 MB to 99.9 MB.
-Total: 11.464700 ms (FindLiveObjects: 0.163400 ms CreateObjectMapping: 0.058900 ms MarkObjects: 4.113400 ms  DeleteObjects: 7.127700 ms)
+Unloading 953 unused Assets / (10.6 MB). Loaded Objects now: 1417.
+Memory consumption went from 121.0 MB to 110.4 MB.
+Total: 5.844084 ms (FindLiveObjects: 0.080666 ms CreateObjectMapping: 0.022625 ms MarkObjects: 2.880500 ms  DeleteObjects: 2.860084 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 549504.329898 seconds.
-  path: Assets/Scenes/Personal/MG/Level 2 MG.unity
-  artifactKey: Guid(545f809d36f674e488b2186a51236c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Personal/MG/Level 2 MG.unity using Guid(545f809d36f674e488b2186a51236c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04014d3b94ea048cdd2e92186ac23cc9') in 0.006554 seconds
+  Time since last request: 21653.068563 seconds.
+  path: Assets/Prefab
+  artifactKey: Guid(4ee4510da8ab346049f7578ffc740c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab using Guid(4ee4510da8ab346049f7578ffc740c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b89dfa9bfdaa6199a130d9a1f29a73a9') in 0.002073542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.895026 seconds.
+  path: Assets/Data
+  artifactKey: Guid(b528b50903498b745a9fe2d8bca47437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data using Guid(b528b50903498b745a9fe2d8bca47437) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '418ec90e63b2406e3d450eff8100b0c1') in 0.000242917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.182129 seconds.
+  path: Assets/Model/Animation/Spring
+  artifactKey: Guid(82a7dc57f155f460688964ce715c1141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring using Guid(82a7dc57f155f460688964ce715c1141) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb50fb4757dd18957a96c879d5520e63') in 0.000252458 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.313 seconds
-Refreshing native plugins compatible for Editor in 0.12 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
+Thread 0x319787000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.178 seconds
+Refreshing native plugins compatible for Editor in 0.06 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.269 seconds
-Domain Reload Profiling: 580ms
-	BeginReloadAssembly (143ms)
+- Finished resetting the current domain, in  0.198 seconds
+Domain Reload Profiling: 376ms
+	BeginReloadAssembly (75ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (111ms)
-		LoadAssemblies (170ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (62ms)
+		LoadAssemblies (75ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (25ms)
+		AnalyzeDomain (15ms)
 			TypeCache.Refresh (3ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (17ms)
+			BuildScriptInfoCaches (9ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (269ms)
+	FinalizeReload (198ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (195ms)
+		SetupLoadedEditorAssemblies (141ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (111ms)
-			ProcessInitializeOnLoadMethodAttributes (24ms)
-			AfterProcessingInitializeOnLoad (2ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.11 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.08 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 951 unused Assets / (14.8 MB). Loaded Objects now: 1419.
-Memory consumption went from 104.0 MB to 89.2 MB.
-Total: 12.959300 ms (FindLiveObjects: 0.104100 ms CreateObjectMapping: 0.029600 ms MarkObjects: 4.069300 ms  DeleteObjects: 8.754300 ms)
+Unloading 951 unused Assets / (10.6 MB). Loaded Objects now: 1419.
+Memory consumption went from 117.7 MB to 107.1 MB.
+Total: 7.041750 ms (FindLiveObjects: 0.091959 ms CreateObjectMapping: 0.021375 ms MarkObjects: 2.979125 ms  DeleteObjects: 3.948708 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.773852 seconds.
+  path: Assets/Model/Animation/Spring/SpringOn.anim
+  artifactKey: Guid(9a1c1f911806a27459b1017f31b51182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/SpringOn.anim using Guid(9a1c1f911806a27459b1017f31b51182) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '227a0c66a9b84042e064dd4bd5a2ca4e') in 0.011755042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.180384 seconds.
+  path: Assets/Model/Animation/Spring/Spring2On.anim
+  artifactKey: Guid(9a1c1f911806a27459b1017f31b51182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring2On.anim using Guid(9a1c1f911806a27459b1017f31b51182) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33d256da8942cc7dcae6ad26facd4177') in 0.0026335 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.259775 seconds.
+  path: Assets/Model/Animation/Spring/Spring.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b484ae16cf93ee1356e049e9029c831b') in 0.003510917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.563712 seconds.
+  path: Assets/Model/Animation/Spring/Spring2.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring2.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b81124f852e0d5a3f65dca785173031') in 0.000925541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.206135 seconds.
+  path: Assets/Model/Material
+  artifactKey: Guid(f363f461a7f614239b71378f1183f658) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Material using Guid(f363f461a7f614239b71378f1183f658) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e94b447ff1e15c1bd5a24364739cd25f') in 0.000226708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.609296 seconds.
+  path: Assets/Model/Prefab
+  artifactKey: Guid(2f348a20cb0d04819b997fbe13b977a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab using Guid(2f348a20cb0d04819b997fbe13b977a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe4a2393adca64052acded4a44b19a34') in 0.000221833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.112665 seconds.
+  path: Assets/Model/Prefab/Map
+  artifactKey: Guid(582d3a32ea1d94eb39d6b0f466085eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map using Guid(582d3a32ea1d94eb39d6b0f466085eaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '209cbca4647de0416bcf665917d95c40') in 0.000235375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.873381 seconds.
+  path: Assets/Model/Prefab/Map/Stage
+  artifactKey: Guid(0b7e359bc588e46e38e40479c7d3d976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Stage using Guid(0b7e359bc588e46e38e40479c7d3d976) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9932f64aeeda64acdfd1a1c92fb5c4ee') in 0.000225125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.815281 seconds.
+  path: Assets/Model/Prefab/Map/Spring
+  artifactKey: Guid(4c949c9e960bd44109d6c56e535b5915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring using Guid(4c949c9e960bd44109d6c56e535b5915) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38c177d1149ccb1845a4bf2b2d84ab9c') in 0.000233541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.014417 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.prefab
+  artifactKey: Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.prefab using Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb35d651dc2c6f3facd6c1d0b2da97ec') in 0.059665708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 119
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.326439 seconds.
+  path: Assets/Model/Prefab/Map/Spring/2.prefab
+  artifactKey: Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/2.prefab using Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4e804912713a41f3855ac1c249db0d7c') in 0.01014675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 119
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.216309 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.fbx
+  artifactKey: Guid(4d50f190173b7104e8bd5b4367401ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.fbx using Guid(4d50f190173b7104e8bd5b4367401ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c93ef2ef4082ac7277e92f82aec839e') in 0.04474 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 62
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.193698 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring2.prefab
+  artifactKey: Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring2.prefab using Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e557373f38b4c888b0f73fbf00b29b2') in 0.009448708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 119
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.602821 seconds.
+  path: Assets/Model/Animation/Spring/Spring.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14166aad132411d15c0348a3e87a1fb5') in 0.00083275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 749.681013 seconds.
+  path: Assets/Model/Prefab/Map/Spring/2.prefab
+  artifactKey: Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/2.prefab using Guid(fceb9e66abb50a84eb922f833807a873) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad3f76e3a67c61aae71a337962a17c9d') in 0.000477042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.993585 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.fbx
+  artifactKey: Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.fbx using Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd61ce958b869056afbe61502f668551a') in 0.026828333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.004936 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.fbx
+  artifactKey: Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.fbx using Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '67c132ac9390235f6be17b7ae7fb6ccc') in 0.028342292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.816698 seconds.
+  path: Assets/Model/Animation
+  artifactKey: Guid(6b96e52a5e3cc4e5e92498436de6e357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation using Guid(6b96e52a5e3cc4e5e92498436de6e357) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81fb3b235d8e276b0095952db781719a') in 0.000269917 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.504148 seconds.
+  path: Assets/Model/Animation/Spring/Spring.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bee82e6c99397a76a642300cc3471bbc') in 0.000854042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x31aec7000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.178 seconds
+Refreshing native plugins compatible for Editor in 0.06 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.197 seconds
+Domain Reload Profiling: 376ms
+	BeginReloadAssembly (76ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (61ms)
+		LoadAssemblies (75ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (2ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (9ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (198ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (140ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.09 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 951 unused Assets / (10.5 MB). Loaded Objects now: 1432.
+Memory consumption went from 136.9 MB to 126.3 MB.
+Total: 6.803750 ms (FindLiveObjects: 0.077041 ms CreateObjectMapping: 0.022500 ms MarkObjects: 2.839417 ms  DeleteObjects: 3.864333 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.336 seconds
-Refreshing native plugins compatible for Editor in 0.09 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
+Thread 0x16cf1b000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.176 seconds
+Refreshing native plugins compatible for Editor in 0.06 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.286 seconds
-Domain Reload Profiling: 621ms
-	BeginReloadAssembly (153ms)
+- Finished resetting the current domain, in  0.199 seconds
+Domain Reload Profiling: 375ms
+	BeginReloadAssembly (75ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (23ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (17ms)
-	LoadAllAssembliesAndSetupDomain (120ms)
-		LoadAssemblies (194ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (60ms)
+		LoadAssemblies (73ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (25ms)
-			TypeCache.Refresh (4ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (2ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (16ms)
+			BuildScriptInfoCaches (10ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (287ms)
+	FinalizeReload (199ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (204ms)
+		SetupLoadedEditorAssemblies (142ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (115ms)
-			ProcessInitializeOnLoadMethodAttributes (25ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			InitializePlatformSupportModulesInManaged (1ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 951 unused Assets / (14.5 MB). Loaded Objects now: 1419.
-Memory consumption went from 103.7 MB to 89.2 MB.
-Total: 14.655200 ms (FindLiveObjects: 0.114900 ms CreateObjectMapping: 0.033200 ms MarkObjects: 4.369900 ms  DeleteObjects: 10.135700 ms)
+Unloading 951 unused Assets / (10.7 MB). Loaded Objects now: 1432.
+Memory consumption went from 144.5 MB to 133.8 MB.
+Total: 6.255458 ms (FindLiveObjects: 0.072292 ms CreateObjectMapping: 0.021625 ms MarkObjects: 2.540625 ms  DeleteObjects: 3.620625 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 51.756251 seconds.
-  path: Assets/Scenes/Main Stage/Level 2.unity
-  artifactKey: Guid(8ee50f7701c51a84a87d1d15b823423d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Main Stage/Level 2.unity using Guid(8ee50f7701c51a84a87d1d15b823423d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1cba9164af92a23bd10b6a8b14c9ac3') in 0.0045735 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 58.731948 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.prefab
+  artifactKey: Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.prefab using Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '705929c593a7c370b757ee34b7c3fc8e') in 0.043558042 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 55
+
+========================================================================
+Received Import Request.
+  Time since last request: 2395.941282 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.fbx
+  artifactKey: Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.fbx using Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5617b69a427fb2b8bf053b081832a802') in 0.001415417 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 74.604524 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.fbx
+  artifactKey: Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.fbx using Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b05c45e327933bdec9bf793869fd28aa') in 0.043158166 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.302975 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 21.fbx
+  artifactKey: Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 21.fbx using Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7bafe04a1ef1b5cf2637d0971c9c6cd') in 0.028269333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.920345 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.fbx
+  artifactKey: Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.fbx using Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '230f0902780c3425a066ca7a6c897fc1') in 0.025564333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.706194 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring.prefab
+  artifactKey: Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring.prefab using Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4a6bb7fb11cd099aa4cd03310b4934b') in 0.008801291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 55
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.411183 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.prefab
+  artifactKey: Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.prefab using Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ea8b6ddd0e26916db7976d833d14d55f') in 0.008856542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 55
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.023193 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.fbx
+  artifactKey: Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.fbx using Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ed29faf5c5ef0a4f6c25452ebdb61e0') in 0.0260215 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.781726 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.prefab
+  artifactKey: Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.prefab using Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0c041e0d3fa22f1727cc194c91ad717') in 0.009292958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 55
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.395976 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.fbx
+  artifactKey: Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.fbx using Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fbb7771b52526ebdc86e345950bd20d5') in 0.032435125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.225625 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.prefab
+  artifactKey: Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.prefab using Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '16261f4e4827d12635e9e7c6665a8a16') in 0.009332542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 98
+
+========================================================================
+Received Import Request.
+  Time since last request: 86.857179 seconds.
+  path: Assets/Model/Animation/Spring/Spring 1.overrideController
+  artifactKey: Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 1.overrideController using Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '90b7612c8df188fc06bac2ceb26259a2') in 0.000925333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.854179 seconds.
+  path: Assets/Model/Animation/Spring/Spring 1.overrideController
+  artifactKey: Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 1.overrideController using Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fdeaf150e21c7554e0d6f2164f77c424') in 0.001090125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.287477 seconds.
+  path: Assets/Model/Animation/Spring/Spring 1.overrideController
+  artifactKey: Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 1.overrideController using Guid(d71429bfe1519429eb34c07ddd89a0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c58d5dbfa38e174971328d5a07c4fe7') in 0.001118833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.455597 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.prefab
+  artifactKey: Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.prefab using Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec91f5692ff9f06d044e337aff989a35') in 0.009756958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 110
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.461576 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.fbx
+  artifactKey: Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.fbx using Guid(cd0b2ad82fb294c0f9f91bf27a649981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '425e8b798069366ebfd0aaaf04ae222f') in 0.032096375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.313 seconds
-Refreshing native plugins compatible for Editor in 0.14 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
+Thread 0x16cf1b000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.186 seconds
+Refreshing native plugins compatible for Editor in 0.06 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.281 seconds
-Domain Reload Profiling: 594ms
-	BeginReloadAssembly (145ms)
+- Finished resetting the current domain, in  0.202 seconds
+Domain Reload Profiling: 387ms
+	BeginReloadAssembly (79ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (17ms)
-	LoadAllAssembliesAndSetupDomain (110ms)
-		LoadAssemblies (170ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (65ms)
+		LoadAssemblies (80ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (22ms)
-			TypeCache.Refresh (3ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (2ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (14ms)
+			BuildScriptInfoCaches (10ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (282ms)
+	FinalizeReload (202ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (205ms)
+		SetupLoadedEditorAssemblies (141ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (117ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 0.05 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 951 unused Assets / (14.4 MB). Loaded Objects now: 1419.
-Memory consumption went from 103.6 MB to 89.2 MB.
-Total: 12.675000 ms (FindLiveObjects: 0.146000 ms CreateObjectMapping: 0.059700 ms MarkObjects: 3.563600 ms  DeleteObjects: 8.904500 ms)
+Unloading 951 unused Assets / (10.5 MB). Loaded Objects now: 1432.
+Memory consumption went from 151.5 MB to 141.0 MB.
+Total: 6.472000 ms (FindLiveObjects: 0.114333 ms CreateObjectMapping: 0.022708 ms MarkObjects: 2.882792 ms  DeleteObjects: 3.451916 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 112.353123 seconds.
-  path: Assets/Scenes/Personal/MG/Loading.unity
-  artifactKey: Guid(890bbb0fe4f590b4b8f98e9336954f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Personal/MG/Loading.unity using Guid(890bbb0fe4f590b4b8f98e9336954f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04e6923e6f2e0972206058760d5b749d') in 0.002824 seconds
+  Time since last request: 255.592565 seconds.
+  path: Assets/Model/Animation/Spring/New Animation.anim
+  artifactKey: Guid(dc6d03f26aee1448c927f9aed7e427c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/New Animation.anim using Guid(dc6d03f26aee1448c927f9aed7e427c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a852f4ab59e1a96c224619bd8fdc7f8a') in 0.009577583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.923118 seconds.
+  path: Assets/Model/Animation/Spring/Spring 1.controller
+  artifactKey: Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 1.controller using Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '26ee5137a9ca6e31f9c24ad2c87cd41f') in 0.001701208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.157541 seconds.
+  path: Assets/Model/Animation/Spring/Spring 2.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 2.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f9738f8ec669d10991d8e0f0deae4f5') in 0.001283541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.345752 seconds.
+  path: Assets/Model/Animation/Spring/Spring 1.controller
+  artifactKey: Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 1.controller using Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e2d2afdf2e40933b52d203cc7d55f624') in 0.000607583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 369.535209 seconds.
+  path: Assets/Model/Animation/Spring/Spring 2 off.fbx
+  artifactKey: Guid(0d52ce7f10084490da1ba8ee7c7921d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 2 off.fbx using Guid(0d52ce7f10084490da1ba8ee7c7921d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96ead68cf2c976745849f8ddce16633b') in 0.010327625 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.114368 seconds.
+  path: Assets/Model/Animation/Spring/Spring 2 off.fbx
+  artifactKey: Guid(0d52ce7f10084490da1ba8ee7c7921d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Spring 2 off.fbx using Guid(0d52ce7f10084490da1ba8ee7c7921d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4ebec394b8010ff9ec75bc92606e8e7') in 0.001285209 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 29
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.401884 seconds.
+  path: Assets/Model/Prefab/Player
+  artifactKey: Guid(2161f831e99a440b3aad4942b515c23d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Player using Guid(2161f831e99a440b3aad4942b515c23d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddd513d9902d1a21e1f4f2c7b8cd2cb9') in 0.000249125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.883906 seconds.
+  path: Assets/Model/Prefab/Player.fbx
+  artifactKey: Guid(d75a0af08078a4a5180da225e917e2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Player.fbx using Guid(d75a0af08078a4a5180da225e917e2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '330fc2a283ddbc20b36c91670801f513') in 0.133126833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 230
+
+========================================================================
+Received Import Request.
+  Time since last request: 199.794659 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.prefab
+  artifactKey: Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.prefab using Guid(b5ac669a0086e4a7598aa1de50f050d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '136379f9db67cb5bd6bb0c7a4a70df58') in 0.002064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.015185 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.prefab
+  artifactKey: Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.prefab using Guid(d9f6d9d90cfcf479f94b096247a030ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3274548cda4794fb0bfe9cfc1f2a758b') in 0.000454 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 119.877097 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring1.fbx
+  artifactKey: Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring1.fbx using Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a07e7d9cdfd28918fce1fc9518a31f06') in 0.023120667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 315.332349 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring1.fbx
+  artifactKey: Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring1.fbx using Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c9d16a7725edf69113ccbf19c5427947') in 0.026067875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 290.670910 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.fbx
+  artifactKey: Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.fbx using Guid(8da9895b549e44b0192e2ddf4d1dd64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '95bd5ed977ee006cbb8bcb56333f7ab3') in 0.032912584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 52
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.495681 seconds.
+  path: Assets/Model/Animation/Spring/Button.cs
+  artifactKey: Guid(55d458569bbf4d448ba157af244f81b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Animation/Spring/Button.cs using Guid(55d458569bbf4d448ba157af244f81b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '901be46cc9c2e446435fbf275d74941f') in 0.000308667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 950 unused Assets / (10.6 MB). Loaded Objects now: 1466.
+Memory consumption went from 151.0 MB to 140.4 MB.
+Total: 6.612708 ms (FindLiveObjects: 0.077416 ms CreateObjectMapping: 0.023042 ms MarkObjects: 3.002791 ms  DeleteObjects: 3.509208 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x16cf1b000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.183 seconds
+Refreshing native plugins compatible for Editor in 0.04 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.201 seconds
+Domain Reload Profiling: 384ms
+	BeginReloadAssembly (79ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (63ms)
+		LoadAssemblies (76ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (10ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (201ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (143ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (41ms)
+			ProcessInitializeOnLoadAttributes (76ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.07 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 951 unused Assets / (10.6 MB). Loaded Objects now: 1465.
+Memory consumption went from 157.8 MB to 147.2 MB.
+Total: 6.682958 ms (FindLiveObjects: 0.081375 ms CreateObjectMapping: 0.019500 ms MarkObjects: 2.738542 ms  DeleteObjects: 3.843292 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 50.246634 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 1.controller
+  artifactKey: Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 1.controller using Guid(32cf0a72c75354ee3859d0640cab830f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68dd1c25daadb1ab1e8330524e76a981') in 0.00907475 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.395202 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring1.fbx
+  artifactKey: Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring1.fbx using Guid(b3c3784e89e9346bea220f7677db45a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bd0e3b85420ce96e34410efd3550ab8a') in 0.0599065 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 25
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.548383 seconds.
+  path: Assets/Model/Prefab/Map/Spring/Spring 2.controller
+  artifactKey: Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Spring/Spring 2.controller using Guid(c24a6b2f4760c8e48a85ad8dcf0b4ae7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '106038ef393bde3b6f0955b3d8c63e03') in 0.001190542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.730783 seconds.
+  path: Assets/Model/Prefab/Map/Door
+  artifactKey: Guid(002e0b29e609340e2bfad99835db4398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Door using Guid(002e0b29e609340e2bfad99835db4398) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bbff489a2ebac37af2ded0da3d86a231') in 0.00026375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.724107 seconds.
+  path: Assets/Model/Prefab/Map/Door/Door.prefab
+  artifactKey: Guid(475d3773bca40534f8eebb479cab7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Door/Door.prefab using Guid(475d3773bca40534f8eebb479cab7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee96e85b3059a4532dc070ef5ccf9345') in 0.011228333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 46
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.316854 seconds.
+  path: Assets/Model/Prefab/Door
+  artifactKey: Guid(2c7eedb1d6f1b47c199c3b9c7ecc498f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Door using Guid(2c7eedb1d6f1b47c199c3b9c7ecc498f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '433b45c410a943d1cf68d68827d1bd51') in 0.000334959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.675684 seconds.
+  path: Assets/Model/Prefab/Map/Tree
+  artifactKey: Guid(4ce73f09e6ab54ee1a6a4e6113284376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Map/Tree using Guid(4ce73f09e6ab54ee1a6a4e6113284376) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35091730d19b9215c3284d2ba7c64404') in 0.000235167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.08 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 950 unused Assets / (10.6 MB). Loaded Objects now: 1466.
+Memory consumption went from 157.7 MB to 147.1 MB.
+Total: 6.544209 ms (FindLiveObjects: 0.075042 ms CreateObjectMapping: 0.018458 ms MarkObjects: 2.827708 ms  DeleteObjects: 3.622667 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.359428 seconds.
+  path: Assets/Model/Prefab/Door 1
+  artifactKey: Guid(002e0b29e609340e2bfad99835db4398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Door 1 using Guid(002e0b29e609340e2bfad99835db4398) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05e17f56155e75af6bdbd4cc8c3705f9') in 0.000275083 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.329 seconds
-Refreshing native plugins compatible for Editor in 0.10 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
+Thread 0x16cf1b000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.187 seconds
+Refreshing native plugins compatible for Editor in 0.04 ms, found 1 plugins.
+Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.284 seconds
-Domain Reload Profiling: 612ms
-	BeginReloadAssembly (145ms)
+- Finished resetting the current domain, in  0.196 seconds
+Domain Reload Profiling: 384ms
+	BeginReloadAssembly (78ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (117ms)
-		LoadAssemblies (178ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (68ms)
+		LoadAssemblies (79ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (24ms)
-			TypeCache.Refresh (3ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (4ms)
 				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (17ms)
+			BuildScriptInfoCaches (9ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (285ms)
+	FinalizeReload (197ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (193ms)
+		SetupLoadedEditorAssemblies (139ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
+			InitializePlatformSupportModulesInManaged (1ms)
 			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (112ms)
-			ProcessInitializeOnLoadMethodAttributes (22ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (75ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.14 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 951 unused Assets / (14.6 MB). Loaded Objects now: 1419.
-Memory consumption went from 103.8 MB to 89.2 MB.
-Total: 12.126300 ms (FindLiveObjects: 0.119400 ms CreateObjectMapping: 0.054100 ms MarkObjects: 3.622000 ms  DeleteObjects: 8.329200 ms)
+Unloading 951 unused Assets / (10.6 MB). Loaded Objects now: 1465.
+Memory consumption went from 164.8 MB to 154.2 MB.
+Total: 6.815625 ms (FindLiveObjects: 0.075833 ms CreateObjectMapping: 0.019292 ms MarkObjects: 2.792791 ms  DeleteObjects: 3.927459 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.322 seconds
-Refreshing native plugins compatible for Editor in 0.10 ms, found 0 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.280 seconds
-Domain Reload Profiling: 600ms
-	BeginReloadAssembly (139ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (20ms)
-	LoadAllAssembliesAndSetupDomain (121ms)
-		LoadAssemblies (182ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (22ms)
-			TypeCache.Refresh (3ms)
-				TypeCache.ScanAssembly (0ms)
-			BuildScriptInfoCaches (15ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (280ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (195ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (111ms)
-			ProcessInitializeOnLoadMethodAttributes (25ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 0.12 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 951 unused Assets / (14.7 MB). Loaded Objects now: 1419.
-Memory consumption went from 103.8 MB to 89.2 MB.
-Total: 12.112700 ms (FindLiveObjects: 0.114500 ms CreateObjectMapping: 0.038700 ms MarkObjects: 4.000800 ms  DeleteObjects: 7.956900 ms)
+Received Import Request.
+  Time since last request: 33.247282 seconds.
+  path: Assets/Model/Prefab/Spring/Spring1.prefab
+  artifactKey: Guid(880d0f43864e9470da56e6ca385ceddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Model/Prefab/Spring/Spring1.prefab using Guid(880d0f43864e9470da56e6ca385ceddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c1c6c1f0224ee01e0702b09e5688bfdf') in 0.042884125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
 
-Prepare: number of updated asset objects reloaded= 0
