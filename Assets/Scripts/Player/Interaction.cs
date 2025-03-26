@@ -11,7 +11,6 @@ public class Interaction : AnimProperty
     public LayerMask PickAxe;
     public LayerMask Wall;
     public GameObject KeySlot;
-    public Collider Goal;
     GameObject InteractTarget;
     GameObject DoorKeySlot;
     GameObject GrowSlot;
@@ -55,7 +54,6 @@ public class Interaction : AnimProperty
                     {
                         DoorKeySlot = col.gameObject;
                         myAnim.SetTrigger("UseKey"); // 열쇠를 쓰는 애니메이션 실행    
-                        Goal.enabled = true;
                     }
 
                     else if ((1 << col.gameObject.layer & Grow) != 0)

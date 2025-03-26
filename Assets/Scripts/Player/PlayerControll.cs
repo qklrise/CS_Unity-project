@@ -2,13 +2,10 @@ using UnityEngine;
 using System.Collections;
 public class PlayerControll : AnimProperty
 {
-    [SerializeField]
-    GameObject myCam;
     public GameObject Player;
     public GameObject cameraArm;
     [SerializeField]
     GameObject puzzleCam;
-    [SerializeField]
     Rigidbody rig;
     [SerializeField]
     Animator playerAnim;
@@ -17,6 +14,7 @@ public class PlayerControll : AnimProperty
     bool onGround = false;
     void Start()
     {
+        rig = Player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,15 +42,14 @@ public class PlayerControll : AnimProperty
             myAnim.SetTrigger("OnLanding");
             onGround = false;
             }
-           
-           myCam.SetActive(false);
+
+           cameraArm.SetActive(false);
            puzzleCam.SetActive(true);  
            Player.GetComponent<PlayerMove2>().enabled = false;   
-           cameraArm.GetComponent<PlayerCam>().enabled = false; 
-           Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+           rig.constraints = RigidbodyConstraints.FreezeAll;
            rig.linearVelocity = Vector3.zero;
            playerAnim.SetFloat("Speed", 0.0f);
-           yield return new WaitForSeconds(0.5f);
+           yield return GameTime.GetWait(0.5f);
            
         }
         
@@ -60,13 +57,12 @@ public class PlayerControll : AnimProperty
 
         else if (GameManager.isPuzzle == false)
         {
-            myCam.SetActive(true);
+            cameraArm.SetActive(true);
             puzzleCam.SetActive(false);
             Player.GetComponent<PlayerMove2>().enabled = true;
-            cameraArm.GetComponent<PlayerCam>().enabled = true; 
-            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
+            rig.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
             GameManager.isPuzzle = false;
-            yield return new WaitForSeconds(0.5f);
+            yield return GameTime.GetWait(0.5f);
         }
     }
      

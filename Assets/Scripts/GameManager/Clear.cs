@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class Clear : MonoBehaviour
 {
     public LayerMask playerMask;
-    public Collider doorCol;
+    Collider myCol;
     
     private void Start()
     {
-        doorCol = gameObject.GetComponent<BoxCollider>();
-        doorCol.enabled = false;
+        myCol = gameObject.GetComponent<Collider>();
+        myCol.enabled = false;
     }
     private void OnTriggerEnter(Collider other)
     {

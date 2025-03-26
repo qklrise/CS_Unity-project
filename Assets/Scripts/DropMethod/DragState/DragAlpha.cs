@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DragAlpha : DropStateGravity
 {
-    Material oriMaterial; 
+    Material[] oriMateArray = null; 
     public Material dragAlpha;
     Renderer[] rendArray = null;
     [SerializeField, Range(0.0f, 1.0f)] float alphaValue = 0.4f;
@@ -10,11 +10,14 @@ public class DragAlpha : DropStateGravity
     {
         base.OnDragSet();
         rendArray = GetComponentsInChildren<Renderer>();
-        foreach (Renderer renderer in rendArray) 
+        oriMateArray = new Material[rendArray.Length];
+
+        for(int i = 0; i < rendArray.Length; i++)
         {
-            if(oriMaterial == null) oriMaterial = renderer.material;
-            renderer.material = dragAlpha;
+            oriMateArray[i] = rendArray[i].material;
+            rendArray[i].material = dragAlpha;
         }
+        
         //dragAlpha.SetColor("_Color",Color.green);
         dragAlpha.color = Color.green;
         dragAlpha.SetFloat("_Alpha", alphaValue);
@@ -31,9 +34,9 @@ public class DragAlpha : DropStateGravity
 
     protected override void EndDragSet()
     {
-        foreach (Renderer renderer in rendArray)
-        {
-            renderer.material = oriMaterial;
+        for (int i = 0; i < rendArray.Length; i++)
+        { 
+            rendArray[i].material = oriMateArray[i];
         }
         base.EndDragSet();
     }

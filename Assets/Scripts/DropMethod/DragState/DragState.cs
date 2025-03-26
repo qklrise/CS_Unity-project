@@ -46,7 +46,7 @@ public class DragState : StopState
                 ori = newDragPoint.material.color;
                 // 현재 바닥의 색 정보를 저장
 
-                if (Physics.BoxCast(terminalPos + Vector3.up, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down,
+                if (Physics.BoxCast(terminalPos + Vector3.up * 2.0f, new Vector3(0.4f, 0.4f, 0.4f), Vector3.down,
                     out RaycastHit boxHit, Quaternion.identity, Mathf.Infinity)) 
                         //floatDist + 1.3f;
                 {
