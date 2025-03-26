@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spring : AnimProperty
 
-// À§¿¡ ³õÀÎ ¿ÀºêÁ§Æ®¸¦ ºÙÀÌ´Â ½ºÅ©¸³Æ®
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®
 {
     public LayerMask pushAble;
     public GameObject Panel;
@@ -19,18 +19,18 @@ public class Spring : AnimProperty
     // Update is called once per frame
     void Update()
     {
-        // ÀÓ½Ã·Î ½ÃÇè¿ëÀ¸·Î ÇØµÐ °Í
+        // ï¿½Ó½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Øµï¿½ ï¿½ï¿½
         if (Input.GetKey(KeyCode.G)) StartCoroutine(OnPiston());
         if (Input.GetKey(KeyCode.H)) OutPiston();
-        // ¾Ö´Ï¸ÞÀÌ¼Ç ÀÌº¥Æ®·Î ´ëÃ¼ ÇÒ ¿¹Á¤
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    public IEnumerator OnPiston() // ¾Ö´Ï¸ÞÀÌ¼Ç ÀÌº¥Æ®·Î È£ÃâÇÏ´Â ÇÔ¼ö
+    public IEnumerator OnPiston() // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     {
-        myAnim.SetTrigger("Using");
+        myAnim.SetTrigger("Spring1On");
         On = true;
-        Collider[] list = Physics.OverlapBox(transform.position + transform.up * 1.5f, new Vector3(0.45f, 0.45f, 0.45f), transform.rotation, pushAble); // ÇÔ¼ö°¡ ½ÇÇàµÉ ¶§ À§¿¡ ³õÀÎ °ÍµéÀ» Ã£À½
-        // ÆÇ³Ú ¹æÇâÀ¸·Î ÇÑÄ­ ÀÌµ¿ÇÑ Á¤À°¸éÃ¼ ¸ð¾çÀÇ °¨Áö ¸ð¾çÀ» ¸¸µê
+        Collider[] list = Physics.OverlapBox(transform.position + transform.up * 1.5f, new Vector3(0.45f, 0.45f, 0.45f), transform.rotation, pushAble); // ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Íµï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
+        // ï¿½Ç³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä­ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         foreach (Collider col in list)
         {
             Transform orgTf = col.GetComponentInParent<Transform>().parent;
@@ -46,8 +46,9 @@ public class Spring : AnimProperty
     }
 
 
-    public void OutPiston() // ¾Ö´Ï¸ÞÀÌ¼Ç ÀÌº¥Æ®·Î È£ÃâÇÏ´Â ÇÔ¼ö
+    public void OutPiston() // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
     {
+        myAnim.SetTrigger("Spring1Off");
         On = false;
     }
 
